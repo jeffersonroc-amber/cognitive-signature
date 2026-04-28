@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cognitive Signature™ — Human Signal Intelligence</title>
+<meta name="description" content="See how your leaders and teams actually operate before the consequences show up." />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}body{font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;background:#f4f1ea;color:#17191d;overflow-x:hidden}a{text-decoration:none;color:inherit}button,input,textarea,select{font-family:inherit}
+nav{position:fixed;inset:0 0 auto 0;height:52px;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:rgba(244,241,234,.88);backdrop-filter:saturate(180%) blur(24px);border-bottom:.5px solid rgba(20,24,29,.09)}.logo{font-size:15px;font-weight:600;letter-spacing:-.03em}.logo em{font-style:normal;color:#0e6f72}.nav-links{display:flex;gap:30px}.nav-links a{font-size:12px;opacity:.58}.nav-links a:hover{opacity:1}.pill{font-size:12px;font-weight:500;background:#0e6f72;color:#fff;border-radius:980px;padding:8px 18px;border:0;cursor:pointer}.hamb{display:none;background:none;border:0;flex-direction:column;gap:4px;padding:8px}.hamb span{display:block;width:20px;height:1.5px;background:#17191d}.mobile{display:none;position:fixed;top:52px;left:0;right:0;bottom:0;background:rgba(244,241,234,.98);z-index:998;padding:18px 22px}.mobile.open{display:flex;flex-direction:column}.mobile a{padding:14px 0;border-bottom:.5px solid rgba(0,0,0,.06)}.mobile .mobcta{background:#0e6f72;color:#fff;text-align:center;border-radius:980px;margin-top:18px;border:0}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;display:block}.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}.reveal.in{opacity:1;transform:none}.blue{color:#2aa6a1}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border-radius:980px;padding:13px 28px;font-size:16px}.btn-primary{background:#0e6f72;color:#fff;box-shadow:0 18px 45px rgba(14,111,114,.22)}.btn-link{color:#c8b27a;padding-inline:8px}.wrap{max-width:980px;margin:0 auto;padding:0 24px}.dark{background:#080a0d;color:#f5f5f2}.muted{color:#6d747c}.dark .muted{color:rgba(255,255,255,.42)}
+.hero{min-height:100vh;background:#080a0d;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 24px 70px;position:relative;overflow:hidden}.hero:before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,10,13,.74),rgba(8,10,13,.88)),linear-gradient(90deg,rgba(8,10,13,.96),rgba(8,10,13,.38) 52%,rgba(8,10,13,.86)),url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=2200&q=82');background-size:cover;background-position:center}.hero:after{content:'';position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);width:760px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(42,166,161,.18),transparent 70%)}.hero-inner{position:relative;z-index:2;max-width:880px}.hero .eyebrow{color:rgba(255,255,255,.48)}h1{font-size:clamp(44px,8vw,88px);font-weight:600;letter-spacing:-.045em;line-height:1.03;margin-bottom:20px;color:#f7f4ee}.hero h1 em{font-style:normal;color:#9fe5df}.hero-lead{font-size:clamp(16px,2vw,20px);color:rgba(255,255,255,.78);line-height:1.5;max-width:600px;margin:0 auto 14px}.hero-sub{font-size:15px;color:rgba(255,255,255,.56);line-height:1.6;max-width:540px;margin:0 auto 14px}.hero-consequence{font-size:15px;color:rgba(255,255,255,.7);font-weight:500;margin:0 auto 34px}.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.qual{position:absolute;z-index:2;bottom:26px;left:50%;transform:translateX(-50%);font-size:11px;color:rgba(255,255,255,.26);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.dash{position:relative;z-index:2;margin:42px auto 0;max-width:760px;background:rgba(10,14,17,.86);border:.5px solid rgba(255,255,255,.12);border-radius:18px;overflow:hidden;box-shadow:0 34px 90px rgba(0,0,0,.58);backdrop-filter:blur(20px)}.dashbar{height:34px;background:rgba(8,10,13,.72);border-bottom:.5px solid rgba(255,255,255,.07);display:flex;align-items:center;padding:0 14px;gap:7px}.dot{width:9px;height:9px;border-radius:50%;opacity:.75}.r{background:#b85c52}.y{background:#b89b5e}.g{background:#2aa6a1}.dashtitle{font-size:10px;color:rgba(255,255,255,.34);font-family:monospace;letter-spacing:.05em;margin-left:8px}.sample{margin-left:auto;font-size:10px;color:rgba(255,255,255,.28);font-family:monospace}.dashbody{padding:18px}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.kpi{background:rgba(244,241,234,.045);border:.5px solid rgba(255,255,255,.08);border-radius:12px;padding:14px;text-align:left}.klabel{font-size:9px;color:rgba(255,255,255,.34);font-family:monospace;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}.kval{font-size:25px;font-weight:600;font-family:monospace;line-height:1}.kcap{font-size:10px;color:rgba(255,255,255,.26);margin-top:8px}
+section{padding:110px 0}.section-head{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end;margin-bottom:48px}.section-head h2,h2{font-size:clamp(26px,4.5vw,50px);font-weight:600;letter-spacing:-.04em;line-height:1.07}.section-head p,p{font-size:15px;line-height:1.65}.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.07);border-radius:18px;overflow:hidden}.card-dark{background:#000;padding:34px 28px}.num{font-size:11px;font-weight:600;letter-spacing:.1em;color:rgba(255,255,255,.18);margin-bottom:14px;display:block}.card-dark h3,.card h3{font-size:17px;font-weight:600;letter-spacing:-.02em;line-height:1.25;margin-bottom:9px}.card-dark p{font-size:13px;color:rgba(255,255,255,.34)}.ref{font-size:11px;color:rgba(255,255,255,.18);font-style:italic;margin-top:12px;padding-top:10px;border-top:.5px solid rgba(255,255,255,.06)}
+.gap{background:#f4f1ea}.gapgrid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.chip{font-size:12px;font-weight:500;color:#0e6f72;background:#e2efeb;border-radius:980px;padding:6px 14px}.bullets{display:flex;flex-direction:column;gap:1px;background:rgba(20,24,29,.07);border-radius:16px;overflow:hidden;margin-top:26px}.bullet{background:#fffaf2;padding:20px 22px}.bullet h4{font-size:14px;margin-bottom:4px}.bullet p{font-size:12px;color:#6d747c}.sidebox{background:#fffaf2;border-radius:22px;padding:16px;border:.5px solid rgba(20,24,29,.08);box-shadow:0 26px 70px rgba(20,24,29,.08)}.sidebox strong{display:block;font-size:21px;letter-spacing:-.025em;line-height:1.35;margin:24px 20px 16px}.sidebox p{font-size:13px;color:#6d747c;margin:0 20px}.closing{font-weight:500;color:#17191d;margin-top:18px}
+.costgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:34px}.costcard{background:rgba(255,255,255,.03);border:.5px solid rgba(255,255,255,.07);border-radius:16px;padding:30px 26px}.costnum{font-size:clamp(30px,4.5vw,50px);font-weight:600;letter-spacing:-.04em;line-height:1;margin-bottom:10px}.red{color:#ff6b6b}.amber{color:#ffd60a}.green{color:#30d158}.costcard p{font-size:13px;color:rgba(255,255,255,.34)}.costnote{background:rgba(255,255,255,.03);border:.5px solid rgba(255,255,255,.07);border-radius:16px;padding:28px;margin-top:12px;text-align:center;font-weight:600;color:#f5f5f7}
+.signal{background:#fffaf2;text-align:center}.signal h2{max-width:780px;margin:0 auto 14px}.signal .muted{max-width:560px;margin:0 auto 34px}.hos{background:#080a0d;border-radius:24px;padding:42px;max-width:860px;margin:22px auto 0;color:#fff;text-align:left}.hoshead{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:24px}.hosgrid{display:grid;grid-template-columns:1fr 1.25fr;gap:16px;align-items:center}.gauge{background:rgba(244,241,234,.04);border:.5px solid rgba(255,255,255,.08);border-radius:18px;padding:32px;text-align:center}.score{font-size:58px;font-weight:600;font-family:monospace;color:#f5f5f7}.scorelabel{font-size:10px;color:rgba(255,255,255,.34);font-family:monospace;letter-spacing:.07em}.domain{background:rgba(244,241,234,.04);border:.5px solid rgba(255,255,255,.08);border-radius:14px;padding:16px;margin-bottom:10px}.domain-top{display:flex;justify-content:space-between;margin-bottom:8px}.bar{height:4px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden}.fill{height:100%}.domain p{font-size:11px;color:rgba(255,255,255,.34);margin-top:8px}.ip{font-size:12px;color:rgba(255,255,255,.24);font-style:italic;margin-top:22px;padding-top:18px;border-top:.5px solid rgba(255,255,255,.07);text-align:center}
+.visible-items{display:flex;flex-direction:column;gap:1px;background:rgba(20,24,29,.07);border-radius:22px;overflow:hidden}.vis{display:grid;grid-template-columns:1fr 1fr;background:#fffaf2}.vis-l,.vis-r{padding:36px}.vis-l{border-right:.5px solid rgba(20,24,29,.07)}.tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#0e6f72;margin-bottom:10px;display:block}.vis p{font-size:13px;color:#6d747c}.impact{font-size:14px;font-weight:500;line-height:1.6;color:#17191d;margin-bottom:14px}.beforeafter{margin-top:18px;background:#f4f1ea;border-radius:18px;padding:24px}.ba-title{font-size:13px;font-weight:600;color:#17191d;margin-bottom:12px}.ba-cols{display:grid;grid-template-columns:1fr 1fr;gap:10px}.ba{background:#fffaf2;border:.5px solid rgba(20,24,29,.08);border-radius:14px;padding:16px}.ba b{font-size:11px;text-transform:uppercase;letter-spacing:.08em}.ba p{font-size:12px;color:#6d747c;margin-top:8px}
+.ps{background:#000}.ps .section-head{align-items:start}.ps-note{font-size:13px;color:rgba(255,255,255,.4);font-style:italic;padding-bottom:14px;border-bottom:.5px solid rgba(255,255,255,.07);margin-bottom:14px}.psgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.pscard{background:rgba(255,255,255,.03);border:.5px solid rgba(255,255,255,.07);border-radius:16px;padding:26px 22px}.pscard h3{font-size:15px;margin-bottom:8px}.pscard p{font-size:12px;color:rgba(255,255,255,.32)}.limited{margin-top:18px;background:rgba(255,255,255,.03);border:.5px solid rgba(255,255,255,.07);border-radius:16px;padding:24px;color:rgba(255,255,255,.38);font-size:13px}.limited strong{color:#fff}
+.cost{background:#f4f1ea}.costgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(20,24,29,.07);border-radius:20px;overflow:hidden}.costcard{background:#f4f1ea;padding:30px 25px}.costcard h3{font-size:16px;letter-spacing:-.02em;line-height:1.35;margin-bottom:8px}.costcard p{font-size:12px;color:#6d747c}.costsig{font-size:12px;color:#0e6f72;margin-top:12px;padding-top:12px;border-top:.5px solid rgba(20,24,29,.08)}.shift-note{margin-top:18px;padding:24px;border:.5px solid rgba(255,255,255,.08);border-radius:16px;background:rgba(244,241,234,.04)}.shift-note p{font-size:14px;color:rgba(255,255,255,.5);margin-bottom:10px}.shift-note p:last-child{margin-bottom:0;color:rgba(255,255,255,.68);font-weight:500}
+.story-photo{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px}.story-strip{display:grid;grid-template-columns:1.1fr .9fr;gap:12px;max-width:860px;margin:0 auto 28px}.story-card{position:relative;min-height:260px;border-radius:22px;overflow:hidden;background:#080a0d;text-align:left}.story-card img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.82)}.story-card:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,10,13,.05),rgba(8,10,13,.68))}.story-caption{position:absolute;left:22px;right:22px;bottom:20px;z-index:1;color:#fff}.story-caption b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#c8b27a;margin-bottom:6px}.story-caption span{font-size:14px;line-height:1.45;color:rgba(255,255,255,.82)}.access{background:#080a0d;text-align:center;position:relative;overflow:hidden}.access:before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:680px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(42,166,161,.14),transparent 70%)}.access-inner{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:0 24px}.access h2{font-size:clamp(32px,6vw,64px);margin-bottom:16px}.access h2 em{font-style:normal;color:#9fe5df}.access p{color:rgba(255,255,255,.45)}.access .identity{color:rgba(255,255,255,.64);font-style:italic;margin-top:8px}.pilot{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08);border-radius:18px;overflow:hidden;margin:34px auto}.pilot div{background:#080a0d;padding:22px}.pilot b{font-size:11px;color:#c8b27a;letter-spacing:.08em;text-transform:uppercase}.pilot p{font-size:12px;margin-top:8px}.form{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:620px;margin:0 auto 12px;text-align:left}.form input,.form textarea,.form select{width:100%;border:.5px solid rgba(255,255,255,.14);background:rgba(244,241,234,.06);color:#fff;border-radius:14px;padding:13px 16px;outline:none}.form input::placeholder,.form textarea::placeholder{color:rgba(255,255,255,.36)}.form select option{background:#080a0d;color:#fff}.form input:focus,.form textarea:focus,.form select:focus{border-color:rgba(42,166,161,.72);box-shadow:0 0 0 3px rgba(42,166,161,.12)}.form .invalid{border-color:#b85c52;box-shadow:0 0 0 3px rgba(184,92,82,.14)}.form textarea{grid-column:1/-1;min-height:112px;resize:vertical}.wide{grid-column:1/-1}.honeypot{position:absolute;left:-10000px;width:1px;height:1px;opacity:0}.consent{grid-column:1/-1;display:grid;grid-template-columns:18px 1fr;gap:10px;align-items:start;color:rgba(255,255,255,.48);font-size:12px;line-height:1.45}.consent input{width:16px;height:16px;margin-top:1px;accent-color:#0e6f72}.form button{grid-column:1/-1;border:0;justify-self:center;min-width:180px}.small{font-size:12px;color:rgba(255,255,255,.22)!important}.pressure{margin-top:14px;color:rgba(255,255,255,.4)!important;font-size:13px!important;font-style:italic}.ty{display:none;color:#2aa6a1!important;margin-top:18px}.err{display:none;color:#b85c52!important;margin-top:18px}.qualification{display:none;max-width:720px;margin:26px auto 0;padding:24px;border:.5px solid rgba(255,255,255,.1);border-radius:24px;background:rgba(244,241,234,.045);text-align:left}.qualification h3{font-size:24px;letter-spacing:-.035em;margin-bottom:8px;color:#fff}.qualification p{font-size:13px;color:rgba(255,255,255,.46);margin-bottom:18px}.qualification .small{grid-column:1/-1;margin:0;text-align:center}.qualification.done{display:block;text-align:center}.qualification.done h3{text-align:center}.qualification.done p{text-align:center;margin-bottom:0}footer{background:#080a0d;border-top:.5px solid rgba(255,255,255,.06);padding:24px 40px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:rgba(255,255,255,.26);font-size:12px}
+@media(max-width:860px){nav{padding:0 20px}.nav-links,.nav-pill-wrap{display:none}.hamb{display:flex}.hero{padding-top:92px}.hero:before{background:linear-gradient(180deg,rgba(8,10,13,.72),rgba(8,10,13,.9)),url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=78');background-size:cover;background-position:center}.hero-dash-wrap{display:none}.section-head,.gapgrid,.hosgrid,.vis,.psgrid,.pilot,.cards3,.costgrid,.form,.story-strip{grid-template-columns:1fr}.vis-l{border-right:0;border-bottom:.5px solid rgba(20,24,29,.07)}section{padding:78px 0}.wrap{padding:0 20px}.ba-cols{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}footer{flex-direction:column;text-align:center}.qual{font-size:10px}.psgrid{grid-template-columns:1fr}.costgrid{gap:8px;background:transparent}.costcard{border-radius:14px}.cards3{gap:8px;background:transparent}.card-dark{border:.5px solid rgba(255,255,255,.07);border-radius:14px}.story-card{min-height:220px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">Cognitive <em>Signature</em>™</div>
+  <div class="nav-links"><a href="#shift">The Shift</a><a href="#gap">Signal Gap</a><a href="#signal">The Signal</a><a href="#services">Services</a><a href="#access">Early Access</a></div>
+  <a href="#access" class="nav-pill-wrap" data-track="secondary_cta_click" data-cta="nav_apply"><button class="pill">Apply for Access</button></a>
+  <button class="hamb" id="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile" id="mobile"><a href="#shift" onclick="closeMenu()">The Shift</a><a href="#gap" onclick="closeMenu()">Signal Gap</a><a href="#signal" onclick="closeMenu()">The Signal</a><a href="#services" onclick="closeMenu()">Services</a><a href="#access" class="mobcta" onclick="closeMenu()" data-track="secondary_cta_click" data-cta="mobile_apply">Apply for Access</a></div>
+
+<section class="hero">
+  <div class="hero-inner reveal in">
+    <span class="eyebrow">Human Signal Intelligence · Limited Access</span>
+    <h1>Your leaders<br>are deciding<br><em>in the dark.</em></h1>
+    <p class="hero-lead">This is how you see how they actually operate — before the consequences show up.</p>
+    <p class="hero-sub">Human–AI interaction generates a new behavioral signal about how people think, decide, regulate, and govern AI. Most organizations are not reading it.</p>
+    <p class="hero-consequence">The signal already exists inside your organization. The risk is not absence. It is invisibility.</p>
+    <div class="hero-actions"><a href="#access" class="btn btn-primary" data-track="hero_cta_click" data-cta="hero_apply">Apply for Early Access</a><a href="#shift" class="btn btn-link" data-track="secondary_cta_click" data-cta="hero_learn">See what changes ›</a></div>
+  </div>
+  <div class="dash hero-dash-wrap" aria-label="Illustrative signal view">
+    <div class="dashbar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="dashtitle">COGNITIVE SIGNATURE™ · SIGNAL VIEW</span><span class="sample">ILLUSTRATIVE</span></div>
+    <div class="dashbody"><div class="kpis"><div class="kpi"><div class="klabel">Illustrative Decision Quality</div><div class="kval blue">84</div><div class="kcap">Sample score</div></div><div class="kpi"><div class="klabel">Illustrative Cognitive Load</div><div class="kval" style="color:#c8b27a">62</div><div class="kcap">Sample score</div></div><div class="kpi"><div class="klabel">Illustrative AI Reliance</div><div class="kval">0.41</div><div class="kcap">Sample ratio</div></div><div class="kpi"><div class="klabel">Illustrative Consistency</div><div class="kval" style="color:#9fe5df">91</div><div class="kcap">Sample index</div></div></div></div>
+  </div>
+  <div class="qual">Selective access · Enterprise pilots · EN / FR</div>
+</section>
+
+<section class="shift dark" id="shift">
+  <div class="wrap">
+    <span class="eyebrow reveal">The irreversible shift</span>
+    <h2 class="reveal" style="max-width:680px;margin-bottom:46px">AI did not just change how decisions are made.<br><span class="blue">It changed the human system underneath them.</span></h2>
+    <div class="cards3 reveal">
+      <div class="card-dark"><span class="num">01</span><h3>The highest-stakes decisions now happen at the human–AI boundary.</h3><p>That boundary is where performance is made or destroyed. Most organizations have no way of knowing what is happening there.</p><div class="ref">Decision complexity is moving faster than standard visibility.</div></div>
+      <div class="card-dark"><span class="num">02</span><h3>Legacy tools were built for a world that no longer operates this way.</h3><p>KPIs, reviews, and personality frameworks measure the past. They were not designed for AI-augmented decision environments.</p><div class="ref">AI adoption is moving faster than organizational readiness.</div></div>
+      <div class="card-dark"><span class="num">03</span><h3>Organizations that gain visibility first earn a structural advantage.</h3><p>The signal compounds. The gap between those who know and those who do not widens every quarter.</p><div class="ref">The window to move first is not permanent.</div></div>
+    </div>
+    <div class="shift-note reveal">
+      <p>AI increased the volume, speed, and complexity of decisions beyond what most human systems can sustain. Organizations are beginning to feel this as fatigue, inconsistency, and friction.</p>
+      <p>The deeper issue is not fatigue itself. It is the absence of visibility into how people are actually functioning under AI load.</p>
+      <p>Emerging workplace research on AI-related cognitive strain points to a growing human-factor gap in AI adoption.</p>
+    </div>
+  </div>
+</section>
+
+<section class="gap" id="gap">
+  <div class="wrap gapgrid">
+    <div class="reveal">
+      <span class="eyebrow" style="color:#bf4800">The signal gap</span>
+      <h2>Leaders make decisions.<br>Teams reveal the patterns.</h2>
+      <p class="muted" style="margin-top:14px">Your current data shows outcomes. It rarely shows the operating patterns that produced them — especially under pressure, ambiguity, and AI-assisted work.</p>
+      <p class="closing">In plain terms: you are managing people and teams you cannot fully see.</p>
+      <div class="bullets">
+        <div class="bullet"><h4>Outcome metrics measure what happened. Not what decided it.</h4><p>KPIs confirm a result. They do not show whether the decision pattern will hold when context changes.</p></div>
+        <div class="bullet"><h4>Self-assessment captures the narrated self. Not the operating one.</h4><p>Behavioral research consistently shows self-perception becomes less reliable under pressure.</p></div>
+        <div class="bullet"><h4>Team friction is often structural, not interpersonal.</h4><p>What looks like communication breakdown is often cognitive architecture mismatch.</p></div>
+      </div>
+    </div>
+    <div class="sidebox reveal">
+      <img class="story-photo" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80" alt="Leaders in a focused working session" loading="lazy" />
+      <strong>Both are readable — if you have the right signal.</strong>
+      <p>Cognitive Signature connects what individuals do in isolation to what organizations produce at scale. No existing framework was built to make this connection. That is why it has been invisible.</p>
+      <div class="chips"><span class="chip">Fewer invisible risks</span><span class="chip">More consistent team decisions</span><span class="chip">AI deployments that deliver</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cost" id="cost">
+  <div class="wrap">
+    <div class="section-head reveal"><h2>The cost is not only adoption failure. It is invisible performance degradation.</h2><p class="muted">AI load changes the conditions under which leaders decide. Without a signal layer, organizations see the outcome late and miss the operating pattern that produced it.</p></div>
+    <div class="costgrid reveal"><div class="costcard"><span class="tag">Cognition</span><h3>Decision velocity rises faster than cognitive load is understood.</h3><p>The organization sees more activity, but not whether complexity is being structured well.</p><div class="costsig">Risk: overload masked as productivity.</div></div><div class="costcard"><span class="tag">Regulation</span><h3>Pressure makes judgment less consistent before performance visibly breaks.</h3><p>Senior leaders can appear composed while their decision pattern becomes less coherent.</p><div class="costsig">Risk: inconsistent judgment under pressure.</div></div><div class="costcard"><span class="tag">AI Collaboration</span><h3>AI use drifts when trust, validation, and oversight are not readable.</h3><p>Teams may over-rely, under-trust, or improvise governance without knowing where the pattern changed.</p><div class="costsig">Risk: governance drift and coherence gaps.</div></div></div>
+  </div>
+</section>
+
+<section class="signal" id="signal">
+  <div class="wrap">
+    <span class="eyebrow reveal">The new paradigm</span>
+    <h2 class="reveal">Human–AI interaction creates a newly precise behavioral signal about how people think.</h2>
+    <p class="muted reveal">Because it is hard to perform. What someone does at the boundary between their own judgment and machine output reveals operating architecture more accurately than self-report.</p>
+    <p class="muted reveal">What appears as AI fatigue is often a measurable pattern across cognition, regulation, and AI collaboration.</p>
+    <div class="story-strip reveal" aria-label="Human signal intelligence story">
+      <div class="story-card">
+        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=82" alt="Quiet executive workspace with digital collaboration tools" loading="lazy" />
+        <div class="story-caption"><b>Human signal</b><span>The most important evidence is often produced in ordinary work, before it becomes visible in outcomes.</span></div>
+      </div>
+      <div class="story-card">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1100&q=82" alt="Executive team reviewing work together" loading="lazy" />
+        <div class="story-caption"><b>Operating pattern</b><span>Teams reveal their architecture in how they decide, validate, and adapt under pressure.</span></div>
+      </div>
+    </div>
+    <div class="hos reveal">
+      <div class="hoshead">HOS Score™ · Three Signal Domains · Illustrative View</div>
+      <div class="hosgrid">
+        <div class="gauge"><div class="score">76</div><div class="scorelabel">SAMPLE COMPOSITE</div></div>
+        <div>
+          <div class="domain"><div class="domain-top"><b>01 · Cognition</b><span class="blue">82 · sample</span></div><div class="bar"><div class="fill" style="width:82%;background:#2aa6a1"></div></div><p>How a person structures complexity and decides when no clean answer exists.</p></div>
+          <div class="domain"><div class="domain-top"><b>02 · Regulation</b><span style="color:#9fe5df">71 · sample</span></div><div class="bar"><div class="fill" style="width:71%;background:#9fe5df"></div></div><p>How a person holds judgment intact under pressure and stress.</p></div>
+          <div class="domain"><div class="domain-top"><b>03 · AI Collaboration</b><span style="color:#c8b27a">64 · sample</span></div><div class="bar"><div class="fill" style="width:64%;background:#c8b27a"></div></div><p>How a person delegates to, validates, and governs AI in real conditions.</p></div>
+        </div>
+      </div>
+      <div class="ip">The derivation methodology is proprietary. Organizations receive transparency on what is measured and why it matters — not how the signal engine works.</div>
+    </div>
+  </div>
+</section>
+
+<section class="visible" id="visible">
+  <div class="wrap">
+    <div class="section-head reveal"><h2>What becomes visible once the signal is no longer hidden.</h2><p class="muted">This is not new information about your people. It is information that has always existed — in how they think, decide, and operate. What is new is the ability to read it.</p></div>
+    <div class="visible-items reveal">
+      <div class="vis"><div class="vis-l"><span class="tag">Individual</span><h3>The HOS Score™</h3><p>The cognitive architecture of each leader — how they think, regulate under pressure, and operate alongside AI.</p></div><div class="vis-r"><div class="impact">Better leadership placement decisions, grounded in operating pattern rather than track record and interview alone.</div></div></div>
+      <div class="vis"><div class="vis-l"><span class="tag">Team</span><h3>Composition Intelligence</h3><p>The cognitive fingerprint of your leadership cohort — where friction is architectural and where gaps surface under pressure.</p></div><div class="vis-r"><div class="impact">More consistent decisions across teams by diagnosing the actual source of misalignment.</div></div></div>
+      <div class="vis"><div class="vis-l"><span class="tag">Governance</span><h3>The Governance Signal</h3><p>Decision-behavior patterns by role and department — tracked longitudinally and structured for defensible oversight.</p></div><div class="vis-r"><div class="impact">The ability to answer AI oversight questions with behavioral evidence, not assertion.</div></div></div>
+    </div>
+    <div class="beforeafter reveal"><div class="ba-title">Before the signal / after the signal</div><div class="ba-cols"><div class="ba"><b style="color:#dc2626">Before</b><p>Decisions improvised. Friction misdiagnosed. AI risk unquantified. Leadership costs invisible.</p></div><div class="ba"><b style="color:#059669">After</b><p>Operating patterns explicit. Friction diagnosed correctly. AI governance documented. Risks visible and closeable.</p></div></div></div>
+  </div>
+</section>
+
+<section class="ps dark" id="services">
+  <div class="wrap">
+    <div class="section-head reveal"><h2>Insight without intervention changes nothing.</h2><div><p class="ps-note">This is not leadership development. It is not coaching. It is not an assessment. It is signal-grounded intervention.</p><p class="muted">The signal infrastructure reveals operating gaps standard data cannot see. What happens next determines whether the intelligence becomes measurable change.</p></div></div>
+    <div class="psgrid reveal">
+      <div class="pscard"><h3>Executive Calibration</h3><p>One-on-one work structured around each leader’s HOS Score™ and decision edges.</p></div>
+      <div class="pscard"><h3>Leadership Architecture</h3><p>Cohort sessions built around team composition and friction points.</p></div>
+      <div class="pscard"><h3>AI Readiness Intensives</h3><p>Programs tied to Domain 03: delegation, validation, and governance of AI outputs.</p></div>
+      <div class="pscard"><h3>Governance Architecture</h3><p>Advisory for defensible human oversight frameworks around AI deployment.</p></div>
+    </div>
+    <div class="limited reveal"><strong>Engagements are limited.</strong> Capacity is finite by design. Every engagement is practitioner-led, signal-grounded, and available in English or French.</div>
+  </div>
+</section>
+
+
+
+<section class="access dark" id="access">
+  <div class="access-inner reveal">
+    <span class="eyebrow">Strategic Pilot · Limited Cohort</span>
+    <h2>Most organizations will understand this <em>too late.</em></h2>
+    <p>The signal is already being generated inside your organization. The question is whether you are positioned to read it before your peers are.</p>
+    <p class="identity">If you already see the gap, you are exactly who this was built for.</p>
+    <div class="pilot"><div><b>Day 1–30</b><p>Hidden patterns become explicit.</p></div><div><b>Day 30–60</b><p>Misalignment becomes structural, not personal.</p></div><div><b>Day 60–90</b><p>A signal baseline becomes trackable.</p></div></div>
+    <form class="form" id="leadForm" onsubmit="handleAccess(event)" novalidate>
+      <input type="email" name="work_email" placeholder="Work email" autocomplete="email" required id="email" />
+      <input type="text" name="organization" placeholder="Organization" autocomplete="organization" required />
+      <input type="text" name="role" placeholder="Role" autocomplete="organization-title" required />
+      <textarea name="use_case" placeholder="Use case / reason for applying" required></textarea>
+      <label class="consent"><input type="checkbox" name="consent" required /> <span>I consent to being contacted about Cognitive Signature strategic pilot access.</span></label>
+      <input type="hidden" name="utm_source" />
+      <input type="hidden" name="utm_medium" />
+      <input type="hidden" name="utm_campaign" />
+      <input type="hidden" name="utm_content" />
+      <input type="hidden" name="utm_term" />
+      <input type="hidden" name="ref" />
+      <input type="hidden" name="gclid" />
+      <input type="hidden" name="gbraid" />
+      <input type="hidden" name="wbraid" />
+      <input type="hidden" name="fbclid" />
+      <input type="hidden" name="li_fat_id" />
+      <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <button class="btn btn-primary" type="submit">Apply Now</button>
+    </form>
+    <p class="small">Application-based · Founder-reviewed · No commitment required</p>
+    <p class="pressure">The organizations that move early will define the standard others later try to meet.</p>
+    <p class="ty" id="ty">Application received. Jefferson will respond personally.</p>
+    <div class="qualification" id="qualification">
+      <h3>Build your Strategic Fit Brief.</h3>
+      <p>Share a little more context so the first conversation can focus on the right signal: governance, deployment, succession, or leadership architecture.</p>
+      <form class="form" id="qualificationForm" onsubmit="handleQualification(event)" novalidate>
+        <select name="company_size" required>
+          <option value="">Company size</option>
+          <option>1-50 employees</option>
+          <option>51-250 employees</option>
+          <option>251-1,000 employees</option>
+          <option>1,001-5,000 employees</option>
+          <option>5,001-20,000 employees</option>
+          <option>20,000+ employees</option>
+        </select>
+        <input type="text" name="industry" placeholder="Industry" autocomplete="organization" required />
+        <select name="ai_maturity" required>
+          <option value="">AI maturity level</option>
+          <option>Exploring / no formal deployment</option>
+          <option>Pilots in selected teams</option>
+          <option>Active deployment across functions</option>
+          <option>Enterprise-wide adoption underway</option>
+          <option>Governance / audit readiness priority</option>
+        </select>
+        <select name="ai_duration" required>
+          <option value="">How long has AI been in use?</option>
+          <option>Not yet incorporated</option>
+          <option>Less than 6 months</option>
+          <option>6-12 months</option>
+          <option>1-2 years</option>
+          <option>More than 2 years</option>
+        </select>
+        <textarea name="ai_areas" placeholder="Where has AI been incorporated? Teams, workflows, decisions, or tools." required></textarea>
+        <textarea name="what_worked" placeholder="What has worked so far?" required></textarea>
+        <textarea name="what_didnt" placeholder="What has not worked, created friction, or exposed risk?" required></textarea>
+        <textarea name="expectations" placeholder="What would you expect from a strategic pilot?" required></textarea>
+        <textarea name="current_future_project" placeholder="Current or future project this could support." required></textarea>
+        <button class="btn btn-primary" type="submit">Send Strategic Fit Brief</button>
+        <p class="small">Optional, but it helps us understand fit before the first conversation.</p>
+      </form>
+    </div>
+    <div class="qualification done" id="qualificationDone" style="display:none">
+      <h3>Strategic Fit Brief received.</h3>
+      <p>Thank you. The next step is a focused review of fit, timing, and whether a pilot would create a useful signal baseline.</p>
+    </div>
+    <p class="err" id="err">The application could not be sent. Please try again.</p>
+  </div>
+</section>
+
+<footer><div>Cognitive Signature™ · Calgary, Alberta · © 2026</div><div>Human Signal Intelligence™</div></footer>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+
+// INSERT GTM ID HERE before launch, for example: const GTM_ID = "GTM-XXXXXXX";
+const GTM_ID = "";
+// Optional direct GA4 fallback if GTM is not used, for example: const GA4_MEASUREMENT_ID = "G-XXXXXXXXXX";
+const GA4_MEASUREMENT_ID = "";
+// INSERT WEBHOOK URL HERE before launch. Works with Zapier, Make, HubSpot, Airtable, or a custom CRM endpoint.
+const LEAD_ENDPOINT = "";
+// Optional: insert a private enrichment endpoint that accepts {domain, organization}
+// and returns public company context, for example {industry, company_size}.
+// Keep API keys server-side. Do not call enrichment vendors directly from this page.
+const COMPANY_ENRICHMENT_ENDPOINT = "";
+const ATTRIBUTION_KEYS = ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","ref","gclid","gbraid","wbraid","fbclid","li_fat_id"];
+
+function safeJSON(value, fallback){
+  try { return JSON.parse(value) || fallback; } catch (_) { return fallback; }
+}
+
+function getAttribution(){
+  const params = new URLSearchParams(location.search);
+  const current = {};
+  ATTRIBUTION_KEYS.forEach((key) => {
+    const value = params.get(key);
+    if (value) current[key] = value;
+  });
+  const stored = safeJSON(localStorage.getItem("cs_attribution"), {});
+  const merged = {...stored, ...current};
+  if (Object.keys(merged).length) localStorage.setItem("cs_attribution", JSON.stringify(merged));
+  return merged;
+}
+
+const attribution = getAttribution();
+populateHiddenAttributionFields(attribution);
+
+function track(eventName, payload={}){
+  const eventPayload = {
+    event: eventName,
+    path: location.pathname,
+    page_title: document.title,
+    ...attribution,
+    ...payload
+  };
+  window.dataLayer.push(eventPayload);
+  if (typeof window.gtag === "function") window.gtag("event", eventName, eventPayload);
+}
+
+function loadTracking(){
+  if (GTM_ID) {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtm.js?id=${encodeURIComponent(GTM_ID)}`;
+    document.head.appendChild(script);
+  }
+  if (GA4_MEASUREMENT_ID) {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GA4_MEASUREMENT_ID)}`;
+    document.head.appendChild(script);
+    window.gtag = function(){ window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", GA4_MEASUREMENT_ID, {send_page_view: false});
+  }
+}
+
+loadTracking();
+track("page_view");
+
+function populateHiddenAttributionFields(values){
+  ATTRIBUTION_KEYS.forEach((key) => {
+    const field = document.querySelector(`[name="${key}"]`);
+    if (field) field.value = values[key] || "";
+  });
+}
+
+document.querySelectorAll("[data-track]").forEach((el) => {
+  el.addEventListener("click", () => track(el.dataset.track, {cta: el.dataset.cta || el.textContent.trim()}));
+});
+
+function toggleMenu(){document.getElementById("mobile").classList.toggle("open")}
+function closeMenu(){document.getElementById("mobile").classList.remove("open")}
+
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("in")}),{threshold:.07});
+document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
+
+let formStarted = false;
+let qualificationStarted = false;
+let latestLeadPayload = null;
+const leadForm = document.getElementById("leadForm");
+const qualification = document.getElementById("qualification");
+const qualificationForm = document.getElementById("qualificationForm");
+const qualificationDone = document.getElementById("qualificationDone");
+leadForm.addEventListener("input", () => {
+  if (!formStarted) {
+    formStarted = true;
+    track("form_start");
+  }
+});
+
+document.querySelectorAll("form").forEach((form) => form.addEventListener("input", (event) => {
+  const field = event.target;
+  if (field.matches("input, textarea, select")) {
+    field.classList.remove("invalid");
+    field.setCustomValidity("");
+  }
+}));
+
+qualificationForm.addEventListener("input", () => {
+  if (!qualificationStarted) {
+    qualificationStarted = true;
+    track("qualification_start");
+  }
+});
+
+async function enrichCompanyContext(){
+  if (!COMPANY_ENRICHMENT_ENDPOINT) return;
+  const email = String(leadForm.elements.work_email.value || "").trim();
+  const organization = String(leadForm.elements.organization.value || "").trim();
+  const domain = email.includes("@") ? email.split("@").pop() : "";
+  if (!domain && !organization) return;
+  try {
+    const response = await fetch(COMPANY_ENRICHMENT_ENDPOINT, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({domain, organization}),
+      keepalive: true
+    });
+    if (!response.ok) return;
+    const company = await response.json();
+    if (company.industry && !qualificationForm.elements.industry.value) qualificationForm.elements.industry.value = company.industry;
+    if (company.company_size && !qualificationForm.elements.company_size.value) qualificationForm.elements.company_size.value = company.company_size;
+    track("company_enrichment_applied", {email_domain: domain});
+  } catch (_) {}
+}
+
+leadForm.elements.work_email.addEventListener("blur", enrichCompanyContext);
+leadForm.elements.organization.addEventListener("blur", enrichCompanyContext);
+
+function validateFields(form, fields){
+  const data = new FormData(form);
+  const website = String(data.get("website") || "").trim();
+  let firstInvalid = null;
+
+  form.querySelectorAll(".invalid").forEach((field) => field.classList.remove("invalid"));
+
+  fields.forEach(([name, message, validator]) => {
+    const field = form.elements[name];
+    const value = String(data.get(name) || "").trim();
+    if (!validator(value)) {
+      field.classList.add("invalid");
+      field.setCustomValidity(message);
+      if (!firstInvalid) firstInvalid = field;
+    } else {
+      field.setCustomValidity("");
+    }
+  });
+
+  if (form.elements.consent && data.get("consent") !== "on") {
+    const field = form.elements.consent;
+    field.classList.add("invalid");
+    field.setCustomValidity("Consent is required to submit the application.");
+    if (!firstInvalid) firstInvalid = field;
+  } else if (form.elements.consent) {
+    form.elements.consent.setCustomValidity("");
+  }
+
+  if (website) return {valid: false, blocked: true};
+  if (firstInvalid) {
+    firstInvalid.reportValidity();
+    firstInvalid.focus();
+    return {valid: false, blocked: false};
+  }
+  return {valid: true, blocked: false};
+}
+
+function validateLeadForm(form){
+  return validateFields(form, [
+    ["work_email", "Enter a valid work email address.", (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)],
+    ["organization", "Enter your organization.", (value) => value.length >= 2],
+    ["role", "Enter your role.", (value) => value.length >= 2],
+    ["use_case", "Briefly describe the use case or reason for applying.", (value) => value.length >= 8]
+  ]);
+}
+
+function validateQualificationForm(form){
+  return validateFields(form, [
+    ["company_size", "Select company size.", (value) => value.length > 0],
+    ["industry", "Enter the industry.", (value) => value.length >= 2],
+    ["ai_maturity", "Select AI maturity level.", (value) => value.length > 0],
+    ["ai_duration", "Select how long AI has been in use.", (value) => value.length > 0],
+    ["ai_areas", "Describe where AI has been incorporated.", (value) => value.length >= 8],
+    ["what_worked", "Describe what has worked.", (value) => value.length >= 4],
+    ["what_didnt", "Describe what has not worked.", (value) => value.length >= 4],
+    ["expectations", "Describe expectations for a pilot.", (value) => value.length >= 8],
+    ["current_future_project", "Describe a current or future project.", (value) => value.length >= 8]
+  ]);
+}
+
+function buildLeadPayload(form){
+  const data = new FormData(form);
+  const email = String(data.get("work_email") || "").trim();
+  const formAttribution = Object.fromEntries(
+    ATTRIBUTION_KEYS.map((key) => [key, String(data.get(key) || "").trim()]).filter(([, value]) => value)
+  );
+  return {
+    source: "cognitive_signature_executive_landing_page",
+    submitted_at: new Date().toISOString(),
+    page: {
+      url: location.href,
+      path: location.pathname,
+      title: document.title,
+      referrer: document.referrer || ""
+    },
+    attribution: formAttribution,
+    lead: {
+      work_email: email,
+      email_domain: email.includes("@") ? email.split("@").pop() : "",
+      organization: String(data.get("organization") || "").trim(),
+      role: String(data.get("role") || "").trim(),
+      use_case: String(data.get("use_case") || "").trim(),
+      consent: data.get("consent") === "on"
+    }
+  };
+}
+
+async function submitLead(payload){
+  if (!LEAD_ENDPOINT) {
+    const storageKey = payload.type === "strategic_fit_brief" ? "cs_pending_qualification" : "cs_pending_lead";
+    localStorage.setItem(storageKey, JSON.stringify(payload));
+    return {queued: true};
+  }
+  const response = await fetch(LEAD_ENDPOINT, {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(payload),
+    keepalive: true
+  });
+  if (!response.ok) throw new Error(`Lead capture failed: ${response.status}`);
+  return response.json().catch(() => ({ok: true}));
+}
+
+function buildQualificationPayload(form){
+  const data = new FormData(form);
+  return {
+    type: "strategic_fit_brief",
+    source: "cognitive_signature_executive_landing_page",
+    submitted_at: new Date().toISOString(),
+    page: {
+      url: location.href,
+      path: location.pathname,
+      title: document.title,
+      referrer: document.referrer || ""
+    },
+    attribution: latestLeadPayload ? latestLeadPayload.attribution : attribution,
+    lead: latestLeadPayload ? latestLeadPayload.lead : {},
+    qualification: {
+      company_size: String(data.get("company_size") || "").trim(),
+      industry: String(data.get("industry") || "").trim(),
+      ai_maturity: String(data.get("ai_maturity") || "").trim(),
+      ai_duration: String(data.get("ai_duration") || "").trim(),
+      ai_areas: String(data.get("ai_areas") || "").trim(),
+      what_worked: String(data.get("what_worked") || "").trim(),
+      what_didnt: String(data.get("what_didnt") || "").trim(),
+      expectations: String(data.get("expectations") || "").trim(),
+      current_future_project: String(data.get("current_future_project") || "").trim()
+    }
+  };
+}
+
+async function handleAccess(e){
+  e.preventDefault();
+  const form = e.currentTarget;
+  const button = form.querySelector("button[type='submit']");
+  const ty = document.getElementById("ty");
+  const err = document.getElementById("err");
+  const validation = validateLeadForm(form);
+  if (!validation.valid) {
+    if (!validation.blocked) err.textContent = "Please complete the required fields before submitting.";
+    err.style.display = validation.blocked ? "none" : "block";
+    return;
+  }
+  const payload = buildLeadPayload(form);
+  latestLeadPayload = payload;
+  button.disabled = true;
+  button.textContent = "Sending...";
+  err.style.display = "none";
+
+  try {
+    const result = await submitLead(payload);
+    track("form_submit", {
+      email_domain: payload.lead.email_domain,
+      organization: payload.lead.organization,
+      lead_status: result.queued ? "queued_endpoint_required" : "submitted"
+    });
+    form.style.display = "none";
+    ty.style.display = "block";
+    qualification.style.display = "block";
+  } catch (_) {
+    track("form_submit", {
+      email_domain: payload.lead.email_domain,
+      organization: payload.lead.organization,
+      lead_status: "error"
+    });
+    err.style.display = "block";
+    button.disabled = false;
+    button.textContent = "Apply Now";
+  }
+}
+
+async function handleQualification(e){
+  e.preventDefault();
+  const form = e.currentTarget;
+  const button = form.querySelector("button[type='submit']");
+  const err = document.getElementById("err");
+  const validation = validateQualificationForm(form);
+  if (!validation.valid) {
+    err.textContent = "Please complete the Strategic Fit Brief before sending.";
+    err.style.display = validation.blocked ? "none" : "block";
+    return;
+  }
+  const payload = buildQualificationPayload(form);
+  button.disabled = true;
+  button.textContent = "Sending...";
+  err.style.display = "none";
+
+  try {
+    const result = await submitLead(payload);
+    track("qualification_submit", {
+      organization: payload.lead.organization || "",
+      ai_maturity: payload.qualification.ai_maturity,
+      lead_status: result.queued ? "queued_endpoint_required" : "submitted"
+    });
+    qualification.style.display = "none";
+    qualificationDone.style.display = "block";
+  } catch (_) {
+    track("qualification_submit", {
+      organization: payload.lead.organization || "",
+      ai_maturity: payload.qualification.ai_maturity,
+      lead_status: "error"
+    });
+    err.textContent = "The Strategic Fit Brief could not be sent. Please try again.";
+    err.style.display = "block";
+    button.disabled = false;
+    button.textContent = "Send Strategic Fit Brief";
+  }
+}
+</script>
+</body>
+</html>
