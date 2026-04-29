@@ -415,14 +415,14 @@ function hasGenericHubSpotForm(){
 }
 
 function showLocalLeadForm(reason){
-  hubspotFormWrap.innerHTML = "";
+  hubspotFormWrap.innerHTML = ""; leadForm.style.display = "none";
   leadForm.style.display = "";
   track("hubspot_form_fallback", {reason});
 }
 
 async function loadHubSpotForm(){
   if (!isHubSpotConfigured()) return;
-  hubspotFormWrap.innerHTML = "";
+  hubspotFormWrap.innerHTML = ""; leadForm.style.display = "none";
   await loadScript("https://js.hsforms.net/forms/embed/v2.js");
   if (!window.hbspt || !window.hbspt.forms) throw new Error("HubSpot form library unavailable");
   let hubspotRendered = false;
