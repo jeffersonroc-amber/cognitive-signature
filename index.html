@@ -319,7 +319,7 @@ document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
 let formStarted = false;
 let qualificationStarted = false;
 let latestLeadPayload = null;
-const leadForm = document.getElementById("leadForm");
+const leadForm = document.getElementById("leadForm"); if (leadForm) { const hubspotTarget = document.createElement("div"); hubspotTarget.id = "hubspot-form"; leadForm.parentNode.insertBefore(hubspotTarget, leadForm); leadForm.style.display = "none"; const hsScript = document.createElement("script"); hsScript.src = "https://js.hsforms.net/forms/v2.js"; hsScript.onload = function() { if (window.hbspt && window.hbspt.forms && window.hbspt.forms.create) { window.hbspt.forms.create({ region: "na3", portalId: "343218698", formId: "3a5690bc-b3dd-468b-962c-035b65b85363", target: "#hubspot-form" }); } }; document.head.appendChild(hsScript); }
 const qualification = document.getElementById("qualification");
 const qualificationForm = document.getElementById("qualificationForm");
 const qualificationDone = document.getElementById("qualificationDone");
