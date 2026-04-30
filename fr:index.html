@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cognitive Signature™ — Human Signal Intelligence</title>
+<meta name="description" content="See how your leaders and teams actually operate before the consequences show up." />
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}body{font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;background:#f4f1ea;color:#17191d;overflow-x:hidden}a{text-decoration:none;color:inherit}button,input,textarea,select{font-family:inherit}
+nav{position:fixed;inset:0 0 auto 0;height:52px;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:rgba(244,241,234,.88);backdrop-filter:saturate(180%) blur(24px);border-bottom:.5px solid rgba(20,24,29,.09)}.logo{font-size:15px;font-weight:600;letter-spacing:-.03em}.logo em{font-style:normal;color:#0e6f72}.nav-links{display:flex;gap:30px}.nav-links a{font-size:12px;opacity:.58}.nav-links a:hover{opacity:1}.nav-lang{display:flex;align-items:center;gap:6px;font-size:11px;color:rgba(23,25,29,.42);white-space:nowrap}.nav-lang a{opacity:.58}.nav-lang a.active,.nav-lang a:hover{opacity:1;color:#0e6f72}.nav-actions{display:flex;align-items:center;gap:18px}.pill{font-size:12px;font-weight:500;background:#0e6f72;color:#fff;border-radius:980px;padding:8px 18px;border:0;cursor:pointer}.hamb{display:none;background:none;border:0;flex-direction:column;gap:4px;padding:8px}.hamb span{display:block;width:20px;height:1.5px;background:#17191d}.mobile{display:none;position:fixed;top:52px;left:0;right:0;bottom:0;background:rgba(244,241,234,.98);z-index:998;padding:18px 22px}.mobile.open{display:flex;flex-direction:column}.mobile a{padding:14px 0;border-bottom:.5px solid rgba(0,0,0,.06)}.mobile .mobcta{background:#0e6f72;color:#fff;text-align:center;border-radius:980px;margin-top:18px;border:0}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;display:block}.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}.reveal.in{opacity:1;transform:none}.blue{color:#2aa6a1}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border-radius:980px;padding:13px 28px;font-size:16px}.btn-primary{background:#0e6f72;color:#fff;box-shadow:0 18px 45px rgba(14,111,114,.22)}.btn-link{color:#c8b27a;padding-inline:8px}.wrap{max-width:980px;margin:0 auto;padding:0 24px}.dark{background:#080a0d;color:#f5f5f2}.muted{color:#6d747c}.dark .muted{color:rgba(255,255,255,.42)}
+.hero{min-height:100vh;background:#080a0d;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 24px 70px;position:relative;overflow:hidden}.hero:before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,10,13,.74),rgba(8,10,13,.88)),linear-gradient(90deg,rgba(8,10,13,.96),rgba(8,10,13,.38) 52%,rgba(8,10,13,.86)),url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=2200&q=82');background-size:cover;background-position:center}.hero:after{content:'';position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);width:760px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(42,166,161,.18),transparent 70%)}.hero-inner{position:relative;z-index:2;max-width:880px}.hero .eyebrow{color:rgba(255,255,255,.48)}h1{font-size:clamp(44px,8vw,88px);font-weight:600;letter-spacing:-.045em;line-height:1.03;margin-bottom:20px;color:#f7f4ee}.hero h1 em{font-style:normal;color:#9fe5df}.hero-lead{font-size:clamp(16px,2vw,20px);color:rgba(255,255,255,.78);line-height:1.5;max-width:600px;margin:0 auto 14px}.hero-sub{font-size:15px;color:rgba(255,255,255,.56);line-height:1.6;max-width:540px;margin:0 auto 14px}.hero-consequence{font-size:15px;color:rgba(255,255,255,.7);font-weight:500;margin:0 auto 34px}.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.qual{position:absolute;z-index:2;bottom:26px;left:50%;transform:translateX(-50%);font-size:11px;color:rgba(255,255,255,.26);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.dash{position:relative;z-index:2;margin:42px auto 0;max-width:760px;background:rgba(10,14,17,.86);border:.5px solid rgba(255,255,255,.12);border-radius:18px;overflow:hidden;box-shadow:0 34px 90px rgba(0,0,0,.58);backdrop-filter:blur(20px)}.dashbar{height:34px;background:rgba(8,10,13,.72);border-bottom:.5px solid rgba(255,255,255,.07);display:flex;align-items:center;padding:0 14px;gap:7px}.dot{width:9px;height:9px;border-radius:50%;opacity:.75}.r{background:#b85c52}.y{background:#b89b5e}.g{background:#2aa6a1}.dashtitle{font-size:10px;color:rgba(255,255,255,.34);font-family:monospace;letter-spacing:.05em;margin-left:8px}.sample{margin-left:auto;font-size:10px;color:rgba(255,255,255,.28);font-family:monospace}.dashbody{padding:18px}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.kpi{background:rgba(244,241,234,.045);border:.5px solid rgba(255,255,255,.08);border-radius:12px;padding:14px;text-align:left}.klabel{font-size:9px;color:rgba(255,255,255,.34);font-family:monospace;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}.kval{font-size:25px;font-weight:600;font-family:monospace;line-height:1}.kcap{font-size:10px;color:rgba(255,255,255,.26);margin-top:8px}
+section{padding:110px 0}.section-head{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end;margin-bottom:48px}.section-head h2,h2{font-size:clamp(26px,4.5vw,50px);font-weight:600;letter-spacing:-.04em;line-height:1.07}.section-head p,p{font-size:15px;line-height:1.65}.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.07);border-radius:18px;overflow:hidden}.card-dark{background:#000;padding:34px 28px}.num{font-size:11px;font-weight:600;letter-spacing:.1em;color:rgba(255,255,255,.18);margin-bottom:14px;display:block}.card-dark h3,.card h3{font-size:17px;font-weight:600;letter-spacing:-.02em;line-height:1.25;margin-bottom:9px}.card-dark p{font-size:13px;color:rgba(255,255,255,.34)}.ref{font-size:11px;color:rgba(255,255,255,.18);font-style:italic;margin-top:12px;padding-top:10px;border-top:.5px solid rgba(255,255,255,.06)}
+.gap{background:#f4f1ea}.gapgrid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.chip{font-size:12px;font-weight:500;color:#0e6f72;background:#e2efeb;border-radius:980px;padding:6px 14px}.bullets{display:flex;flex-direction:column;gap:1px;background:rgba(20,24,29,.07);border-radius:16px;overflow:hidden;margin-top:26px}.bullet{background:#fffaf2;padding:20px 22px}.bullet h4{font-size:14px;margin-bottom:4px}.bullet p{font-size:12px;color:#6d747c}.sidebox{background:#fffaf2;border-radius:22px;padding:16px;border:.5px solid rgba(20,24,29,.08);box-shadow:0 26px 70px rgba(20,24,29,.08)}.sidebox strong{display:block;font-size:21px;letter-spacing:-.025em;line-height:1.35;margin:24px 20px 16px}.sidebox p{font-size:13px;color:#6d747c;margin:0 20px}.closing{font-weight:500;color:#17191d;margin-top:18px}
+.costgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:34px}.costcard{background:rgba(255,255,255,.03);border:.5px solid rgba(255,255,255,.07);border-radius:16px;padding:30px 26px}.costnum{font-size:clamp(30px,4.5vw,50px);font-weight:600;letter-spacing:-.04em;line-height:1;margin-bottom:10px}.red{color:#ff6b6b}.amber{color:#ffd60a}.green{color:#30d158}.costcard p{font-size:13px;color:rgba(255,255,255,.34)}.costnote{background:rgba(255,255,255,.03);border:.5px solid rgba(255,255,255,.07);border-radius:16px;padding:28px;margin-top:12px;text-align:center;font-weight:600;color:#f5f5f7}
+.signal{background:#fffaf2;text-align:center}.signal h2{max-width:780px;margin:0 auto 14px}.signal .muted{max-width:560px;margin:0 auto 34px}.hos{background:#080a0d;border-radius:24px;padding:42px;max-width:860px;margin:22px auto 0;color:#fff;text-align:left}.hoshead{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:24px}.hosgrid{display:grid;grid-template-columns:1fr 1.25fr;gap:16px;align-items:center}.gauge{background:rgba(244,241,234,.04);border:.5px solid rgba(255,255,255,.08);border-radius:18px;padding:32px;text-align:center}.score{font-size:58px;font-weight:600;font-family:monospace;color:#f5f5f7}.scorelabel{font-size:10px;color:rgba(255,255,255,.34);font-family:monospace;letter-spacing:.07em}.domain{background:rgba(244,241,234,.04);border:.5px solid rgba(255,255,255,.08);border-radius:14px;padding:16px;margin-bottom:10px}.domain-top{display:flex;justify-content:space-between;margin-bottom:8px}.bar{height:4px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden}.fill{height:100%}.domain p{font-size:11px;color:rgba(255,255,255,.34);margin-top:8px}.ip{font-size:12px;color:rgba(255,255,255,.24);font-style:italic;margin-top:22px;padding-top:18px;border-top:.5px solid rgba(255,255,255,.07);text-align:center}
+.visible-items{display:flex;flex-direction:column;gap:1px;background:rgba(20,24,29,.07);border-radius:22px;overflow:hidden}.vis{display:grid;grid-template-columns:1fr 1fr;background:#fffaf2}.vis-l,.vis-r{padding:36px}.vis-l{border-right:.5px solid rgba(20,24,29,.07)}.tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#0e6f72;margin-bottom:10px;display:block}.vis p{font-size:13px;color:#6d747c}.impact{font-size:14px;font-weight:500;line-height:1.6;color:#17191d;margin-bottom:14px}.beforeafter{margin-top:18px;background:#f4f1ea;border-radius:18px;padding:24px}.ba-title{font-size:13px;font-weight:600;color:#17191d;margin-bottom:12px}.ba-cols{display:grid;grid-template-columns:1fr 1fr;gap:10px}.ba{background:#fffaf2;border:.5px solid rgba(20,24,29,.08);border-radius:14px;padding:16px}.ba b{font-size:11px;text-transform:uppercase;letter-spacing:.08em}.ba p{font-size:12px;color:#6d747c;margin-top:8px}
+.ps{background:#000}.ps .section-head{align-items:start}.ps-note{font-size:13px;color:rgba(255,255,255,.4);font-style:italic;padding-bottom:14px;border-bottom:.5px solid rgba(255,255,255,.07);margin-bottom:14px}.psgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.pscard{background:rgba(255,255,255,.03);border:.5px solid rgba(255,255,255,.07);border-radius:16px;padding:26px 22px}.pscard h3{font-size:15px;margin-bottom:8px}.pscard p{font-size:12px;color:rgba(255,255,255,.32)}.limited{margin-top:18px;background:rgba(255,255,255,.03);border:.5px solid rgba(255,255,255,.07);border-radius:16px;padding:24px;color:rgba(255,255,255,.38);font-size:13px}.limited strong{color:#fff}
+.cost{background:#f4f1ea}.costgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(20,24,29,.07);border-radius:20px;overflow:hidden}.costcard{background:#f4f1ea;padding:30px 25px}.costcard h3{font-size:16px;letter-spacing:-.02em;line-height:1.35;margin-bottom:8px}.costcard p{font-size:12px;color:#6d747c}.costsig{font-size:12px;color:#0e6f72;margin-top:12px;padding-top:12px;border-top:.5px solid rgba(20,24,29,.08)}.shift-note{margin-top:18px;padding:24px;border:.5px solid rgba(255,255,255,.08);border-radius:16px;background:rgba(244,241,234,.04)}.shift-note p{font-size:14px;color:rgba(255,255,255,.5);margin-bottom:10px}.shift-note p:last-child{margin-bottom:0;color:rgba(255,255,255,.68);font-weight:500}
+.story-photo{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px}.story-strip{display:grid;grid-template-columns:1.1fr .9fr;gap:12px;max-width:860px;margin:0 auto 28px}.story-card{position:relative;min-height:260px;border-radius:22px;overflow:hidden;background:#080a0d;text-align:left}.story-card img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.82)}.story-card:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,10,13,.05),rgba(8,10,13,.68))}.story-caption{position:absolute;left:22px;right:22px;bottom:20px;z-index:1;color:#fff}.story-caption b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#c8b27a;margin-bottom:6px}.story-caption span{font-size:14px;line-height:1.45;color:rgba(255,255,255,.82)}.access{background:#080a0d;text-align:center;position:relative;overflow:hidden}.access:before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:680px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(42,166,161,.14),transparent 70%)}.access-inner{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:0 24px}.access h2{font-size:clamp(32px,6vw,64px);margin-bottom:16px}.access h2 em{font-style:normal;color:#9fe5df}.access p{color:rgba(255,255,255,.45)}.access .identity{color:rgba(255,255,255,.64);font-style:italic;margin-top:8px}.pilot{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08);border-radius:18px;overflow:hidden;margin:34px auto}.pilot div{background:#080a0d;padding:22px}.pilot b{font-size:11px;color:#c8b27a;letter-spacing:.08em;text-transform:uppercase}.pilot p{font-size:12px;margin-top:8px}.form{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:620px;margin:0 auto 12px;text-align:left}.form input,.form textarea,.form select{width:100%;border:.5px solid rgba(255,255,255,.14);background:rgba(244,241,234,.06);color:#fff;border-radius:14px;padding:13px 16px;outline:none}.form input::placeholder,.form textarea::placeholder{color:rgba(255,255,255,.36)}.form select option{background:#080a0d;color:#fff}.form input:focus,.form textarea:focus,.form select:focus{border-color:rgba(42,166,161,.72);box-shadow:0 0 0 3px rgba(42,166,161,.12)}.form .invalid{border-color:#b85c52;box-shadow:0 0 0 3px rgba(184,92,82,.14)}.form textarea{grid-column:1/-1;min-height:112px;resize:vertical}.wide{grid-column:1/-1}.honeypot{position:absolute;left:-10000px;width:1px;height:1px;opacity:0}.consent{grid-column:1/-1;display:grid;grid-template-columns:18px 1fr;gap:10px;align-items:start;color:rgba(255,255,255,.48);font-size:12px;line-height:1.45}.consent input{width:16px;height:16px;margin-top:1px;accent-color:#0e6f72}.form button{grid-column:1/-1;border:0;justify-self:center;min-width:180px}.small{font-size:12px;color:rgba(255,255,255,.22)!important}.pressure{margin-top:14px;color:rgba(255,255,255,.4)!important;font-size:13px!important;font-style:italic}.ty{display:none;color:#2aa6a1!important;margin-top:18px}.err{display:none;color:#b85c52!important;margin-top:18px}.hubspot-wrap{max-width:620px;margin:0 auto 12px;text-align:left}.hubspot-wrap:empty{display:none}.hubspot-wrap .hs-form-field{margin-bottom:10px}.hubspot-wrap label{display:block;color:rgba(255,255,255,.58);font-size:12px;margin:0 0 6px 4px}.hubspot-wrap input,.hubspot-wrap textarea,.hubspot-wrap select{width:100%!important;border:.5px solid rgba(255,255,255,.14)!important;background:rgba(244,241,234,.06)!important;color:#fff!important;border-radius:14px!important;padding:13px 16px!important;outline:none!important}.hubspot-wrap input[type=submit],.hubspot-wrap .hs-button{width:auto!important;min-width:180px!important;border:0!important;border-radius:999px!important;background:#0e6f72!important;color:#fff!important;box-shadow:0 18px 45px rgba(14,111,114,.22)!important;cursor:pointer!important}.hubspot-wrap .hs-error-msg,.hubspot-wrap .hs-error-msgs label{color:#b85c52!important}.hubspot-wrap .submitted-message{color:#2aa6a1!important;text-align:center}.qualification{display:none;max-width:720px;margin:26px auto 0;padding:24px;border:.5px solid rgba(255,255,255,.1);border-radius:24px;background:rgba(244,241,234,.045);text-align:left}.qualification h3{font-size:24px;letter-spacing:-.035em;margin-bottom:8px;color:#fff}.qualification p{font-size:13px;color:rgba(255,255,255,.46);margin-bottom:18px}.qualification .small{grid-column:1/-1;margin:0;text-align:center}.qualification.done{display:block;text-align:center}.qualification.done h3{text-align:center}.qualification.done p{text-align:center;margin-bottom:0}.qa-toggle{position:fixed;right:22px;bottom:22px;z-index:1000;border:0;border-radius:999px;background:#0e6f72;color:#fff;padding:13px 18px;box-shadow:0 18px 48px rgba(8,10,13,.28);cursor:pointer;font-weight:600}.qa-panel{display:none;position:fixed;right:22px;bottom:82px;z-index:1000;width:min(380px,calc(100vw - 32px));background:#fffaf2;color:#17191d;border:.5px solid rgba(20,24,29,.12);border-radius:22px;box-shadow:0 28px 80px rgba(8,10,13,.28);overflow:hidden}.qa-panel.open{display:block}.qa-head{display:flex;justify-content:space-between;gap:12px;padding:16px 18px;background:#080a0d;color:#fff}.qa-head b{font-size:14px}.qa-head span{display:block;color:rgba(255,255,255,.46);font-size:11px;margin-top:3px}.qa-close{border:0;background:transparent;color:#fff;font-size:22px;line-height:1;cursor:pointer}.qa-log{display:flex;flex-direction:column;gap:10px;max-height:310px;overflow:auto;padding:16px}.qa-msg{border-radius:14px;padding:11px 12px;font-size:13px;line-height:1.45}.qa-msg.bot{background:#f0ebe1;color:#30353b}.qa-msg.user{background:#0e6f72;color:#fff;align-self:flex-end}.qa-form{display:grid;grid-template-columns:1fr auto;gap:8px;padding:12px;border-top:.5px solid rgba(20,24,29,.09)}.qa-form input{border:.5px solid rgba(20,24,29,.14);background:#fff;color:#17191d;border-radius:999px;padding:11px 13px;outline:none}.qa-form button{border:0;border-radius:999px;background:#0e6f72;color:#fff;padding:0 14px;cursor:pointer}.qa-note{padding:0 16px 14px;color:#6d747c;font-size:11px;line-height:1.4}footer{background:#080a0d;border-top:.5px solid rgba(255,255,255,.06);padding:24px 40px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:rgba(255,255,255,.26);font-size:12px}
+@media(max-width:860px){nav{padding:0 20px}.nav-links,.nav-pill-wrap{display:none}.hamb{display:flex}.hero{padding-top:92px}.hero:before{background:linear-gradient(180deg,rgba(8,10,13,.72),rgba(8,10,13,.9)),url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=78');background-size:cover;background-position:center}.hero-dash-wrap{display:none}.section-head,.gapgrid,.hosgrid,.vis,.psgrid,.pilot,.cards3,.costgrid,.form,.story-strip{grid-template-columns:1fr}.vis-l{border-right:0;border-bottom:.5px solid rgba(20,24,29,.07)}section{padding:78px 0}.wrap{padding:0 20px}.ba-cols{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}footer{flex-direction:column;text-align:center}.qual{font-size:10px}.psgrid{grid-template-columns:1fr}.costgrid{gap:8px;background:transparent}.costcard{border-radius:14px}.cards3{gap:8px;background:transparent}.card-dark{border:.5px solid rgba(255,255,255,.07);border-radius:14px}.story-card{min-height:220px}}
+@media(max-width:520px){.qa-toggle{right:14px;bottom:14px}.qa-panel{right:12px;bottom:70px;width:calc(100vw - 24px)}.qa-log{max-height:280px}}
+.card-icon{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:10px;margin-bottom:16px;background:rgba(42,166,161,.12);color:#9fe5df;border:.5px solid rgba(159,229,223,.16)}.card-icon svg{width:18px;height:18px;stroke-width:1.8}.costcard .card-icon,.vis-l .card-icon{background:#e2efeb;color:#0e6f72;border-color:rgba(14,111,114,.14)}.pscard .card-icon{background:rgba(200,178,122,.1);color:#c8b27a;border-color:rgba(200,178,122,.18)}.card-dark h3,.costcard h3,.vis h3,.pscard h3{font-size:18px;line-height:1.32}.card-dark p,.bullet p,.sidebox p,.costcard p,.vis p,.ba p,.pscard p,.limited,.pilot p{font-size:14px;line-height:1.62}.domain p{font-size:12.5px;line-height:1.55}.impact{font-size:15px;line-height:1.62}.ps-note{font-size:14px}.qualification p,.qa-msg{font-size:14px}.klabel{font-size:10px}.kcap{font-size:11px}.form input,.form textarea,.form select{font-size:15px}
+.costgrid{grid-template-columns:repeat(3,1fr)}
+@media(max-width:860px){.costgrid{grid-template-columns:1fr}}
+body{background:#f5f5f7}.dark .muted{color:rgba(255,255,255,.62)}.hero:before{background:linear-gradient(180deg,rgba(8,10,13,.76),rgba(8,10,13,.9)),linear-gradient(90deg,rgba(8,10,13,.96),rgba(8,10,13,.44) 52%,rgba(8,10,13,.88)),url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=2200&q=82');background-size:cover;background-position:center;filter:saturate(.78) contrast(.96) blur(.6px);transform:scale(1.01)}.hero-sub{color:rgba(255,255,255,.62)}.hero .eyebrow{color:rgba(255,255,255,.54)}.qual{color:rgba(255,255,255,.5)}.card-dark{color:#f5f5f2}.card-dark h3{color:#f5f5f2}.card-dark p{color:rgba(255,255,255,.64)}.ref{color:rgba(255,255,255,.5);border-top-color:rgba(255,255,255,.1)}.num{color:rgba(255,255,255,.38)}
+.shift,.gap,.cost,.visible,.ps{background:#f5f5f7}.shift .cards3{background:rgba(20,24,29,.08)}.shift-note{background:#fff;border-color:rgba(20,24,29,.08);box-shadow:0 22px 70px rgba(20,24,29,.06)}.shift-note p{color:#5e6670}.shift-note p:last-child{color:#17191d}.costcard{background:#f8f9fb}.signal{background:#000;color:#f5f5f2}.signal .muted{color:rgba(255,255,255,.62)}.signal .eyebrow{color:rgba(255,255,255,.55)}.signal h2{color:#f5f5f2}.signal .beforeafter{background:#f8f9fb}.signal .ip{color:rgba(255,255,255,.52)}.signal .hoshead,.scorelabel,.domain p{color:rgba(255,255,255,.55)}
+.human-context{margin-bottom:34px}.service-story{margin-top:30px;margin-bottom:8px}.story-card img{filter:saturate(.72) contrast(.94) brightness(.88)}.story-card:after{background:linear-gradient(180deg,rgba(8,10,13,.08),rgba(8,10,13,.74))}.beforeafter.contextual{position:relative;overflow:hidden;background:linear-gradient(90deg,rgba(245,245,247,.94),rgba(245,245,247,.84)),url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=72');background-size:cover;background-position:center}.beforeafter.contextual .ba-title,.beforeafter.contextual .ba{position:relative}.ba-before{background:rgba(255,255,255,.78)}.ba-after{background:rgba(255,255,255,.9)}
+.ps .section-head h2{color:#17191d}.ps .muted,.pscard p,.limited{color:#5e6670}.ps-note{color:#555f68;border-bottom-color:rgba(20,24,29,.09)}.pscard{background:#fff;border-color:rgba(20,24,29,.08);box-shadow:0 18px 54px rgba(20,24,29,.05)}.pscard h3{color:#17191d}.pscard .card-icon{background:#e8f0ed;color:#0e6f72;border-color:rgba(14,111,114,.12)}.pilot-copy,.pilot-list{font-size:15px;color:#5e6670;font-weight:300;line-height:1.7}.pilot-copy strong{color:#17191d}.pilot-copy.spaced{margin-top:12px}.pilot-label{font-size:15px;color:#17191d;font-weight:600;margin-top:18px}.pilot-limited{font-size:13px;color:#7a828b;margin-top:14px}.limited{background:#fff;border-color:rgba(20,24,29,.08)}.limited strong{color:#17191d}.access p{color:rgba(255,255,255,.62)}.access .small{color:rgba(255,255,255,.5)!important}.pressure{color:rgba(255,255,255,.58)!important}.consent{color:rgba(255,255,255,.62)}.qualification p{color:rgba(255,255,255,.62)}
+.trust{background:#f8f9fb}.trust .section-head{align-items:start}.trustgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.trustcard{background:#fff;border:.5px solid rgba(20,24,29,.08);border-radius:16px;padding:24px 20px;box-shadow:0 16px 44px rgba(20,24,29,.045)}.trustcard h3{font-size:16px;line-height:1.28;letter-spacing:-.02em;margin-bottom:8px;color:#17191d}.trustcard p{font-size:13px;line-height:1.58;color:#5e6670}.trust-link{margin-top:22px;font-size:13px;color:#0e6f72;font-weight:500}.trust-link a{border-bottom:.5px solid rgba(14,111,114,.28)}@media(max-width:980px){.trustgrid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.trustgrid{grid-template-columns:1fr}}
+.dash{color:#f5f5f7}.dash .kval{color:#f5f5f7}.human-context .story-card,.service-story .story-card{display:flex;flex-direction:column;min-height:0;background:#fff;color:#17191d;border:.5px solid rgba(20,24,29,.08);box-shadow:0 18px 54px rgba(20,24,29,.05)}.human-context .story-card img,.service-story .story-card img{height:190px;flex:0 0 auto;filter:saturate(.82) contrast(.98) brightness(.98)}.human-context .story-card:after,.service-story .story-card:after{content:none!important;display:none!important}.human-context .story-caption,.service-story .story-caption{position:relative!important;left:auto!important;right:auto!important;bottom:auto!important;padding:18px 20px 20px;color:#17191d;background:#fff}.human-context .story-caption b,.service-story .story-caption b{color:#0e6f72}.human-context .story-caption span,.service-story .story-caption span{color:#5e6670}.beforeafter.contextual{background:linear-gradient(90deg,rgba(245,245,247,.9),rgba(245,245,247,.72)),url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=72');background-size:cover;background-position:center}
+.hero{flex-direction:column}
+.dash{max-width:900px;text-align:left}.dashbody{padding:18px}.pattern{position:relative;background:rgba(244,241,234,.055);border:.5px solid rgba(159,229,223,.18);border-radius:14px;padding:15px 16px 16px;margin-bottom:12px;overflow:hidden}.pattern:before{content:'';position:absolute;left:0;top:14px;bottom:14px;width:3px;border-radius:0 3px 3px 0;background:#2aa6a1}.pattern-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9fe5df;margin-bottom:7px}.pattern-main{font-size:14px;font-weight:600;line-height:1.4;color:#f5f5f7}.pattern-sub{font-size:12.5px;line-height:1.55;color:rgba(255,255,255,.62);margin-top:6px}.intelligence-kpis{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.intel-card{display:flex;flex-direction:column;min-height:210px;padding:15px;background:rgba(244,241,234,.05)}.intel-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:8px}.status{flex:0 0 auto;border-radius:999px;padding:4px 8px;font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:.5px solid}.status.strong,.status.stable{color:#9fe5df;background:rgba(42,166,161,.12);border-color:rgba(159,229,223,.18)}.status.elevated{color:#ead38a;background:rgba(200,178,122,.12);border-color:rgba(234,211,138,.2)}.status.balanced{color:#9fc7ff;background:rgba(95,154,220,.13);border-color:rgba(159,199,255,.2)}.intel-card .kval{font-size:31px;margin-bottom:10px}.meaning,.implication{font-size:11.5px;line-height:1.45;margin:0}.meaning{color:rgba(255,255,255,.72)}.implication{color:rgba(255,255,255,.5);margin-top:8px;padding-top:8px;border-top:.5px solid rgba(255,255,255,.08)}.why-strip{margin-top:12px;padding:13px 15px;border:.5px solid rgba(255,255,255,.08);border-radius:13px;background:rgba(244,241,234,.04);font-size:12px;line-height:1.5;color:rgba(255,255,255,.6)}.why-strip b{color:#f5f5f7;margin-right:4px}
+.signal-measure{position:relative;padding:24px;background:rgba(244,241,234,.055);border:.5px solid rgba(159,229,223,.16);border-radius:18px;box-shadow:none;color:#f5f5f2;overflow:hidden}.signal-measure:before{content:'';position:absolute;left:0;top:20px;bottom:20px;width:3px;border-radius:0 3px 3px 0;background:#2aa6a1}.signal-measure .ba-title{color:#9fe5df}.measure-lead{font-size:15px;color:#f5f5f2;font-weight:500;line-height:1.6}.measure-body{font-size:14px;color:rgba(255,255,255,.64);line-height:1.7;margin-top:10px}.measure-close{font-size:14px;color:#f5f5f2;font-weight:500;margin-top:12px}
+@media(max-width:860px){.hero:before{background:linear-gradient(180deg,rgba(8,10,13,.76),rgba(8,10,13,.92)),url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=78');background-size:cover;background-position:center}.story-strip{gap:10px}.service-story{margin-top:24px}.hero-dash-wrap{display:block;margin-top:34px}.intelligence-kpis{grid-template-columns:1fr 1fr}.intel-card{min-height:0}.sample{display:none}}
+@media(max-width:560px){.hero-dash-wrap{max-width:100%;border-radius:16px}.dashbody{padding:14px}.intelligence-kpis{grid-template-columns:1fr}.pattern-main{font-size:13px}.pattern-sub,.why-strip{font-size:12px}.intel-card .kval{font-size:29px}.meaning,.implication{font-size:12px}.dashtitle{font-size:9px}}
+html[lang="zh"] body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",Inter,sans-serif}html[lang="zh"] h1,html[lang="zh"] h2{letter-spacing:0;line-height:1.12}html[lang="zh"] .hero:before{background:linear-gradient(180deg,rgba(8,10,13,.7),rgba(8,10,13,.88)),linear-gradient(90deg,rgba(8,10,13,.92),rgba(8,10,13,.34) 52%,rgba(8,10,13,.82)),url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2200&q=82');background-size:cover;background-position:center}html[lang="zh"] .card-dark,html[lang="zh"] .dash{border-color:rgba(159,229,223,.2)}html[lang="zh"] .story-card img{filter:saturate(.76) contrast(1.02) brightness(1)}
+html[lang="ar"]{direction:rtl}html[lang="ar"] body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial,sans-serif;letter-spacing:0}html[lang="ar"] .logo{direction:ltr;text-align:left}html[lang="ar"] nav,html[lang="ar"] .langbar,html[lang="ar"] .hero,html[lang="ar"] .access{text-align:right}html[lang="ar"] .nav-links,html[lang="ar"] .hero-actions,html[lang="ar"] .langbar{flex-direction:row-reverse}html[lang="ar"] .section-head,html[lang="ar"] .gapgrid,html[lang="ar"] .hosgrid,html[lang="ar"] .vis,html[lang="ar"] .ba-cols,html[lang="ar"] .form{direction:rtl}html[lang="ar"] .dash,html[lang="ar"] .card-dark,html[lang="ar"] .costcard,html[lang="ar"] .vis,html[lang="ar"] .pscard,html[lang="ar"] .signal-measure,html[lang="ar"] .qualification{text-align:right}html[lang="ar"] h1,html[lang="ar"] h2{letter-spacing:0;line-height:1.16}html[lang="ar"] .eyebrow,html[lang="ar"] .tag,html[lang="ar"] .klabel,html[lang="ar"] .dashtitle{letter-spacing:.04em}html[lang="ar"] .pattern:before,html[lang="ar"] .signal-measure:before{left:auto;right:0;border-radius:3px 0 0 3px}html[lang="ar"] .sample{margin-left:0;margin-right:auto}html[lang="ar"] .hero:before{background:linear-gradient(180deg,rgba(8,10,13,.72),rgba(8,10,13,.9)),linear-gradient(270deg,rgba(8,10,13,.94),rgba(8,10,13,.36) 52%,rgba(8,10,13,.82)),url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=2200&q=82');background-size:cover;background-position:center}html[lang="ar"] .btn,html[lang="ar"] .pill{font-weight:600}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">Cognitive <em>Signature</em>™</div>
+  <div class="nav-links"><a href="#shift">The Shift</a><a href="#gap">Blind Spot</a><a href="#signal">HOS Score</a><a href="#services">Services</a><a href="#access">Early Access</a></div>
+  <div class="nav-actions">
+    <div class="nav-lang" aria-label="Language selector"><a href="/" data-lang-select="en">EN</a><span>|</span><a href="/fr/" data-lang-select="fr">FR</a><span>|</span><a href="/es/" data-lang-select="es">ES</a><span>|</span><a href="/zh/" data-lang-select="zh">中文</a><span>|</span><a href="/ar/" data-lang-select="ar">العربية</a></div>
+    <a href="#access" class="nav-pill-wrap" data-track="secondary_cta_click" data-cta="nav_apply"><button class="pill">Apply for Access</button></a>
+  </div>
+  <button class="hamb" id="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile" id="mobile"><a href="#shift" onclick="closeMenu()">The Shift</a><a href="#gap" onclick="closeMenu()">Blind Spot</a><a href="#signal" onclick="closeMenu()">HOS Score</a><a href="#services" onclick="closeMenu()">Services</a><a href="#access" class="mobcta" onclick="closeMenu()" data-track="secondary_cta_click" data-cta="mobile_apply">Apply for Access</a></div>
+
+<section class="hero">
+  <div class="hero-inner reveal in">
+    <span class="eyebrow">Human Signal Intelligence · Limited Access</span>
+    <h1>Your leaders<br>are deciding<br><em>in the dark.</em></h1>
+    <p class="hero-lead">This is how you see how they actually operate — before the consequences show up.</p>
+    <p class="hero-sub">Human–AI interaction generates a new behavioral signal about how people think, decide, regulate, and govern AI. Most organizations are not reading it.</p>
+    <p class="hero-consequence">The signal already exists inside your organization. The risk is not absence. It is invisibility.</p>
+    <div class="hero-actions"><a href="#access" class="btn btn-primary" data-track="hero_cta_click" data-cta="hero_apply">Apply for Early Access</a><a href="#shift" class="btn btn-link" data-track="secondary_cta_click" data-cta="hero_learn">See what changes ›</a></div>
+  </div>
+  <div class="dash hero-dash-wrap" aria-label="Illustrative signal view">
+    <div class="dashbar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="dashtitle">COGNITIVE SIGNATURE™ · SIGNAL VIEW</span><span class="sample">ILLUSTRATIVE SIGNAL VIEW · SAMPLE DATA</span></div>
+    <div class="dashbody">
+      <div class="pattern">
+        <div class="pattern-label">Detected Pattern</div>
+        <div class="pattern-main">High cognitive clarity, elevated cognitive load, stable AI reliance, strong consistency.</div>
+        <div class="pattern-sub">This profile suggests strong decision structure, but potential risk of load accumulation under sustained AI-assisted work.</div>
+      </div>
+      <div class="kpis intelligence-kpis">
+        <div class="kpi intel-card">
+          <div class="intel-top"><div class="klabel">Decision Quality</div><span class="status strong">Strong</span></div>
+          <div class="kval blue">84</div>
+          <p class="meaning">Structures complex decisions clearly and validates outputs effectively.</p>
+          <p class="implication">Reliable in strategic environments; monitor for speed under time pressure.</p>
+        </div>
+        <div class="kpi intel-card">
+          <div class="intel-top"><div class="klabel">Cognitive Load</div><span class="status elevated">Elevated</span></div>
+          <div class="kval" style="color:#c8b27a">62</div>
+          <p class="meaning">Mental load is rising across sustained AI-assisted workflows.</p>
+          <p class="implication">Risk of decision fatigue if validation and delegation are not balanced.</p>
+        </div>
+        <div class="kpi intel-card">
+          <div class="intel-top"><div class="klabel">AI Reliance</div><span class="status balanced">Balanced</span></div>
+          <div class="kval">0.41</div>
+          <p class="meaning">AI is being used as a thinking partner, not blindly accepted or ignored.</p>
+          <p class="implication">Healthy oversight pattern; opportunity to scale responsible delegation.</p>
+        </div>
+        <div class="kpi intel-card">
+          <div class="intel-top"><div class="klabel">Consistency</div><span class="status stable">Stable</span></div>
+          <div class="kval" style="color:#9fe5df">91</div>
+          <p class="meaning">Decision behavior remains steady across changing conditions.</p>
+          <p class="implication">Strong predictability; suitable for high-trust operating environments.</p>
+        </div>
+      </div>
+      <div class="why-strip"><b>Why it matters:</b> Most organizations can track AI usage. Very few can see whether AI is improving judgment, increasing cognitive load, or shifting accountability.</div>
+    </div>
+  </div>
+  <div class="qual">Selective access · Enterprise pilots · EN / FR</div>
+</section>
+
+<section class="shift" id="shift">
+  <div class="wrap">
+    <span class="eyebrow reveal">The irreversible shift</span>
+    <h2 class="reveal" style="max-width:680px;margin-bottom:46px">AI did not just change how decisions are made.<br><span class="blue">It changed the human system underneath them.</span></h2>
+    <div class="cards3 reveal">
+      <div class="card-dark"><span class="card-icon"><i data-lucide="activity"></i></span><span class="num">01</span><h3>The highest-stakes decisions now happen at the human–AI boundary.</h3><p>That boundary is where performance is made or destroyed. Most organizations have no way of knowing what is happening there.</p><div class="ref">Decision complexity is moving faster than standard visibility.</div></div>
+      <div class="card-dark"><span class="card-icon"><i data-lucide="layers"></i></span><span class="num">02</span><h3>Legacy tools were built for a world that no longer operates this way.</h3><p>KPIs, reviews, and personality frameworks measure the past. They were not designed for AI-augmented decision environments.</p><div class="ref">AI adoption is moving faster than organizational readiness.</div></div>
+      <div class="card-dark"><span class="card-icon"><i data-lucide="telescope"></i></span><span class="num">03</span><h3>Organizations that gain visibility first earn a structural advantage.</h3><p>The signal compounds. The gap between those who know and those who do not widens every quarter.</p><div class="ref">The window to move first is not permanent.</div></div>
+    </div>
+    <div class="shift-note reveal">
+      <p>AI increased the volume, speed, and complexity of decisions beyond what most human systems can sustain. Organizations are beginning to feel this as fatigue, inconsistency, and friction.</p>
+      <p>The deeper issue is not fatigue itself. It is the absence of visibility into how people are actually functioning under AI load.</p>
+      <p>Emerging workplace research on AI-related cognitive strain points to a growing human-factor gap in AI adoption.</p>
+    </div>
+  </div>
+</section>
+
+<section class="gap" id="gap">
+  <div class="wrap gapgrid">
+    <div class="reveal">
+      <span class="eyebrow" style="color:#bf4800">The signal gap</span>
+      <h2>Leaders make decisions.<br>Teams reveal the patterns.</h2>
+      <p class="muted" style="margin-top:14px">Your current data shows outcomes. It rarely shows the operating patterns that produced them — especially under pressure, ambiguity, and AI-assisted work.</p>
+      <p class="closing">In plain terms: you are managing people and teams you cannot fully see.</p>
+      <div class="bullets">
+        <div class="bullet"><h4>Outcome metrics measure what happened. Not what decided it.</h4><p>KPIs confirm a result. They do not show whether the decision pattern will hold when context changes.</p></div>
+        <div class="bullet"><h4>Self-assessment captures the narrated self. Not the operating one.</h4><p>Behavioral research consistently shows self-perception becomes less reliable under pressure.</p></div>
+        <div class="bullet"><h4>Team friction is often structural, not interpersonal.</h4><p>What looks like communication breakdown is often cognitive architecture mismatch.</p></div>
+      </div>
+    </div>
+    <div class="sidebox reveal">
+      <img class="story-photo" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80" alt="Leaders in a focused working session" loading="lazy" />
+      <strong>Both are readable — if you have the right signal.</strong>
+      <p>Cognitive Signature connects what individuals do in isolation to what organizations produce at scale. No existing framework was built to make this connection. That is why it has been invisible.</p>
+      <div class="chips"><span class="chip">Fewer invisible risks</span><span class="chip">More consistent team decisions</span><span class="chip">AI deployments that deliver</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cost" id="cost">
+  <div class="wrap">
+    <div class="section-head reveal"><h2>The cost is not only adoption failure. It is invisible performance degradation.</h2><p class="muted">AI load changes the conditions under which leaders decide. Most organizations can measure AI usage. Very few can determine whether it is improving judgment — or degrading it.</p></div>
+    <div class="costgrid reveal"><div class="costcard"><span class="card-icon"><i data-lucide="brain"></i></span><span class="tag">Cognition</span><h3>Decision velocity rises faster than cognitive load is understood.</h3><p>The organization sees more activity, but not whether complexity is being structured well.</p><div class="costsig">Risk: overload masked as productivity.</div></div><div class="costcard"><span class="card-icon"><i data-lucide="gauge"></i></span><span class="tag">Regulation</span><h3>Pressure makes judgment less consistent before performance visibly breaks.</h3><p>Senior leaders can appear composed while their decision pattern becomes less coherent.</p><div class="costsig">Risk: inconsistent judgment under pressure.</div></div><div class="costcard"><span class="card-icon"><i data-lucide="shield-alert"></i></span><span class="tag">AI Collaboration</span><h3>AI use drifts when trust, validation, and oversight are not readable.</h3><p>Teams may over-rely, under-trust, or improvise governance without knowing where the pattern changed.</p><div class="costsig">Risk: governance drift and coherence gaps.</div></div></div>
+  </div>
+</section>
+
+<section class="signal" id="signal">
+  <div class="wrap">
+    <span class="eyebrow reveal">The new paradigm</span>
+    <h2 class="reveal">Human-AI interaction is the most precise behavioral signal<br><em style="font-style:normal;color:#0e6f72">ever produced about how people think.</em></h2>
+    <p class="muted reveal">Because it cannot be performed. What someone does at the boundary between their own judgment and machine output reveals their operating architecture more accurately than any prior instrument — and it does so consistently, over time, under conditions that matter.</p>
+    <p class="muted reveal">What appears as AI fatigue is often a measurable pattern across cognition, regulation, and AI collaboration.</p>
+
+    <div class="signal-measure reveal" style="max-width:640px;margin:32px auto 28px;text-align:left">
+      <div class="ba-title">What is being measured</div>
+      <p class="measure-lead">This is not a measure of usage, productivity, or self-reported confidence.</p>
+      <p class="measure-body">It captures how decisions are actually formed at the boundary between human judgment and AI output:<br>– when AI is accepted, challenged, or overridden<br>– how reasoning evolves under pressure<br>– where cognitive load begins to alter judgment<br>– how accountability shifts across human-AI interaction</p>
+      <p class="measure-close">This is where performance is actually decided.</p>
+    </div>
+
+    <div class="hos reveal">
+      <div class="hoshead">HOS Score™ · Three Signal Domains · Illustrative View</div>
+      <div class="hosgrid">
+        <div class="gauge"><div class="score">76</div><div class="scorelabel">SAMPLE COMPOSITE</div></div>
+        <div>
+          <div class="domain"><div class="domain-top"><b>01 · Cognition</b><span class="blue">82 · sample</span></div><div class="bar"><div class="fill" style="width:82%;background:#2aa6a1"></div></div><p>How a person structures complexity and decides when no clean answer exists.</p></div>
+          <div class="domain"><div class="domain-top"><b>02 · Regulation</b><span style="color:#9fe5df">71 · sample</span></div><div class="bar"><div class="fill" style="width:71%;background:#9fe5df"></div></div><p>How a person holds judgment intact under pressure and stress.</p></div>
+          <div class="domain"><div class="domain-top"><b>03 · AI Collaboration</b><span style="color:#c8b27a">64 · sample</span></div><div class="bar"><div class="fill" style="width:64%;background:#c8b27a"></div></div><p>How a person delegates to, validates, and governs AI in real conditions.</p></div>
+        </div>
+      </div>
+      <div class="ip">The derivation methodology is proprietary. Organizations receive full transparency on what is measured and why it matters — not how the signal engine works. This is foundational, not incidental.</div>
+    </div>
+
+    <div class="reveal" style="max-width:640px;margin:28px auto 0">
+      <p style="font-size:12px;color:rgba(255,255,255,.6);font-weight:300;line-height:1.6;text-align:center">All signal capture is consent-based, anonymized at the organizational level, and designed to support governance alignment — not individual surveillance.</p>
+    </div>
+  </div>
+</section>
+
+<section class="visible" id="visible">
+  <div class="wrap">
+    <div class="section-head reveal"><h2>What becomes visible once the signal is no longer hidden.</h2><p class="muted">This is not new information about your people. It is information that has always existed — in how they think, decide, and operate. What is new is the ability to read it.</p></div>
+    <div class="story-strip human-context">
+      <div class="story-card"><img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1200&q=78" alt="Executive team reviewing decisions in a restrained boardroom setting" loading="lazy" /><div class="story-caption"><b>Leadership context</b><span>Signals become useful when they clarify how judgment behaves inside real decision environments.</span></div></div>
+      <div class="story-card"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=78" alt="Focused leadership discussion around a shared work surface" loading="lazy" /><div class="story-caption"><b>Team coherence</b><span>The value is not more data. It is better visibility into the patterns shaping action.</span></div></div>
+    </div>
+    <div class="visible-items reveal">
+      <div class="vis"><div class="vis-l"><span class="card-icon"><i data-lucide="user-check"></i></span><span class="tag">Individual</span><h3>The HOS Score™</h3><p>The cognitive architecture of each leader — how they think, regulate under pressure, and operate alongside AI.</p></div><div class="vis-r"><div class="impact">Better leadership placement decisions, grounded in operating pattern rather than track record and interview alone.</div></div></div>
+      <div class="vis"><div class="vis-l"><span class="card-icon"><i data-lucide="users"></i></span><span class="tag">Team</span><h3>Composition Intelligence</h3><p>The cognitive fingerprint of your leadership cohort — where friction is architectural and where gaps surface under pressure.</p></div><div class="vis-r"><div class="impact">More consistent decisions across teams by diagnosing the actual source of misalignment.</div></div></div>
+      <div class="vis"><div class="vis-l"><span class="card-icon"><i data-lucide="shield-check"></i></span><span class="tag">Governance</span><h3>The Governance Signal</h3><p>Decision-behavior patterns by role and department — tracked longitudinally and structured for defensible oversight.</p></div><div class="vis-r"><div class="impact">The ability to answer AI oversight questions with behavioral evidence, not assertion.</div></div></div>
+    </div>
+    <div class="beforeafter contextual reveal"><div class="ba-title">Before the signal / after the signal</div><div class="ba-cols"><div class="ba ba-before"><b style="color:#dc2626">Before</b><p>Decisions improvised. Friction misdiagnosed. AI risk unquantified. Leadership costs invisible.</p></div><div class="ba ba-after"><b style="color:#059669">After</b><p>Operating patterns explicit. Friction diagnosed correctly. AI governance documented. Risks visible and closeable.</p></div></div></div>
+  </div>
+</section>
+
+<section class="ps" id="services">
+  <div class="wrap">
+    <div class="section-head reveal"><h2>Insight without intervention changes nothing.</h2><div><p class="ps-note">This is not leadership development. It is not coaching. It is not an assessment. It is signal-grounded intervention.</p><p class="muted">The signal infrastructure reveals operating gaps standard data cannot see. What happens next determines whether the intelligence becomes measurable change.</p></div></div>
+    <div class="psgrid reveal">
+      <div class="pscard"><span class="card-icon"><i data-lucide="sliders-horizontal"></i></span><h3>Executive Calibration</h3><p>One-on-one work structured around each leader’s HOS Score™ and decision edges.</p></div>
+      <div class="pscard"><span class="card-icon"><i data-lucide="network"></i></span><h3>Leadership Architecture</h3><p>Cohort sessions built around team composition and friction points.</p></div>
+      <div class="pscard"><span class="card-icon"><i data-lucide="bot"></i></span><h3>AI Readiness Intensives</h3><p>Programs tied to Domain 03: delegation, validation, and governance of AI outputs.</p></div>
+      <div class="pscard"><span class="card-icon"><i data-lucide="landmark"></i></span><h3>Governance Architecture</h3><p>Advisory for defensible human oversight frameworks around AI deployment.</p></div>
+    </div>
+    <div class="story-strip service-story">
+      <div class="story-card"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=78" alt="Executive advisory discussion in a focused professional setting" loading="lazy" /><div class="story-caption"><b>Executive advisory</b><span>Practitioner-led interpretation turns signal into decisions leaders can act on.</span></div></div>
+      <div class="story-card"><img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1000&q=78" alt="Leadership workshop with teams working through a strategic discussion" loading="lazy" /><div class="story-caption"><b>Diagnostic pilot</b><span>Focused cohorts create a useful baseline without turning the engagement into a broad program.</span></div></div>
+    </div>
+    <div class="reveal" style="max-width:680px;margin:40px auto 0;text-align:left;">
+      <p class="pilot-copy">
+        Cognitive Signature engagements are structured as focused diagnostic pilots designed to surface measurable Human Operating System (HOS) signals within real workflows.
+      </p>
+      <p class="pilot-label">
+        Typical pilot scope:
+      </p>
+      <ul class="pilot-list">
+        <li>• 2–4 week engagement</li>
+        <li>• Defined cohort (leaders, teams, or critical roles)</li>
+        <li>• Behavioral signal extraction across cognition, emotional regulation, and AI collaboration</li>
+        <li>• HOS Score generation and interpretation</li>
+        <li>• Executive briefing with operational recommendations</li>
+      </ul>
+      <p class="pilot-label">
+        Investment range:
+      </p>
+      <p class="pilot-copy">
+        Typical pilot engagements range from <strong>USD $15,000 to $50,000</strong>.
+      </p>
+      <p class="pilot-copy spaced">
+        Larger enterprise engagements and longitudinal deployments are scoped separately.
+      </p>
+      <p class="pilot-limited">
+        Engagements are limited and prioritized for organizations actively exploring AI-enabled workforce transformation.
+      </p>
+    </div>
+    <div class="limited reveal"><strong>Engagements are limited.</strong> Capacity is finite by design. Every engagement is practitioner-led, signal-grounded, and available in English or French.</div>
+  </div>
+</section>
+
+
+
+<section class="trust" id="trust">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>Built for trust. Designed for responsible use.</h2>
+      <p class="muted">Cognitive Signature operates at the intersection of human behavior and AI. That requires clarity, consent, and strong boundaries.</p>
+    </div>
+    <div class="trustgrid reveal">
+      <div class="trustcard"><h3>No Surveillance</h3><p>Cognitive Signature does not monitor employees or capture hidden activity. The signal is derived from structured, transparent interaction environments.</p></div>
+      <div class="trustcard"><h3>Consent-Based Participation</h3><p>Participation is explicit. Individuals understand what is being measured and why.</p></div>
+      <div class="trustcard"><h3>Not for Hiring or Punitive Decisions</h3><p>The system is not used for automated hiring, firing, or disciplinary action. It supports development and governance—not enforcement.</p></div>
+      <div class="trustcard"><h3>Behavioral Signal, Not Personal Data Mining</h3><p>No scraping of personal data, private messages, or external behavior. The signal is contextual and interaction-based.</p></div>
+      <div class="trustcard"><h3>Enterprise-Grade Privacy</h3><p>Designed to align with GDPR and enterprise data standards. Data handling is secure, controlled, and auditable.</p></div>
+    </div>
+    <p class="trust-link reveal">Full privacy policy available → <a href="#" aria-label="Privacy policy placeholder">link placeholder</a></p>
+  </div>
+</section>
+
+<section class="access dark" id="access">
+  <div class="access-inner reveal">
+    <span class="eyebrow">Strategic Pilot · Limited Cohort</span>
+    <h2>Most organizations will understand this <em>too late.</em></h2>
+    <p>The signal is already being generated inside your organization. The question is whether you are positioned to read it before your peers are.</p>
+    <p class="identity">If you already see the gap, you are exactly who this was built for.</p>
+    <div class="pilot"><div><b>Day 1–30</b><p>Hidden patterns become explicit.</p></div><div><b>Day 30–60</b><p>Misalignment becomes structural, not personal.</p></div><div><b>Day 60–90</b><p>A signal baseline becomes trackable.</p></div></div>
+    <div id="hubspotFormWrap" class="hubspot-wrap" aria-live="polite"></div>
+    <form class="form" id="leadForm" onsubmit="handleAccess(event)" novalidate>
+      <input type="email" name="work_email" placeholder="Work email" autocomplete="email" required id="email" />
+      <input type="text" name="organization" placeholder="Organization" autocomplete="organization" required />
+      <input type="text" name="role" placeholder="Role" autocomplete="organization-title" required />
+      <textarea name="use_case" placeholder="Use case / reason for applying" required></textarea>
+      <label class="consent"><input type="checkbox" name="consent" required /> <span>I consent to being contacted about Cognitive Signature strategic pilot access.</span></label>
+      <input type="hidden" name="utm_source" />
+      <input type="hidden" name="utm_medium" />
+      <input type="hidden" name="utm_campaign" />
+      <input type="hidden" name="utm_content" />
+      <input type="hidden" name="utm_term" />
+      <input type="hidden" name="ref" />
+      <input type="hidden" name="gclid" />
+      <input type="hidden" name="gbraid" />
+      <input type="hidden" name="wbraid" />
+      <input type="hidden" name="fbclid" />
+      <input type="hidden" name="li_fat_id" />
+      <input type="hidden" name="selected_language" />
+      <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <button class="btn btn-primary" type="submit">Apply Now</button>
+    </form>
+    <p class="small">Application-based · Founder-reviewed · No commitment required</p>
+    <p class="pressure">The organizations that move early will define the standard others later try to meet.</p>
+    <p class="ty" id="ty">We will get back to you within 2 business days.</p>
+    <div class="qualification" id="qualification">
+      <h3>Build your Strategic Fit Brief.</h3>
+      <p>Share a little more context so the first conversation can focus on the right signal: governance, deployment, succession, or leadership architecture.</p>
+      <form class="form" id="qualificationForm" onsubmit="handleQualification(event)" novalidate>
+        <select name="company_size" required>
+          <option value="">Company size</option>
+          <option>1-50 employees</option>
+          <option>51-250 employees</option>
+          <option>251-1,000 employees</option>
+          <option>1,001-5,000 employees</option>
+          <option>5,001-20,000 employees</option>
+          <option>20,000+ employees</option>
+        </select>
+        <input type="text" name="industry" placeholder="Industry" autocomplete="organization" required />
+        <select name="ai_maturity" required>
+          <option value="">AI maturity level</option>
+          <option>Exploring / no formal deployment</option>
+          <option>Pilots in selected teams</option>
+          <option>Active deployment across functions</option>
+          <option>Enterprise-wide adoption underway</option>
+          <option>Governance / audit readiness priority</option>
+        </select>
+        <select name="ai_duration" required>
+          <option value="">How long has AI been in use?</option>
+          <option>Not yet incorporated</option>
+          <option>Less than 6 months</option>
+          <option>6-12 months</option>
+          <option>1-2 years</option>
+          <option>More than 2 years</option>
+        </select>
+        <textarea name="ai_areas" placeholder="Where has AI been incorporated? Teams, workflows, decisions, or tools." required></textarea>
+        <textarea name="what_worked" placeholder="What has worked so far?" required></textarea>
+        <textarea name="what_didnt" placeholder="What has not worked, created friction, or exposed risk?" required></textarea>
+        <textarea name="expectations" placeholder="What would you expect from a strategic pilot?" required></textarea>
+        <textarea name="current_future_project" placeholder="Current or future project this could support." required></textarea>
+        <input type="hidden" name="selected_language" />
+        <button class="btn btn-primary" type="submit">Send Strategic Fit Brief</button>
+        <p class="small">Optional, but it helps us understand fit before the first conversation.</p>
+      </form>
+    </div>
+    <div class="qualification done" id="qualificationDone" style="display:none">
+      <h3>Strategic Fit Brief received.</h3>
+      <p>Thank you. The next step is a focused review of fit, timing, and whether a pilot would create a useful signal baseline.</p>
+    </div>
+    <p class="err" id="err">The application could not be sent. Please try again.</p>
+  </div>
+</section>
+
+<footer><div>Cognitive Signature™ · Calgary, Alberta · © 2026</div><div>Human Signal Intelligence™</div></footer>
+
+<button class="qa-toggle" id="qaToggle" type="button" aria-controls="qaPanel" aria-expanded="false">Ask Amber</button>
+<aside class="qa-panel" id="qaPanel" aria-label="Ask Amber assistant">
+  <div class="qa-head">
+    <div><b>Ask Amber</b><span>Ask about pilots, HOS Score, governance, or fit.</span></div>
+    <button class="qa-close" id="qaClose" type="button" aria-label="Close Ask Amber">×</button>
+  </div>
+  <div class="qa-log" id="qaLog">
+    <div class="qa-msg bot">I can answer concise questions about Cognitive Signature as a Human Signal Intelligence layer. For fit, the strongest next step is the early-access application.</div>
+  </div>
+  <form class="qa-form" id="qaForm">
+    <input id="qaInput" name="question" type="text" autocomplete="off" placeholder="Ask a question" required />
+    <button type="submit">Ask</button>
+  </form>
+  <div class="qa-note">Answers are informational and should not disclose proprietary methodology. Connect the backend endpoint before launch.</div>
+</aside>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+const LANG_META = {
+  en: {label: "English", dir: "ltr", title: "Cognitive Signature™ — Human Signal Intelligence", description: "See how your leaders and teams actually operate before the consequences show up."},
+  fr: {label: "Français", dir: "ltr", title: "Cognitive Signature™ — Intelligence du signal humain", description: "Voyez comment vos leaders et vos équipes fonctionnent réellement avant que les conséquences n'apparaissent."},
+  es: {label: "Español", dir: "ltr", title: "Cognitive Signature™ — Inteligencia de Señal Humana", description: "Vea cómo operan realmente sus líderes y equipos antes de que aparezcan las consecuencias."},
+  zh: {label: "中文", dir: "ltr", title: "Cognitive Signature™ — 人类信号智能", description: "在后果显现之前，看清领导者和团队真实的运行方式。"},
+  ar: {label: "العربية", dir: "rtl", title: "Cognitive Signature™ — ذكاء الإشارة البشرية", description: "افهم كيف يعمل قادتك وفرقك فعلياً قبل أن تظهر العواقب."}
+};
+
+const I18N = {
+  fr: {
+    "The Shift": "Le basculement",
+    "Blind Spot": "Angle mort",
+    "HOS Score": "Score HOS",
+    "Services": "Services",
+    "Early Access": "Accès anticipé",
+    "Apply for Access": "Demander l'accès",
+    "Human Signal Intelligence · Limited Access": "Intelligence du signal humain · Accès limité",
+    "Your leaders": "Vos leaders",
+    "are deciding": "décident",
+    "in the dark.": "dans l'angle mort.",
+    "This is how you see how they actually operate — before the consequences show up.": "Voici comment voir comment ils fonctionnent réellement — avant que les conséquences n'apparaissent.",
+    "Human–AI interaction generates a new behavioral signal about how people think, decide, regulate, and govern AI. Most organizations are not reading it.": "L'interaction humain–IA génère un nouveau signal comportemental sur la façon dont les personnes pensent, décident, se régulent et gouvernent l'IA. La plupart des organisations ne le lisent pas.",
+    "The signal already exists inside your organization. The risk is not absence. It is invisibility.": "Le signal existe déjà dans votre organisation. Le risque n'est pas son absence. C'est son invisibilité.",
+    "Apply for Early Access": "Demander l'accès anticipé",
+    "See what changes ›": "Voir ce qui change ›",
+    "Selective access · Enterprise pilots · EN / FR": "Accès sélectif · Pilotes entreprise · EN / FR",
+    "COGNITIVE SIGNATURE™ · SIGNAL VIEW": "COGNITIVE SIGNATURE™ · VUE SIGNAL",
+    "ILLUSTRATIVE SIGNAL VIEW · SAMPLE DATA": "VUE SIGNAL ILLUSTRATIVE · DONNÉES EXEMPLE",
+    "Detected Pattern": "Modèle détecté",
+    "High cognitive clarity, elevated cognitive load, stable AI reliance, strong consistency.": "Clarté cognitive élevée, charge cognitive accrue, recours à l'IA stable, forte constance.",
+    "This profile suggests strong decision structure, but potential risk of load accumulation under sustained AI-assisted work.": "Ce profil suggère une structure décisionnelle solide, avec un risque potentiel d'accumulation de charge sous un travail assisté par IA soutenu.",
+    "Decision Quality": "Qualité décisionnelle",
+    "Strong": "Solide",
+    "Structures complex decisions clearly and validates outputs effectively.": "Structure clairement les décisions complexes et valide efficacement les résultats.",
+    "Reliable in strategic environments; monitor for speed under time pressure.": "Fiable dans les environnements stratégiques; surveiller la vitesse sous contrainte de temps.",
+    "Cognitive Load": "Charge cognitive",
+    "Elevated": "Élevée",
+    "Mental load is rising across sustained AI-assisted workflows.": "La charge mentale augmente dans les flux de travail assistés par IA soutenus.",
+    "Risk of decision fatigue if validation and delegation are not balanced.": "Risque de fatigue décisionnelle si validation et délégation ne sont pas équilibrées.",
+    "AI Reliance": "Dépendance à l'IA",
+    "Balanced": "Équilibrée",
+    "AI is being used as a thinking partner, not blindly accepted or ignored.": "L'IA est utilisée comme partenaire de réflexion, ni acceptée aveuglément ni ignorée.",
+    "Healthy oversight pattern; opportunity to scale responsible delegation.": "Schéma de supervision sain; occasion de déployer une délégation responsable.",
+    "Consistency": "Constance",
+    "Stable": "Stable",
+    "Decision behavior remains steady across changing conditions.": "Le comportement décisionnel reste stable malgré les conditions changeantes.",
+    "Strong predictability; suitable for high-trust operating environments.": "Forte prévisibilité; adapté aux environnements opérationnels à haut niveau de confiance.",
+    "Why it matters:": "Pourquoi c'est important :",
+    "Most organizations can track AI usage. Very few can see whether AI is improving judgment, increasing cognitive load, or shifting accountability.": "La plupart des organisations peuvent suivre l'usage de l'IA. Très peu peuvent voir si l'IA améliore le jugement, augmente la charge cognitive ou déplace la responsabilité.",
+    "The irreversible shift": "Le basculement irréversible",
+    "AI did not just change how decisions are made.": "L'IA n'a pas seulement changé la façon dont les décisions sont prises.",
+    "It changed the human system underneath them.": "Elle a changé le système humain qui les soutient.",
+    "The highest-stakes decisions now happen at the human–AI boundary.": "Les décisions les plus critiques se prennent désormais à la frontière humain–IA.",
+    "That boundary is where performance is made or destroyed. Most organizations have no way of knowing what is happening there.": "C'est à cette frontière que la performance se construit ou se détruit. La plupart des organisations ne savent pas ce qui s'y passe.",
+    "Decision complexity is moving faster than standard visibility.": "La complexité décisionnelle évolue plus vite que la visibilité standard.",
+    "Legacy tools were built for a world that no longer operates this way.": "Les outils hérités ont été conçus pour un monde qui ne fonctionne plus ainsi.",
+    "KPIs, reviews, and personality frameworks measure the past. They were not designed for AI-augmented decision environments.": "Les KPI, évaluations et cadres de personnalité mesurent le passé. Ils n'ont pas été conçus pour des environnements décisionnels augmentés par l'IA.",
+    "AI adoption is moving faster than organizational readiness.": "L'adoption de l'IA avance plus vite que la préparation organisationnelle.",
+    "Organizations that gain visibility first earn a structural advantage.": "Les organisations qui gagnent cette visibilité en premier obtiennent un avantage structurel.",
+    "The signal compounds. The gap between those who know and those who do not widens every quarter.": "Le signal se renforce. L'écart entre ceux qui savent et ceux qui ne savent pas s'élargit chaque trimestre.",
+    "The window to move first is not permanent.": "La fenêtre pour agir en premier n'est pas permanente.",
+    "The signal gap": "L'écart de signal",
+    "Leaders make decisions.": "Les leaders prennent des décisions.",
+    "Teams reveal the patterns.": "Les équipes révèlent les modèles.",
+    "Your current data shows outcomes. It rarely shows the operating patterns that produced them — especially under pressure, ambiguity, and AI-assisted work.": "Vos données actuelles montrent les résultats. Elles montrent rarement les modèles opérationnels qui les produisent — surtout sous pression, ambiguïté et travail assisté par IA.",
+    "In plain terms: you are managing people and teams you cannot fully see.": "En clair : vous gérez des personnes et des équipes que vous ne voyez pas pleinement.",
+    "Outcome metrics measure what happened. Not what decided it.": "Les indicateurs de résultat mesurent ce qui s'est passé. Pas ce qui l'a décidé.",
+    "Self-assessment captures the narrated self. Not the operating one.": "L'autoévaluation capture le soi raconté. Pas le soi opérant.",
+    "Team friction is often structural, not interpersonal.": "La friction d'équipe est souvent structurelle, pas interpersonnelle.",
+    "Both are readable — if you have the right signal.": "Les deux sont lisibles — si vous avez le bon signal.",
+    "The cost is not only adoption failure. It is invisible performance degradation.": "Le coût n'est pas seulement l'échec d'adoption. C'est la dégradation invisible de la performance.",
+    "The new paradigm": "Le nouveau paradigme",
+    "Human-AI interaction is the most precise behavioral signal": "L'interaction humain-IA est le signal comportemental le plus précis",
+    "ever produced about how people think.": "jamais produit sur la façon dont les personnes pensent.",
+    "What is being measured": "Ce qui est mesuré",
+    "This is not a measure of usage, productivity, or self-reported confidence.": "Ce n'est pas une mesure d'usage, de productivité ou de confiance déclarée.",
+    "This is where performance is actually decided.": "C'est ici que la performance se décide réellement.",
+    "What becomes visible once the signal is no longer hidden.": "Ce qui devient visible lorsque le signal n'est plus caché.",
+    "Professional Services": "Services professionnels",
+    "Strategic Pilot · Limited Cohort": "Pilote stratégique · Cohorte limitée",
+    "Most organizations will understand this": "La plupart des organisations comprendront cela",
+    "too late.": "trop tard.",
+    "Apply Now": "Postuler",
+    "Work email": "E-mail professionnel",
+    "Organization": "Organisation",
+    "Role": "Rôle",
+    "Use case / reason for applying": "Cas d'usage / raison de la demande",
+    "I consent to being contacted about Cognitive Signature strategic pilot access.": "J'accepte d'être contacté au sujet de l'accès au pilote stratégique Cognitive Signature.",
+    "Ask Amber": "Demander à Amber",
+    "Ask a question": "Poser une question",
+    "Ask": "Demander"
+  },
+  es: {
+    "The Shift": "El cambio",
+    "Blind Spot": "Punto ciego",
+    "HOS Score": "Puntuación HOS",
+    "Services": "Servicios",
+    "Early Access": "Acceso anticipado",
+    "Apply for Access": "Solicitar acceso",
+    "Human Signal Intelligence · Limited Access": "Inteligencia de Señal Humana · Acceso limitado",
+    "Your leaders": "Sus líderes",
+    "are deciding": "deciden",
+    "in the dark.": "a ciegas.",
+    "This is how you see how they actually operate — before the consequences show up.": "Así puede ver cómo operan realmente — antes de que aparezcan las consecuencias.",
+    "Human–AI interaction generates a new behavioral signal about how people think, decide, regulate, and govern AI. Most organizations are not reading it.": "La interacción humano–IA genera una nueva señal conductual sobre cómo las personas piensan, deciden, se regulan y gobiernan la IA. La mayoría de las organizaciones no la está leyendo.",
+    "Apply for Early Access": "Solicitar acceso anticipado",
+    "See what changes ›": "Ver qué cambia ›",
+    "Detected Pattern": "Patrón detectado",
+    "High cognitive clarity, elevated cognitive load, stable AI reliance, strong consistency.": "Alta claridad cognitiva, carga cognitiva elevada, dependencia de IA estable y fuerte consistencia.",
+    "Decision Quality": "Calidad decisional",
+    "Strong": "Fuerte",
+    "Cognitive Load": "Carga cognitiva",
+    "Elevated": "Elevada",
+    "AI Reliance": "Dependencia de IA",
+    "Balanced": "Equilibrada",
+    "Consistency": "Consistencia",
+    "Stable": "Estable",
+    "Why it matters:": "Por qué importa:",
+    "The irreversible shift": "El cambio irreversible",
+    "AI did not just change how decisions are made.": "La IA no solo cambió cómo se toman las decisiones.",
+    "It changed the human system underneath them.": "Cambió el sistema humano que las sostiene.",
+    "The signal gap": "La brecha de señal",
+    "Leaders make decisions.": "Los líderes toman decisiones.",
+    "Teams reveal the patterns.": "Los equipos revelan los patrones.",
+    "The new paradigm": "El nuevo paradigma",
+    "Human-AI interaction is the most precise behavioral signal": "La interacción humano-IA es la señal conductual más precisa",
+    "ever produced about how people think.": "jamás producida sobre cómo piensan las personas.",
+    "What is being measured": "Qué se está midiendo",
+    "This is not a measure of usage, productivity, or self-reported confidence.": "No es una medida de uso, productividad ni confianza autodeclarada.",
+    "This is where performance is actually decided.": "Aquí es donde realmente se decide el desempeño.",
+    "What becomes visible once the signal is no longer hidden.": "Lo que se vuelve visible cuando la señal deja de estar oculta.",
+    "Strategic Pilot · Limited Cohort": "Piloto estratégico · Cohorte limitada",
+    "Most organizations will understand this": "La mayoría de las organizaciones entenderá esto",
+    "too late.": "demasiado tarde.",
+    "Apply Now": "Solicitar ahora",
+  "Work email": "Correo laboral",
+  "Typical pilot engagements range from": "Los pilotos típicos oscilan entre",
+    "Organization": "Organización",
+    "Role": "Cargo",
+    "Use case / reason for applying": "Caso de uso / motivo de solicitud",
+    "I consent to being contacted about Cognitive Signature strategic pilot access.": "Acepto que me contacten sobre el acceso al piloto estratégico de Cognitive Signature.",
+    "Ask Amber": "Preguntar a Amber",
+    "Ask a question": "Hacer una pregunta",
+    "Ask": "Preguntar"
+  },
+  zh: {
+    "The Shift": "转折",
+    "Blind Spot": "盲点",
+    "HOS Score": "HOS评分",
+    "Services": "服务",
+    "Early Access": "优先体验",
+    "Apply for Access": "申请访问",
+    "Human Signal Intelligence · Limited Access": "人类信号智能 · 限量开放",
+    "Your leaders": "你的领导者",
+    "are deciding": "正在决策",
+    "in the dark.": "却看不见关键运行信号。",
+    "This is how you see how they actually operate — before the consequences show up.": "在结果显现之前，看清他们真实的运行方式。",
+    "Human–AI interaction generates a new behavioral signal about how people think, decide, regulate, and govern AI. Most organizations are not reading it.": "人机互动正在产生一种新的行为信号，揭示人们如何思考、决策、调节并治理AI。多数组织尚未读取这一信号。",
+    "Apply for Early Access": "申请优先体验",
+    "See what changes ›": "查看变化 ›",
+    "Detected Pattern": "检测到的模式",
+    "High cognitive clarity, elevated cognitive load, stable AI reliance, strong consistency.": "认知清晰度高，认知负荷上升，AI依赖稳定，一致性强。",
+    "Decision Quality": "决策质量",
+    "Strong": "强",
+    "Cognitive Load": "认知负荷",
+    "Elevated": "偏高",
+    "AI Reliance": "AI依赖",
+    "Balanced": "均衡",
+    "Consistency": "一致性",
+    "Stable": "稳定",
+    "Why it matters:": "为什么重要：",
+    "The irreversible shift": "不可逆的转折",
+    "AI did not just change how decisions are made.": "AI改变的不只是决策方式。",
+    "It changed the human system underneath them.": "它改变了决策背后的人类系统。",
+    "The signal gap": "信号缺口",
+    "Leaders make decisions.": "领导者做出决策。",
+    "Teams reveal the patterns.": "团队显露模式。",
+    "The new paradigm": "新的范式",
+    "Human-AI interaction is the most precise behavioral signal": "人机互动是迄今最精确的行为信号",
+    "ever produced about how people think.": "能够揭示人们如何思考。",
+    "What is being measured": "测量的内容",
+    "This is not a measure of usage, productivity, or self-reported confidence.": "这不是使用量、生产力或自我报告信心的测量。",
+    "This is where performance is actually decided.": "真正的绩效在这里被决定。",
+    "What becomes visible once the signal is no longer hidden.": "当信号不再被隐藏，什么会变得可见。",
+    "Strategic Pilot · Limited Cohort": "战略试点 · 限定名额",
+    "Most organizations will understand this": "多数组织会理解这一点",
+    "too late.": "但为时已晚。",
+    "Apply Now": "立即申请",
+  "Work email": "工作邮箱",
+  "Typical pilot engagements range from": "典型试点项目范围为",
+    "Organization": "组织",
+    "Role": "职务",
+    "Use case / reason for applying": "应用场景 / 申请原因",
+    "I consent to being contacted about Cognitive Signature strategic pilot access.": "我同意就 Cognitive Signature 战略试点访问事宜被联系。",
+    "Ask Amber": "询问 Amber",
+    "Ask a question": "请输入问题",
+    "Ask": "提问"
+  },
+  ar: {
+    "The Shift": "التحول",
+    "Blind Spot": "نقطة عمياء",
+    "HOS Score": "مؤشر HOS",
+    "Services": "الخدمات",
+    "Early Access": "وصول مبكر",
+    "Apply for Access": "طلب الوصول",
+    "Human Signal Intelligence · Limited Access": "ذكاء الإشارة البشرية · وصول محدود",
+    "Your leaders": "قادتك",
+    "are deciding": "يتخذون القرار",
+    "in the dark.": "من دون رؤية كافية.",
+    "This is how you see how they actually operate — before the consequences show up.": "هذه هي الطريقة لرؤية كيف يعملون فعلياً قبل أن تظهر العواقب.",
+    "Human–AI interaction generates a new behavioral signal about how people think, decide, regulate, and govern AI. Most organizations are not reading it.": "ينتج تفاعل الإنسان مع الذكاء الاصطناعي إشارة سلوكية جديدة حول كيفية التفكير واتخاذ القرار والضبط وحوكمة الذكاء الاصطناعي. معظم المؤسسات لا تقرأها بعد.",
+    "Apply for Early Access": "طلب الوصول المبكر",
+    "See what changes ›": "ما الذي يتغير ›",
+    "Detected Pattern": "النمط المكتشف",
+    "High cognitive clarity, elevated cognitive load, stable AI reliance, strong consistency.": "وضوح معرفي عال، حمل معرفي مرتفع، اعتماد مستقر على الذكاء الاصطناعي، واتساق قوي.",
+    "Decision Quality": "جودة القرار",
+    "Strong": "قوي",
+    "Cognitive Load": "الحمل المعرفي",
+    "Elevated": "مرتفع",
+    "AI Reliance": "الاعتماد على الذكاء الاصطناعي",
+    "Balanced": "متوازن",
+    "Consistency": "الاتساق",
+    "Stable": "مستقر",
+    "Why it matters:": "لماذا يهم:",
+    "The irreversible shift": "التحول غير القابل للتراجع",
+    "AI did not just change how decisions are made.": "لم يغير الذكاء الاصطناعي طريقة اتخاذ القرار فقط.",
+    "It changed the human system underneath them.": "بل غيّر النظام البشري الذي يقف خلفها.",
+    "The signal gap": "فجوة الإشارة",
+    "Leaders make decisions.": "القادة يتخذون القرارات.",
+    "Teams reveal the patterns.": "والفرق تكشف الأنماط.",
+    "The new paradigm": "النموذج الجديد",
+    "Human-AI interaction is the most precise behavioral signal": "تفاعل الإنسان مع الذكاء الاصطناعي هو أدق إشارة سلوكية",
+    "ever produced about how people think.": "تم إنتاجها حول كيفية تفكير الناس.",
+    "What is being measured": "ما الذي يتم قياسه",
+    "This is not a measure of usage, productivity, or self-reported confidence.": "هذا ليس قياساً للاستخدام أو الإنتاجية أو الثقة المعلنة ذاتياً.",
+    "This is where performance is actually decided.": "هنا تُحسم القدرة على الأداء فعلياً.",
+    "What becomes visible once the signal is no longer hidden.": "ما يصبح مرئياً عندما لا تعود الإشارة مخفية.",
+    "Strategic Pilot · Limited Cohort": "تجربة استراتيجية · مجموعة محدودة",
+    "Most organizations will understand this": "معظم المؤسسات ستفهم هذا",
+    "too late.": "بعد فوات الأوان.",
+    "Apply Now": "قدّم الآن",
+  "Work email": "البريد المهني",
+  "Typical pilot engagements range from": "تتراوح التجارب النموذجية بين",
+    "Organization": "المؤسسة",
+    "Role": "الدور",
+    "Use case / reason for applying": "حالة الاستخدام / سبب التقديم",
+    "I consent to being contacted about Cognitive Signature strategic pilot access.": "أوافق على التواصل معي بشأن الوصول إلى التجربة الاستراتيجية لـ Cognitive Signature.",
+    "Ask Amber": "اسأل Amber",
+    "Ask a question": "اطرح سؤالاً",
+    "Ask": "اسأل"
+  }
+};
+
+Object.assign(I18N.fr, {
+  "The signal already exists inside your organization. The risk is not absence. It is invisibility.": "Le signal existe déjà dans votre organisation. Le risque n'est pas son absence. C'est son invisibilité.",
+  "This profile suggests strong decision structure, but potential risk of load accumulation under sustained AI-assisted work.": "Ce profil suggère une structure décisionnelle forte, avec un risque potentiel d'accumulation de charge sous un travail assisté par IA prolongé.",
+  "Most organizations can track AI usage. Very few can see whether AI is improving judgment, increasing cognitive load, or shifting accountability.": "La plupart des organisations peuvent suivre l'usage de l'IA. Très peu peuvent voir si l'IA améliore le jugement, augmente la charge cognitive ou déplace la responsabilité.",
+  "AI increased the volume, speed, and complexity of decisions beyond what most human systems can sustain. Organizations are beginning to feel this as fatigue, inconsistency, and friction.": "L'IA a augmenté le volume, la vitesse et la complexité des décisions au-delà de ce que la plupart des systèmes humains peuvent soutenir. Les organisations commencent à le ressentir comme fatigue, incohérence et friction.",
+  "The deeper issue is not fatigue itself. It is the absence of visibility into how people are actually functioning under AI load.": "Le problème plus profond n'est pas la fatigue elle-même. C'est l'absence de visibilité sur la façon dont les personnes fonctionnent réellement sous charge IA.",
+  "Emerging workplace research on AI-related cognitive strain points to a growing human-factor gap in AI adoption.": "Les recherches émergentes sur la contrainte cognitive liée à l'IA indiquent un écart croissant des facteurs humains dans l'adoption de l'IA.",
+  "KPIs confirm a result. They do not show whether the decision pattern will hold when context changes.": "Les KPI confirment un résultat. Ils ne montrent pas si le modèle décisionnel tiendra lorsque le contexte changera.",
+  "Behavioral research consistently shows self-perception becomes less reliable under pressure.": "La recherche comportementale montre constamment que la perception de soi devient moins fiable sous pression.",
+  "What looks like communication breakdown is often cognitive architecture mismatch.": "Ce qui ressemble à une rupture de communication est souvent un décalage d'architecture cognitive.",
+  "Cognitive Signature connects what individuals do in isolation to what organizations produce at scale. No existing framework was built to make this connection. That is why it has been invisible.": "Cognitive Signature relie ce que les individus font isolément à ce que les organisations produisent à grande échelle. Aucun cadre existant n'a été conçu pour établir ce lien. C'est pourquoi il est resté invisible.",
+  "Fewer invisible risks": "Moins de risques invisibles",
+  "More consistent team decisions": "Décisions d'équipe plus cohérentes",
+  "AI deployments that deliver": "Déploiements IA qui livrent",
+  "AI load changes the conditions under which leaders decide. Most organizations can measure AI usage. Very few can determine whether it is improving judgment — or degrading it.": "La charge IA change les conditions dans lesquelles les leaders décident. La plupart des organisations peuvent mesurer l'usage de l'IA. Très peu peuvent déterminer si elle améliore le jugement — ou le dégrade.",
+  "Decision velocity rises faster than cognitive load is understood.": "La vitesse décisionnelle augmente plus vite que la charge cognitive n'est comprise.",
+  "Risk: overload masked as productivity.": "Risque : surcharge masquée en productivité.",
+  "Pressure makes judgment less consistent before performance visibly breaks.": "La pression rend le jugement moins cohérent avant que la performance ne se brise visiblement.",
+  "Risk: inconsistent judgment under pressure.": "Risque : jugement incohérent sous pression.",
+  "AI use drifts when trust, validation, and oversight are not readable.": "L'usage de l'IA dérive lorsque la confiance, la validation et la supervision ne sont pas lisibles.",
+  "Risk: governance drift and coherence gaps.": "Risque : dérive de gouvernance et écarts de cohérence.",
+  "Because it cannot be performed. What someone does at the boundary between their own judgment and machine output reveals their operating architecture more accurately than any prior instrument — and it does so consistently, over time, under conditions that matter.": "Parce qu'il ne peut pas être joué. Ce qu'une personne fait à la frontière entre son propre jugement et la sortie machine révèle son architecture opérationnelle plus précisément que tout instrument antérieur — et le fait de manière constante, dans le temps, dans les conditions qui comptent.",
+  "What appears as AI fatigue is often a measurable pattern across cognition, regulation, and AI collaboration.": "Ce qui apparaît comme fatigue liée à l'IA est souvent un modèle mesurable à travers la cognition, la régulation et la collaboration avec l'IA.",
+  "It captures how decisions are actually formed at the boundary between human judgment and AI output:": "Il capture comment les décisions se forment réellement à la frontière entre le jugement humain et la sortie IA :",
+  "The derivation methodology is proprietary. Organizations receive full transparency on what is measured and why it matters — not how the signal engine works. This is foundational, not incidental.": "La méthodologie de dérivation est propriétaire. Les organisations reçoivent une transparence complète sur ce qui est mesuré et pourquoi cela compte — pas sur le fonctionnement du moteur de signal. C'est fondamental, pas accessoire.",
+  "All signal capture is consent-based, anonymized at the organizational level, and designed to support governance alignment — not individual surveillance.": "Toute capture de signal repose sur le consentement, est anonymisée au niveau organisationnel et conçue pour soutenir l'alignement de gouvernance — pas la surveillance individuelle.",
+  "Insight without intervention changes nothing.": "L'insight sans intervention ne change rien.",
+  "This is not leadership development. It is not coaching. It is not an assessment. It is signal-grounded intervention.": "Ce n'est pas du développement du leadership. Ce n'est pas du coaching. Ce n'est pas une évaluation. C'est une intervention fondée sur le signal.",
+  "Cognitive Signature engagements are structured as focused diagnostic pilots designed to surface measurable Human Operating System (HOS) signals within real workflows.": "Les engagements Cognitive Signature sont structurés comme des pilotes diagnostiques ciblés, conçus pour faire émerger des signaux mesurables du Human Operating System (HOS) dans des flux de travail réels.",
+  "Typical pilot scope:": "Portée typique du pilote :",
+  "Investment range:": "Fourchette d'investissement :",
+  "Typical pilot engagements range from": "Les pilotes typiques se situent entre",
+  "Typical pilot engagements range from USD $15,000 to $50,000.": "Les pilotes typiques se situent entre USD $15,000 et $50,000.",
+  "Larger enterprise engagements and longitudinal deployments are scoped separately.": "Les engagements d'entreprise plus larges et les déploiements longitudinaux sont cadrés séparément.",
+  "Engagements are limited and prioritized for organizations actively exploring AI-enabled workforce transformation.": "Les engagements sont limités et priorisés pour les organisations qui explorent activement la transformation du travail activée par l'IA.",
+  "The signal is already being generated inside your organization. The question is whether you are positioned to read it before your peers are.": "Le signal est déjà généré dans votre organisation. La question est de savoir si vous êtes positionné pour le lire avant vos pairs.",
+  "If you already see the gap, you are exactly who this was built for.": "Si vous voyez déjà l'écart, c'est exactement pour vous que cela a été conçu.",
+  "We will get back to you within 2 business days.": "Nous vous répondrons dans un délai de 2 jours ouvrables."
+  ,"Built for trust. Designed for responsible use.": "Conçu pour la confiance. Pensé pour un usage responsable."
+  ,"Cognitive Signature operates at the intersection of human behavior and AI. That requires clarity, consent, and strong boundaries.": "Cognitive Signature opère à l'intersection du comportement humain et de l'IA. Cela exige clarté, consentement et limites solides."
+  ,"No Surveillance": "Aucune surveillance"
+  ,"Cognitive Signature does not monitor employees or capture hidden activity. The signal is derived from structured, transparent interaction environments.": "Cognitive Signature ne surveille pas les employés et ne capture pas d'activité cachée. Le signal provient d'environnements d'interaction structurés et transparents."
+  ,"Consent-Based Participation": "Participation fondée sur le consentement"
+  ,"Participation is explicit. Individuals understand what is being measured and why.": "La participation est explicite. Les individus comprennent ce qui est mesuré et pourquoi."
+  ,"Not for Hiring or Punitive Decisions": "Pas pour l'embauche ni les décisions punitives"
+  ,"The system is not used for automated hiring, firing, or disciplinary action. It supports development and governance—not enforcement.": "Le système n'est pas utilisé pour l'embauche, le licenciement ou les mesures disciplinaires automatisés. Il soutient le développement et la gouvernance, pas l'application punitive."
+  ,"Behavioral Signal, Not Personal Data Mining": "Signal comportemental, pas extraction de données personnelles"
+  ,"No scraping of personal data, private messages, or external behavior. The signal is contextual and interaction-based.": "Aucune extraction de données personnelles, messages privés ou comportements externes. Le signal est contextuel et fondé sur l'interaction."
+  ,"Enterprise-Grade Privacy": "Confidentialité de niveau entreprise"
+  ,"Designed to align with GDPR and enterprise data standards. Data handling is secure, controlled, and auditable.": "Conçu pour s'aligner avec le RGPD et les standards de données d'entreprise. Le traitement des données est sécurisé, contrôlé et auditable."
+  ,"Full privacy policy available →": "Politique de confidentialité complète disponible →"
+  ,"link placeholder": "lien à venir"
+});
+
+Object.assign(I18N.es, {
+  "The signal already exists inside your organization. The risk is not absence. It is invisibility.": "La señal ya existe dentro de su organización. El riesgo no es la ausencia. Es la invisibilidad.",
+  "This profile suggests strong decision structure, but potential risk of load accumulation under sustained AI-assisted work.": "Este perfil sugiere una estructura decisional fuerte, pero posible riesgo de acumulación de carga bajo trabajo asistido por IA sostenido.",
+  "Structures complex decisions clearly and validates outputs effectively.": "Estructura decisiones complejas con claridad y valida resultados de forma efectiva.",
+  "Reliable in strategic environments; monitor for speed under time pressure.": "Confiable en entornos estratégicos; monitorear la velocidad bajo presión de tiempo.",
+  "Mental load is rising across sustained AI-assisted workflows.": "La carga mental aumenta en flujos de trabajo sostenidos asistidos por IA.",
+  "Risk of decision fatigue if validation and delegation are not balanced.": "Riesgo de fatiga decisional si la validación y la delegación no están equilibradas.",
+  "AI is being used as a thinking partner, not blindly accepted or ignored.": "La IA se usa como socio de pensamiento, no se acepta ciegamente ni se ignora.",
+  "Healthy oversight pattern; opportunity to scale responsible delegation.": "Patrón sano de supervisión; oportunidad para escalar una delegación responsable.",
+  "Decision behavior remains steady across changing conditions.": "El comportamiento decisional se mantiene estable ante condiciones cambiantes.",
+  "Strong predictability; suitable for high-trust operating environments.": "Alta previsibilidad; adecuado para entornos operativos de alta confianza.",
+  "AI increased the volume, speed, and complexity of decisions beyond what most human systems can sustain. Organizations are beginning to feel this as fatigue, inconsistency, and friction.": "La IA aumentó el volumen, la velocidad y la complejidad de las decisiones más allá de lo que la mayoría de los sistemas humanos puede sostener. Las organizaciones empiezan a sentirlo como fatiga, inconsistencia y fricción.",
+  "The deeper issue is not fatigue itself. It is the absence of visibility into how people are actually functioning under AI load.": "El problema más profundo no es la fatiga en sí. Es la falta de visibilidad sobre cómo funcionan realmente las personas bajo carga de IA.",
+  "What is being measured": "Qué se mide",
+  "It captures how decisions are actually formed at the boundary between human judgment and AI output:": "Captura cómo se forman realmente las decisiones en el límite entre el juicio humano y la salida de IA:",
+  "All signal capture is consent-based, anonymized at the organizational level, and designed to support governance alignment — not individual surveillance.": "Toda captura de señal se basa en consentimiento, se anonimiza a nivel organizacional y está diseñada para apoyar la alineación de gobernanza, no la vigilancia individual.",
+  "Insight without intervention changes nothing.": "La información sin intervención no cambia nada.",
+  "The signal is already being generated inside your organization. The question is whether you are positioned to read it before your peers are.": "La señal ya se está generando dentro de su organización. La pregunta es si está preparado para leerla antes que sus pares.",
+  "We will get back to you within 2 business days.": "Responderemos dentro de 2 días hábiles."
+  ,"Typical pilot engagements range from USD $15,000 to $50,000.": "Los pilotos típicos oscilan entre USD $15,000 y $50,000."
+  ,"Built for trust. Designed for responsible use.": "Construido para la confianza. Diseñado para un uso responsable."
+  ,"Cognitive Signature operates at the intersection of human behavior and AI. That requires clarity, consent, and strong boundaries.": "Cognitive Signature opera en la intersección entre comportamiento humano e IA. Eso exige claridad, consentimiento y límites sólidos."
+  ,"No Surveillance": "Sin vigilancia"
+  ,"Cognitive Signature does not monitor employees or capture hidden activity. The signal is derived from structured, transparent interaction environments.": "Cognitive Signature no monitorea empleados ni captura actividad oculta. La señal se deriva de entornos de interacción estructurados y transparentes."
+  ,"Consent-Based Participation": "Participación basada en consentimiento"
+  ,"Participation is explicit. Individuals understand what is being measured and why.": "La participación es explícita. Las personas entienden qué se mide y por qué."
+  ,"Not for Hiring or Punitive Decisions": "No para contratación ni decisiones punitivas"
+  ,"The system is not used for automated hiring, firing, or disciplinary action. It supports development and governance—not enforcement.": "El sistema no se utiliza para contratación, despido o acción disciplinaria automatizada. Apoya desarrollo y gobernanza, no enforcement."
+  ,"Behavioral Signal, Not Personal Data Mining": "Señal conductual, no extracción de datos personales"
+  ,"No scraping of personal data, private messages, or external behavior. The signal is contextual and interaction-based.": "No se extraen datos personales, mensajes privados ni comportamiento externo. La señal es contextual y basada en interacción."
+  ,"Enterprise-Grade Privacy": "Privacidad de nivel empresarial"
+  ,"Designed to align with GDPR and enterprise data standards. Data handling is secure, controlled, and auditable.": "Diseñado para alinearse con GDPR y estándares empresariales de datos. El manejo de datos es seguro, controlado y auditable."
+  ,"Full privacy policy available →": "Política de privacidad completa disponible →"
+  ,"link placeholder": "enlace pendiente"
+});
+
+Object.assign(I18N.zh, {
+  "The signal already exists inside your organization. The risk is not absence. It is invisibility.": "信号已经存在于你的组织内部。风险不是没有信号，而是看不见。",
+  "This profile suggests strong decision structure, but potential risk of load accumulation under sustained AI-assisted work.": "该画像显示决策结构较强，但在持续AI辅助工作下存在负荷累积风险。",
+  "Structures complex decisions clearly and validates outputs effectively.": "能够清晰组织复杂决策，并有效验证输出。",
+  "Reliable in strategic environments; monitor for speed under time pressure.": "在战略环境中可靠；需关注时间压力下的决策速度。",
+  "Mental load is rising across sustained AI-assisted workflows.": "在持续AI辅助流程中，心理负荷正在上升。",
+  "Risk of decision fatigue if validation and delegation are not balanced.": "若验证与授权不平衡，存在决策疲劳风险。",
+  "AI is being used as a thinking partner, not blindly accepted or ignored.": "AI被作为思考伙伴使用，而不是被盲目接受或忽视。",
+  "Healthy oversight pattern; opportunity to scale responsible delegation.": "监督模式健康；可进一步扩展负责任的授权。",
+  "Decision behavior remains steady across changing conditions.": "在变化条件下，决策行为保持稳定。",
+  "Strong predictability; suitable for high-trust operating environments.": "可预测性强；适合高信任度的运营环境。",
+  "AI increased the volume, speed, and complexity of decisions beyond what most human systems can sustain. Organizations are beginning to feel this as fatigue, inconsistency, and friction.": "AI提升了决策的数量、速度和复杂度，超出了多数人类系统可持续承受的范围。组织开始将其感受到为疲劳、不一致和摩擦。",
+  "The deeper issue is not fatigue itself. It is the absence of visibility into how people are actually functioning under AI load.": "更深层的问题不是疲劳本身，而是缺乏对人们在AI负荷下真实运行方式的可见性。",
+  "It captures how decisions are actually formed at the boundary between human judgment and AI output:": "它捕捉的是在人类判断与AI输出之间，决策实际如何形成：",
+  "All signal capture is consent-based, anonymized at the organizational level, and designed to support governance alignment — not individual surveillance.": "所有信号采集均基于同意，在组织层面匿名化，并用于支持治理一致性，而非个人监控。",
+  "Insight without intervention changes nothing.": "只有洞察而没有干预，不会带来改变。",
+  "The signal is already being generated inside your organization. The question is whether you are positioned to read it before your peers are.": "信号已经在你的组织内部产生。关键是你是否能比同行更早读取它。",
+  "We will get back to you within 2 business days.": "我们将在2个工作日内回复。"
+  ,"Typical pilot engagements range from USD $15,000 to $50,000.": "典型试点项目范围为 USD $15,000 至 $50,000。"
+  ,"Built for trust. Designed for responsible use.": "为信任而构建，为负责任使用而设计。"
+  ,"Cognitive Signature operates at the intersection of human behavior and AI. That requires clarity, consent, and strong boundaries.": "Cognitive Signature 位于人类行为与AI的交汇处。这需要清晰、同意和明确边界。"
+  ,"No Surveillance": "不做监控"
+  ,"Cognitive Signature does not monitor employees or capture hidden activity. The signal is derived from structured, transparent interaction environments.": "Cognitive Signature 不监控员工，也不捕捉隐藏活动。信号来自结构化、透明的交互环境。"
+  ,"Consent-Based Participation": "基于同意的参与"
+  ,"Participation is explicit. Individuals understand what is being measured and why.": "参与是明确的。个人了解正在测量什么以及原因。"
+  ,"Not for Hiring or Punitive Decisions": "不用于招聘或惩戒决策"
+  ,"The system is not used for automated hiring, firing, or disciplinary action. It supports development and governance—not enforcement.": "系统不用于自动化招聘、解雇或纪律处分。它支持发展与治理，而不是执行惩戒。"
+  ,"Behavioral Signal, Not Personal Data Mining": "行为信号，而非个人数据挖掘"
+  ,"No scraping of personal data, private messages, or external behavior. The signal is contextual and interaction-based.": "不抓取个人数据、私人信息或外部行为。信号基于情境和交互。"
+  ,"Enterprise-Grade Privacy": "企业级隐私"
+  ,"Designed to align with GDPR and enterprise data standards. Data handling is secure, controlled, and auditable.": "设计上对齐GDPR和企业数据标准。数据处理安全、受控且可审计。"
+  ,"Full privacy policy available →": "完整隐私政策 →"
+  ,"link placeholder": "链接占位"
+});
+
+Object.assign(I18N.ar, {
+  "The signal already exists inside your organization. The risk is not absence. It is invisibility.": "الإشارة موجودة بالفعل داخل مؤسستك. الخطر ليس غيابها، بل عدم رؤيتها.",
+  "This profile suggests strong decision structure, but potential risk of load accumulation under sustained AI-assisted work.": "يشير هذا النمط إلى بنية قرار قوية، مع احتمال تراكم الحمل عند العمل المطوّل بمساعدة الذكاء الاصطناعي.",
+  "Structures complex decisions clearly and validates outputs effectively.": "ينظم القرارات المعقدة بوضوح ويتحقق من المخرجات بفعالية.",
+  "Reliable in strategic environments; monitor for speed under time pressure.": "موثوق في البيئات الاستراتيجية؛ راقب السرعة تحت ضغط الوقت.",
+  "Mental load is rising across sustained AI-assisted workflows.": "الحمل الذهني يرتفع عبر مسارات العمل المستمرة المدعومة بالذكاء الاصطناعي.",
+  "Risk of decision fatigue if validation and delegation are not balanced.": "خطر إرهاق القرار إذا لم تتوازن عملية التحقق مع التفويض.",
+  "AI is being used as a thinking partner, not blindly accepted or ignored.": "يُستخدم الذكاء الاصطناعي كشريك في التفكير، لا كأمر يُقبل بلا تمحيص أو يُتجاهل.",
+  "Healthy oversight pattern; opportunity to scale responsible delegation.": "نمط إشراف صحي؛ فرصة لتوسيع التفويض المسؤول.",
+  "Decision behavior remains steady across changing conditions.": "يبقى سلوك القرار ثابتاً عبر الظروف المتغيرة.",
+  "Strong predictability; suitable for high-trust operating environments.": "قابلية عالية للتنبؤ؛ مناسب لبيئات تشغيل عالية الثقة.",
+  "AI increased the volume, speed, and complexity of decisions beyond what most human systems can sustain. Organizations are beginning to feel this as fatigue, inconsistency, and friction.": "زاد الذكاء الاصطناعي حجم القرارات وسرعتها وتعقيدها بما يتجاوز قدرة معظم الأنظمة البشرية على الاحتمال. بدأت المؤسسات تشعر بذلك كإرهاق وتباين واحتكاك.",
+  "The deeper issue is not fatigue itself. It is the absence of visibility into how people are actually functioning under AI load.": "المشكلة الأعمق ليست الإرهاق نفسه، بل غياب الرؤية حول كيفية عمل الناس فعلياً تحت حمل الذكاء الاصطناعي.",
+  "It captures how decisions are actually formed at the boundary between human judgment and AI output:": "يلتقط كيف تتشكل القرارات فعلياً عند الحد الفاصل بين الحكم البشري ومخرجات الذكاء الاصطناعي:",
+  "All signal capture is consent-based, anonymized at the organizational level, and designed to support governance alignment — not individual surveillance.": "كل التقاط للإشارة قائم على الموافقة، ومجهول على مستوى المؤسسة، ومصمم لدعم اتساق الحوكمة لا لمراقبة الأفراد.",
+  "Insight without intervention changes nothing.": "البصيرة من دون تدخل لا تغيّر شيئاً.",
+  "The signal is already being generated inside your organization. The question is whether you are positioned to read it before your peers are.": "تُنتج الإشارة بالفعل داخل مؤسستك. السؤال هو هل أنت مستعد لقراءتها قبل الآخرين.",
+  "We will get back to you within 2 business days.": "سنعاود التواصل معك خلال يومي عمل."
+  ,"Typical pilot engagements range from USD $15,000 to $50,000.": "تتراوح التجارب النموذجية بين USD $15,000 و $50,000."
+  ,"Built for trust. Designed for responsible use.": "مصمم للثقة. ومبني للاستخدام المسؤول."
+  ,"Cognitive Signature operates at the intersection of human behavior and AI. That requires clarity, consent, and strong boundaries.": "يعمل Cognitive Signature عند تقاطع السلوك البشري والذكاء الاصطناعي. وهذا يتطلب وضوحاً وموافقة وحدوداً قوية."
+  ,"No Surveillance": "لا مراقبة"
+  ,"Cognitive Signature does not monitor employees or capture hidden activity. The signal is derived from structured, transparent interaction environments.": "لا يراقب Cognitive Signature الموظفين ولا يلتقط نشاطاً مخفياً. تُشتق الإشارة من بيئات تفاعل منظمة وشفافة."
+  ,"Consent-Based Participation": "مشاركة قائمة على الموافقة"
+  ,"Participation is explicit. Individuals understand what is being measured and why.": "المشاركة صريحة. يفهم الأفراد ما الذي يتم قياسه ولماذا."
+  ,"Not for Hiring or Punitive Decisions": "ليس للتوظيف أو القرارات العقابية"
+  ,"The system is not used for automated hiring, firing, or disciplinary action. It supports development and governance—not enforcement.": "لا يُستخدم النظام للتوظيف أو الفصل أو الإجراءات التأديبية الآلية. إنه يدعم التطوير والحوكمة، لا الإنفاذ."
+  ,"Behavioral Signal, Not Personal Data Mining": "إشارة سلوكية، وليست تنقيباً في البيانات الشخصية"
+  ,"No scraping of personal data, private messages, or external behavior. The signal is contextual and interaction-based.": "لا يتم جمع بيانات شخصية أو رسائل خاصة أو سلوك خارجي. الإشارة سياقية وقائمة على التفاعل."
+  ,"Enterprise-Grade Privacy": "خصوصية بمستوى المؤسسات"
+  ,"Designed to align with GDPR and enterprise data standards. Data handling is secure, controlled, and auditable.": "مصمم ليتوافق مع GDPR ومعايير بيانات المؤسسات. معالجة البيانات آمنة ومضبوطة وقابلة للتدقيق."
+  ,"Full privacy policy available →": "سياسة الخصوصية الكاملة متاحة →"
+  ,"link placeholder": "رابط مؤقت"
+});
+
+Object.assign(I18N.zh, {
+  "Selective access · Enterprise pilots · EN / FR": "精选开放 · 企业试点 · 英文 / 法文",
+  "The highest-stakes decisions now happen at the human–AI boundary.": "最高风险的决策正在人机边界发生。",
+  "That boundary is where performance is made or destroyed. Most organizations have no way of knowing what is happening there.": "这个边界决定绩效的形成或受损。多数组织无法看清那里正在发生什么。",
+  "Decision complexity is moving faster than standard visibility.": "决策复杂度正在超过传统可见性的速度。",
+  "Legacy tools were built for a world that no longer operates this way.": "传统工具服务的是一个已经不再如此运行的世界。",
+  "KPIs, reviews, and personality frameworks measure the past. They were not designed for AI-augmented decision environments.": "KPI、评估和人格框架衡量的是过去。它们并非为AI增强的决策环境而设计。",
+  "AI adoption is moving faster than organizational readiness.": "AI采用速度正在超过组织准备程度。",
+  "Organizations that gain visibility first earn a structural advantage.": "率先获得可见性的组织，将获得结构性优势。",
+  "The signal compounds. The gap between those who know and those who do not widens every quarter.": "信号会不断累积。看得见与看不见之间的差距，会每个季度扩大。",
+  "The window to move first is not permanent.": "先发窗口不会永久存在。",
+  "Emerging workplace research on AI-related cognitive strain points to a growing human-factor gap in AI adoption.": "关于AI相关认知压力的新兴职场研究表明，AI采用中的人类因素缺口正在扩大。",
+  "Your current data shows outcomes. It rarely shows the operating patterns that produced them — especially under pressure, ambiguity, and AI-assisted work.": "你现有的数据展示结果，却很少展示产生结果的运行模式，尤其是在压力、模糊性和AI辅助工作中。",
+  "In plain terms: you are managing people and teams you cannot fully see.": "直白地说：你正在管理一些无法完全看清的人与团队。",
+  "Outcome metrics measure what happened. Not what decided it.": "结果指标衡量发生了什么，而不是决定它的模式。",
+  "KPIs confirm a result. They do not show whether the decision pattern will hold when context changes.": "KPI确认结果，但无法显示当环境变化时，决策模式是否仍然可靠。",
+  "Self-assessment captures the narrated self. Not the operating one.": "自我评估捕捉的是被叙述的自我，而非真实运行的自我。",
+  "Behavioral research consistently shows self-perception becomes less reliable under pressure.": "行为研究一再显示，在压力下，自我感知会变得不那么可靠。",
+  "Team friction is often structural, not interpersonal.": "团队摩擦往往是结构性的，而非单纯的人际问题。",
+  "What looks like communication breakdown is often cognitive architecture mismatch.": "看似沟通失效的现象，常常是认知架构不匹配。",
+  "Both are readable — if you have the right signal.": "两者都可以被读取，前提是你拥有正确的信号。",
+  "Cognitive Signature connects what individuals do in isolation to what organizations produce at scale. No existing framework was built to make this connection. That is why it has been invisible.": "Cognitive Signature 将个体在独立情境中的行为，与组织在规模化运行中的产出连接起来。现有框架并非为建立这种连接而设计，因此它一直不可见。",
+  "Fewer invisible risks": "减少不可见风险",
+  "More consistent team decisions": "更一致的团队决策",
+  "AI deployments that deliver": "真正产生价值的AI部署",
+  "The cost is not only adoption failure. It is invisible performance degradation.": "成本不只是AI采用失败，而是不可见的绩效退化。",
+  "AI load changes the conditions under which leaders decide. Most organizations can measure AI usage. Very few can determine whether it is improving judgment — or degrading it.": "AI负荷改变了领导者做决策的条件。多数组织能衡量AI使用量，却很少能判断AI是在提升判断，还是在削弱判断。",
+  "Cognition": "认知",
+  "Decision velocity rises faster than cognitive load is understood.": "决策速度上升得比认知负荷被理解得更快。",
+  "The organization sees more activity, but not whether complexity is being structured well.": "组织看见了更多活动，却看不见复杂性是否被有效组织。",
+  "Risk: overload masked as productivity.": "风险：过载被误读为生产力。",
+  "Regulation": "调节",
+  "Pressure makes judgment less consistent before performance visibly breaks.": "在绩效明显受损之前，压力已经让判断变得不一致。",
+  "Senior leaders can appear composed while their decision pattern becomes less coherent.": "高级领导者表面仍然镇定，但其决策模式可能已经不再连贯。",
+  "Risk: inconsistent judgment under pressure.": "风险：压力下判断不一致。",
+  "AI Collaboration": "AI协作",
+  "AI use drifts when trust, validation, and oversight are not readable.": "当信任、验证和监督无法被读取时，AI使用会发生漂移。",
+  "Teams may over-rely, under-trust, or improvise governance without knowing where the pattern changed.": "团队可能过度依赖、信任不足，或临时拼凑治理方式，却不知道模式在哪里发生了变化。",
+  "Risk: governance drift and coherence gaps.": "风险：治理漂移与一致性缺口。",
+  "Because it cannot be performed. What someone does at the boundary between their own judgment and machine output reveals their operating architecture more accurately than any prior instrument — and it does so consistently, over time, under conditions that matter.": "因为它难以表演。一个人在自身判断与机器输出之间如何行动，比以往任何工具都更准确地揭示其运行架构，并能在真正重要的条件下持续呈现。",
+  "What appears as AI fatigue is often a measurable pattern across cognition, regulation, and AI collaboration.": "表面上的AI疲劳，往往是在认知、调节和AI协作中的可测模式。",
+  "– when AI is accepted, challenged, or overridden": "– 何时接受、质疑或覆盖AI输出",
+  "– how reasoning evolves under pressure": "– 推理在压力下如何演变",
+  "– where cognitive load begins to alter judgment": "– 认知负荷从哪里开始改变判断",
+  "– how accountability shifts across human-AI interaction": "– 责任如何在人机互动中转移",
+  "HOS Score™ · Three Signal Domains · Illustrative View": "HOS Score™ · 三个信号域 · 示例视图",
+  "SAMPLE COMPOSITE": "示例综合评分",
+  "01 · Cognition": "01 · 认知",
+  "82 · sample": "82 · 示例",
+  "How a person structures complexity and decides when no clean answer exists.": "一个人在没有清晰答案时如何组织复杂性并做出决策。",
+  "02 · Regulation": "02 · 调节",
+  "71 · sample": "71 · 示例",
+  "How a person holds judgment intact under pressure and stress.": "一个人在压力与紧张下如何保持判断完整。",
+  "03 · AI Collaboration": "03 · AI协作",
+  "64 · sample": "64 · 示例",
+  "How a person delegates to, validates, and governs AI in real conditions.": "一个人在真实条件下如何授权、验证并治理AI。",
+  "The derivation methodology is proprietary. Organizations receive full transparency on what is measured and why it matters — not how the signal engine works. This is foundational, not incidental.": "推导方法为专有方法。组织会清楚了解测量什么以及为什么重要，但不会公开信号引擎的内部机制。这是基础原则，而非附带事项。",
+  "This is not new information about your people. It is information that has always existed — in how they think, decide, and operate. What is new is the ability to read it.": "这不是关于人的新信息。它一直存在于人们思考、决策和运行的方式中。新的，是读取它的能力。",
+  "Leadership context": "领导情境",
+  "Signals become useful when they clarify how judgment behaves inside real decision environments.": "当信号能说明判断在真实决策环境中如何运行时，它才真正有用。",
+  "Team coherence": "团队一致性",
+  "The value is not more data. It is better visibility into the patterns shaping action.": "价值不在于更多数据，而在于更清晰地看见塑造行动的模式。",
+  "Individual": "个人",
+  "The HOS Score™": "HOS Score™",
+  "The cognitive architecture of each leader — how they think, regulate under pressure, and operate alongside AI.": "每位领导者的认知架构——他们如何思考、在压力下调节，并与AI协同运行。",
+  "Better leadership placement decisions, grounded in operating pattern rather than track record and interview alone.": "基于运行模式，而不只是履历和面试，做出更好的领导岗位配置决策。",
+  "Team": "团队",
+  "Composition Intelligence": "组合智能",
+  "The cognitive fingerprint of your leadership cohort — where friction is architectural and where gaps surface under pressure.": "领导团队的认知指纹——哪里存在结构性摩擦，哪里会在压力下暴露缺口。",
+  "More consistent decisions across teams by diagnosing the actual source of misalignment.": "通过诊断错位的真实来源，提高团队间决策一致性。",
+  "Governance": "治理",
+  "The Governance Signal": "治理信号",
+  "Decision-behavior patterns by role and department — tracked longitudinally and structured for defensible oversight.": "按角色和部门追踪决策行为模式，并形成可辩护的监督结构。",
+  "The ability to answer AI oversight questions with behavioral evidence, not assertion.": "用行为证据，而不是主张，回答AI监督问题。",
+  "Before the signal / after the signal": "信号之前 / 信号之后",
+  "Before": "之前",
+  "Decisions improvised. Friction misdiagnosed. AI risk unquantified. Leadership costs invisible.": "决策靠临场发挥。摩擦被误诊。AI风险无法量化。领导成本不可见。",
+  "After": "之后",
+  "Operating patterns explicit. Friction diagnosed correctly. AI governance documented. Risks visible and closeable.": "运行模式明确。摩擦被正确诊断。AI治理被记录。风险可见且可关闭。",
+  "The signal infrastructure reveals operating gaps standard data cannot see. What happens next determines whether the intelligence becomes measurable change.": "信号基础设施揭示标准数据看不见的运行缺口。接下来如何行动，决定智能是否转化为可衡量变化。",
+  "Executive Calibration": "高管校准",
+  "One-on-one work structured around each leader’s HOS Score™ and decision edges.": "围绕每位领导者的 HOS Score™ 和决策边界进行一对一工作。",
+  "Leadership Architecture": "领导架构",
+  "Cohort sessions built around team composition and friction points.": "围绕团队组成和摩擦点设计的群组会议。",
+  "AI Readiness Intensives": "AI准备度强化",
+  "Programs tied to Domain 03: delegation, validation, and governance of AI outputs.": "围绕第三域展开：AI输出的授权、验证和治理。",
+  "Governance Architecture": "治理架构",
+  "Advisory for defensible human oversight frameworks around AI deployment.": "为AI部署建立可辩护的人类监督框架提供咨询。",
+  "Executive advisory": "高管咨询",
+  "Practitioner-led interpretation turns signal into decisions leaders can act on.": "由实践者主导的解读，将信号转化为领导者可执行的决策。",
+  "Diagnostic pilot": "诊断试点",
+  "Focused cohorts create a useful baseline without turning the engagement into a broad program.": "聚焦群体建立有用基线，而不把项目扩展成庞大计划。",
+  "• 2–4 week engagement": "• 2–4周项目",
+  "• Defined cohort (leaders, teams, or critical roles)": "• 明确群体（领导者、团队或关键角色）",
+  "• Behavioral signal extraction across cognition, emotional regulation, and AI collaboration": "• 跨认知、情绪调节和AI协作提取行为信号",
+  "• HOS Score generation and interpretation": "• HOS Score生成与解读",
+  "• Executive briefing with operational recommendations": "• 含运营建议的高管汇报",
+  "Investment range:": "投资范围：",
+  "USD $15,000 to $50,000": "USD $15,000 至 $50,000",
+  "Larger enterprise engagements and longitudinal deployments are scoped separately.": "更大规模的企业项目和长期部署将单独界定范围。",
+  "Engagements are limited and prioritized for organizations actively exploring AI-enabled workforce transformation.": "项目名额有限，将优先面向正在积极探索AI赋能 workforce 转型的组织。",
+  "Engagements are limited.": "项目名额有限。",
+  "Capacity is finite by design. Every engagement is practitioner-led, signal-grounded, and available in English or French.": "服务容量有意保持有限。每个项目均由实践者主导、以信号为基础，并支持英文或法文。",
+  "Day 1–30": "第1–30天",
+  "Hidden patterns become explicit.": "隐藏模式变得明确。",
+  "Day 30–60": "第30–60天",
+  "Misalignment becomes structural, not personal.": "错位被理解为结构性问题，而非个人问题。",
+  "Day 60–90": "第60–90天",
+  "A signal baseline becomes trackable.": "信号基线变得可追踪。",
+  "Application-based · Founder-reviewed · No commitment required": "申请制 · 创始人审核 · 无需承诺",
+  "The organizations that move early will define the standard others later try to meet.": "率先行动的组织将定义后来者试图追赶的标准。",
+  "Build your Strategic Fit Brief.": "填写战略适配简报。",
+  "Share a little more context so the first conversation can focus on the right signal: governance, deployment, succession, or leadership architecture.": "补充一些背景，让第一次对话聚焦于正确的信号：治理、部署、继任或领导架构。",
+  "Company size": "公司规模",
+  "AI maturity level": "AI成熟度",
+  "Exploring / no formal deployment": "探索阶段 / 尚无正式部署",
+  "Pilots in selected teams": "部分团队试点",
+  "Active deployment across functions": "跨职能积极部署",
+  "Enterprise-wide adoption underway": "企业级采用正在推进",
+  "Governance / audit readiness priority": "治理 / 审计准备优先",
+  "How long has AI been in use?": "AI已使用多长时间？",
+  "Not yet incorporated": "尚未纳入",
+  "Less than 6 months": "少于6个月",
+  "More than 2 years": "超过2年",
+  "Send Strategic Fit Brief": "发送战略适配简报",
+  "Optional, but it helps us understand fit before the first conversation.": "可选，但有助于我们在首次对话前判断适配度。",
+  "Strategic Fit Brief received.": "战略适配简报已收到。",
+  "Thank you. The next step is a focused review of fit, timing, and whether a pilot would create a useful signal baseline.": "谢谢。下一步将重点评估适配度、时机，以及试点是否能形成有价值的信号基线。",
+  "The application could not be sent. Please try again.": "申请未能发送。请重试。",
+  "Ask about pilots, HOS Score, governance, or fit.": "询问试点、HOS Score、治理或适配度。",
+  "I can answer concise questions about Cognitive Signature as a Human Signal Intelligence layer. For fit, the strongest next step is the early-access application.": "我可以简要回答关于 Cognitive Signature 作为 Human Signal Intelligence 层的问题。若要判断适配度，最佳下一步是提交优先体验申请。",
+  "Answers are informational and should not disclose proprietary methodology. Connect the backend endpoint before launch.": "回答仅供参考，不应披露专有方法。上线前请连接后端端点。",
+  "Industry": "行业",
+  "Where has AI been incorporated? Teams, workflows, decisions, or tools.": "AI已应用在哪里？团队、流程、决策或工具。",
+  "What has worked so far?": "目前哪些做法有效？",
+  "What has not worked, created friction, or exposed risk?": "哪些做法无效、产生摩擦或暴露风险？",
+  "What would you expect from a strategic pilot?": "你对战略试点有什么期待？",
+  "Current or future project this could support.": "它可支持的当前或未来项目。"
+});
+
+Object.assign(I18N.ar, {
+  "Selective access · Enterprise pilots · EN / FR": "وصول انتقائي · تجارب مؤسسية · EN / FR",
+  "The highest-stakes decisions now happen at the human–AI boundary.": "تحدث القرارات الأعلى حساسية الآن عند حدود الإنسان والذكاء الاصطناعي.",
+  "That boundary is where performance is made or destroyed. Most organizations have no way of knowing what is happening there.": "عند هذه الحدود تُبنى القدرة على الأداء أو تتضرر. معظم المؤسسات لا تملك وسيلة لمعرفة ما يحدث هناك.",
+  "Decision complexity is moving faster than standard visibility.": "تعقيد القرار يتحرك أسرع من أدوات الرؤية التقليدية.",
+  "Legacy tools were built for a world that no longer operates this way.": "الأدوات القديمة صُممت لعالم لم يعد يعمل بهذه الطريقة.",
+  "KPIs, reviews, and personality frameworks measure the past. They were not designed for AI-augmented decision environments.": "المؤشرات والتقييمات وأطر الشخصية تقيس الماضي. لم تُصمم لبيئات قرار مدعومة بالذكاء الاصطناعي.",
+  "AI adoption is moving faster than organizational readiness.": "تبني الذكاء الاصطناعي يتحرك أسرع من جاهزية المؤسسة.",
+  "Organizations that gain visibility first earn a structural advantage.": "المؤسسات التي تحصل على هذه الرؤية أولاً تكتسب ميزة بنيوية.",
+  "The signal compounds. The gap between those who know and those who do not widens every quarter.": "الإشارة تتراكم. والفجوة بين من يعرف ومن لا يعرف تتسع كل ربع سنة.",
+  "The window to move first is not permanent.": "نافذة التحرك المبكر ليست دائمة.",
+  "Emerging workplace research on AI-related cognitive strain points to a growing human-factor gap in AI adoption.": "تشير الأبحاث الحديثة حول الضغط المعرفي المرتبط بالذكاء الاصطناعي إلى فجوة بشرية متزايدة في تبني الذكاء الاصطناعي.",
+  "Your current data shows outcomes. It rarely shows the operating patterns that produced them — especially under pressure, ambiguity, and AI-assisted work.": "بياناتك الحالية تُظهر النتائج. لكنها نادراً ما تُظهر أنماط التشغيل التي أنتجتها، خصوصاً تحت الضغط والغموض والعمل المدعوم بالذكاء الاصطناعي.",
+  "In plain terms: you are managing people and teams you cannot fully see.": "ببساطة: أنت تدير أشخاصاً وفرقاً لا تراهم بالكامل.",
+  "Outcome metrics measure what happened. Not what decided it.": "مقاييس النتائج تقيس ما حدث، لا ما حسم القرار.",
+  "KPIs confirm a result. They do not show whether the decision pattern will hold when context changes.": "المؤشرات تؤكد النتيجة، لكنها لا تُظهر ما إذا كان نمط القرار سيصمد عندما يتغير السياق.",
+  "Self-assessment captures the narrated self. Not the operating one.": "التقييم الذاتي يلتقط الصورة المروية عن الذات، لا الذات كما تعمل فعلياً.",
+  "Behavioral research consistently shows self-perception becomes less reliable under pressure.": "تُظهر الأبحاث السلوكية باستمرار أن إدراك الذات يصبح أقل موثوقية تحت الضغط.",
+  "Team friction is often structural, not interpersonal.": "احتكاك الفرق غالباً بنيوي، وليس مجرد مسألة علاقات شخصية.",
+  "What looks like communication breakdown is often cognitive architecture mismatch.": "ما يبدو كتعطل في التواصل يكون غالباً عدم توافق في البنية المعرفية.",
+  "Both are readable — if you have the right signal.": "كلاهما قابل للقراءة إذا امتلكت الإشارة الصحيحة.",
+  "Cognitive Signature connects what individuals do in isolation to what organizations produce at scale. No existing framework was built to make this connection. That is why it has been invisible.": "يربط Cognitive Signature ما يفعله الأفراد في عزلة بما تنتجه المؤسسات على نطاق واسع. لم يُبن أي إطار قائم لإجراء هذا الربط، لذلك بقي غير مرئي.",
+  "Fewer invisible risks": "مخاطر غير مرئية أقل",
+  "More consistent team decisions": "قرارات فرق أكثر اتساقاً",
+  "AI deployments that deliver": "نشر ذكاء اصطناعي يحقق قيمة",
+  "The cost is not only adoption failure. It is invisible performance degradation.": "الكلفة ليست فشل التبني فقط، بل تدهور غير مرئي في الأداء.",
+  "AI load changes the conditions under which leaders decide. Most organizations can measure AI usage. Very few can determine whether it is improving judgment — or degrading it.": "حمل الذكاء الاصطناعي يغير شروط اتخاذ القرار. معظم المؤسسات تستطيع قياس الاستخدام، لكن القليل منها يستطيع معرفة ما إذا كان يحسن الحكم أم يضعفه.",
+  "Cognition": "الإدراك",
+  "Decision velocity rises faster than cognitive load is understood.": "سرعة القرار ترتفع أسرع من فهم الحمل المعرفي.",
+  "The organization sees more activity, but not whether complexity is being structured well.": "ترى المؤسسة نشاطاً أكبر، لكنها لا ترى ما إذا كان التعقيد يُنظم بشكل جيد.",
+  "Risk: overload masked as productivity.": "الخطر: حمل زائد يظهر كإنتاجية.",
+  "Regulation": "الضبط",
+  "Pressure makes judgment less consistent before performance visibly breaks.": "الضغط يجعل الحكم أقل اتساقاً قبل أن يظهر تراجع الأداء بوضوح.",
+  "Senior leaders can appear composed while their decision pattern becomes less coherent.": "قد يبدو القادة هادئين بينما يصبح نمط قراراتهم أقل تماسكاً.",
+  "Risk: inconsistent judgment under pressure.": "الخطر: حكم غير متسق تحت الضغط.",
+  "AI Collaboration": "التعاون مع الذكاء الاصطناعي",
+  "AI use drifts when trust, validation, and oversight are not readable.": "ينحرف استخدام الذكاء الاصطناعي عندما لا تكون الثقة والتحقق والإشراف قابلة للقراءة.",
+  "Teams may over-rely, under-trust, or improvise governance without knowing where the pattern changed.": "قد تُفرط الفرق في الاعتماد، أو لا تثق بما يكفي، أو ترتجل الحوكمة من دون معرفة أين تغير النمط.",
+  "Risk: governance drift and coherence gaps.": "الخطر: انحراف الحوكمة وفجوات الاتساق.",
+  "Because it cannot be performed. What someone does at the boundary between their own judgment and machine output reveals their operating architecture more accurately than any prior instrument — and it does so consistently, over time, under conditions that matter.": "لأنه لا يمكن تمثيله بسهولة. ما يفعله الشخص عند الحد بين حكمه ومخرجات الآلة يكشف بنيته التشغيلية بدقة أكبر من أي أداة سابقة، وبشكل متسق عبر الزمن وفي الظروف المهمة.",
+  "What appears as AI fatigue is often a measurable pattern across cognition, regulation, and AI collaboration.": "ما يبدو كإرهاق من الذكاء الاصطناعي يكون غالباً نمطاً قابلاً للقياس عبر الإدراك والضبط والتعاون مع الذكاء الاصطناعي.",
+  "– when AI is accepted, challenged, or overridden": "– متى يتم قبول الذكاء الاصطناعي أو تحديه أو تجاوزه",
+  "– how reasoning evolves under pressure": "– كيف يتطور الاستدلال تحت الضغط",
+  "– where cognitive load begins to alter judgment": "– أين يبدأ الحمل المعرفي بتغيير الحكم",
+  "– how accountability shifts across human-AI interaction": "– كيف تنتقل المساءلة عبر تفاعل الإنسان والذكاء الاصطناعي",
+  "HOS Score™ · Three Signal Domains · Illustrative View": "HOS Score™ · ثلاثة مجالات إشارة · عرض توضيحي",
+  "SAMPLE COMPOSITE": "مؤشر توضيحي مركب",
+  "01 · Cognition": "01 · الإدراك",
+  "82 · sample": "82 · مثال",
+  "How a person structures complexity and decides when no clean answer exists.": "كيف ينظم الشخص التعقيد ويتخذ القرار عندما لا توجد إجابة واضحة.",
+  "02 · Regulation": "02 · الضبط",
+  "71 · sample": "71 · مثال",
+  "How a person holds judgment intact under pressure and stress.": "كيف يحافظ الشخص على الحكم تحت الضغط والتوتر.",
+  "03 · AI Collaboration": "03 · التعاون مع الذكاء الاصطناعي",
+  "64 · sample": "64 · مثال",
+  "How a person delegates to, validates, and governs AI in real conditions.": "كيف يفوض الشخص الذكاء الاصطناعي ويتحقق منه ويحكمه في ظروف حقيقية.",
+  "The derivation methodology is proprietary. Organizations receive full transparency on what is measured and why it matters — not how the signal engine works. This is foundational, not incidental.": "منهجية الاشتقاق ملكية خاصة. تحصل المؤسسات على شفافية كاملة بشأن ما يتم قياسه ولماذا يهم، وليس حول آلية عمل محرك الإشارة. هذا أمر أساسي وليس تفصيلاً جانبياً.",
+  "This is not new information about your people. It is information that has always existed — in how they think, decide, and operate. What is new is the ability to read it.": "هذه ليست معلومات جديدة عن موظفيك. إنها معلومات كانت موجودة دائماً في طريقة تفكيرهم وقرارهم وعملهم. الجديد هو القدرة على قراءتها.",
+  "Leadership context": "سياق القيادة",
+  "Signals become useful when they clarify how judgment behaves inside real decision environments.": "تصبح الإشارات مفيدة عندما توضّح كيف يعمل الحكم داخل بيئات قرار حقيقية.",
+  "Team coherence": "تماسك الفريق",
+  "The value is not more data. It is better visibility into the patterns shaping action.": "القيمة ليست في المزيد من البيانات، بل في رؤية أفضل للأنماط التي تشكل الفعل.",
+  "Individual": "الفرد",
+  "The HOS Score™": "HOS Score™",
+  "The cognitive architecture of each leader — how they think, regulate under pressure, and operate alongside AI.": "البنية المعرفية لكل قائد: كيف يفكر، ويضبط نفسه تحت الضغط، ويعمل مع الذكاء الاصطناعي.",
+  "Better leadership placement decisions, grounded in operating pattern rather than track record and interview alone.": "قرارات أفضل لتوزيع القيادة، مبنية على نمط التشغيل لا على السجل والمقابلة فقط.",
+  "Team": "الفريق",
+  "Composition Intelligence": "ذكاء التكوين",
+  "The cognitive fingerprint of your leadership cohort — where friction is architectural and where gaps surface under pressure.": "البصمة المعرفية لمجموعة القيادة: أين يكون الاحتكاك بنيوياً وأين تظهر الفجوات تحت الضغط.",
+  "More consistent decisions across teams by diagnosing the actual source of misalignment.": "قرارات أكثر اتساقاً عبر الفرق من خلال تشخيص المصدر الحقيقي لعدم التوافق.",
+  "Governance": "الحوكمة",
+  "The Governance Signal": "إشارة الحوكمة",
+  "Decision-behavior patterns by role and department — tracked longitudinally and structured for defensible oversight.": "أنماط سلوك القرار حسب الدور والقسم، تُتبع زمنياً وتُنظم لإشراف قابل للدفاع.",
+  "The ability to answer AI oversight questions with behavioral evidence, not assertion.": "القدرة على الإجابة عن أسئلة الإشراف على الذكاء الاصطناعي بأدلة سلوكية لا بمجرد ادعاء.",
+  "Before the signal / after the signal": "قبل الإشارة / بعد الإشارة",
+  "Before": "قبل",
+  "Decisions improvised. Friction misdiagnosed. AI risk unquantified. Leadership costs invisible.": "قرارات مرتجلة. احتكاك يُشخّص خطأ. مخاطر ذكاء اصطناعي غير مُقاسة. تكاليف قيادة غير مرئية.",
+  "After": "بعد",
+  "Operating patterns explicit. Friction diagnosed correctly. AI governance documented. Risks visible and closeable.": "أنماط تشغيل واضحة. احتكاك يُشخّص بدقة. حوكمة ذكاء اصطناعي موثقة. مخاطر مرئية وقابلة للإغلاق.",
+  "The signal infrastructure reveals operating gaps standard data cannot see. What happens next determines whether the intelligence becomes measurable change.": "تكشف بنية الإشارة فجوات تشغيل لا تراها البيانات التقليدية. ما يحدث بعد ذلك يحدد هل يتحول الذكاء إلى تغيير قابل للقياس.",
+  "Executive Calibration": "معايرة تنفيذية",
+  "One-on-one work structured around each leader’s HOS Score™ and decision edges.": "عمل فردي منظم حول HOS Score™ لكل قائد وحدود قراره.",
+  "Leadership Architecture": "هندسة القيادة",
+  "Cohort sessions built around team composition and friction points.": "جلسات جماعية حول تكوين الفريق ونقاط الاحتكاك.",
+  "AI Readiness Intensives": "برامج جاهزية الذكاء الاصطناعي",
+  "Programs tied to Domain 03: delegation, validation, and governance of AI outputs.": "برامج مرتبطة بالمجال الثالث: التفويض والتحقق وحوكمة مخرجات الذكاء الاصطناعي.",
+  "Governance Architecture": "هندسة الحوكمة",
+  "Advisory for defensible human oversight frameworks around AI deployment.": "استشارات لبناء أطر إشراف بشري قابلة للدفاع حول نشر الذكاء الاصطناعي.",
+  "Executive advisory": "استشارة تنفيذية",
+  "Practitioner-led interpretation turns signal into decisions leaders can act on.": "يفسر الممارسون الإشارة لتحويلها إلى قرارات يمكن للقادة العمل عليها.",
+  "Diagnostic pilot": "تجربة تشخيصية",
+  "Focused cohorts create a useful baseline without turning the engagement into a broad program.": "تُنشئ المجموعات المركزة خط أساس مفيداً دون تحويل المشاركة إلى برنامج واسع.",
+  "• 2–4 week engagement": "• مشاركة لمدة 2–4 أسابيع",
+  "• Defined cohort (leaders, teams, or critical roles)": "• مجموعة محددة: قادة أو فرق أو أدوار حرجة",
+  "• Behavioral signal extraction across cognition, emotional regulation, and AI collaboration": "• استخراج إشارات سلوكية عبر الإدراك والضبط العاطفي والتعاون مع الذكاء الاصطناعي",
+  "• HOS Score generation and interpretation": "• إنشاء HOS Score وتفسيره",
+  "• Executive briefing with operational recommendations": "• إحاطة تنفيذية مع توصيات تشغيلية",
+  "Investment range:": "نطاق الاستثمار:",
+  "USD $15,000 to $50,000": "USD $15,000 إلى $50,000",
+  "Larger enterprise engagements and longitudinal deployments are scoped separately.": "تُحدد المشاركات المؤسسية الأكبر والانتشار طويل المدى بشكل منفصل.",
+  "Engagements are limited and prioritized for organizations actively exploring AI-enabled workforce transformation.": "المشاركات محدودة وتُعطى الأولوية للمؤسسات التي تستكشف بجدية تحول القوى العاملة المدعوم بالذكاء الاصطناعي.",
+  "Engagements are limited.": "المشاركات محدودة.",
+  "Capacity is finite by design. Every engagement is practitioner-led, signal-grounded, and available in English or French.": "السعة محدودة عمداً. كل مشاركة يقودها ممارسون، وترتكز على الإشارة، ومتاحة بالإنجليزية أو الفرنسية.",
+  "Day 1–30": "اليوم 1–30",
+  "Hidden patterns become explicit.": "تصبح الأنماط الخفية واضحة.",
+  "Day 30–60": "اليوم 30–60",
+  "Misalignment becomes structural, not personal.": "يصبح عدم التوافق بنيوياً لا شخصياً.",
+  "Day 60–90": "اليوم 60–90",
+  "A signal baseline becomes trackable.": "يصبح خط أساس الإشارة قابلاً للتتبع.",
+  "Application-based · Founder-reviewed · No commitment required": "بالطلب · بمراجعة المؤسس · دون التزام",
+  "The organizations that move early will define the standard others later try to meet.": "المؤسسات التي تتحرك مبكراً ستحدد المعيار الذي سيحاول الآخرون لاحقاً بلوغه.",
+  "Build your Strategic Fit Brief.": "أنشئ موجز الملاءمة الاستراتيجية.",
+  "Share a little more context so the first conversation can focus on the right signal: governance, deployment, succession, or leadership architecture.": "شارك بعض السياق الإضافي حتى تركز المحادثة الأولى على الإشارة الصحيحة: الحوكمة أو النشر أو التعاقب أو هندسة القيادة.",
+  "Company size": "حجم الشركة",
+  "AI maturity level": "مستوى نضج الذكاء الاصطناعي",
+  "Exploring / no formal deployment": "استكشاف / لا نشر رسمي",
+  "Pilots in selected teams": "تجارب في فرق محددة",
+  "Active deployment across functions": "نشر نشط عبر الوظائف",
+  "Enterprise-wide adoption underway": "تبنٍ على مستوى المؤسسة جارٍ",
+  "Governance / audit readiness priority": "أولوية للحوكمة / جاهزية التدقيق",
+  "How long has AI been in use?": "منذ متى يُستخدم الذكاء الاصطناعي؟",
+  "Not yet incorporated": "لم يتم إدماجه بعد",
+  "Less than 6 months": "أقل من 6 أشهر",
+  "More than 2 years": "أكثر من سنتين",
+  "Send Strategic Fit Brief": "إرسال موجز الملاءمة الاستراتيجية",
+  "Optional, but it helps us understand fit before the first conversation.": "اختياري، لكنه يساعدنا على فهم الملاءمة قبل المحادثة الأولى.",
+  "Strategic Fit Brief received.": "تم استلام موجز الملاءمة الاستراتيجية.",
+  "Thank you. The next step is a focused review of fit, timing, and whether a pilot would create a useful signal baseline.": "شكراً لك. الخطوة التالية هي مراجعة مركزة للملاءمة والتوقيت وما إذا كانت التجربة ستنشئ خط أساس مفيداً للإشارة.",
+  "The application could not be sent. Please try again.": "تعذر إرسال الطلب. يرجى المحاولة مرة أخرى.",
+  "Ask about pilots, HOS Score, governance, or fit.": "اسأل عن التجارب أو HOS Score أو الحوكمة أو الملاءمة.",
+  "I can answer concise questions about Cognitive Signature as a Human Signal Intelligence layer. For fit, the strongest next step is the early-access application.": "يمكنني الإجابة بإيجاز عن Cognitive Signature كطبقة Human Signal Intelligence. لتقييم الملاءمة، أفضل خطوة تالية هي طلب الوصول المبكر.",
+  "Answers are informational and should not disclose proprietary methodology. Connect the backend endpoint before launch.": "الإجابات معلوماتية ولا ينبغي أن تكشف المنهجية الملكية. صِل نقطة النهاية الخلفية قبل الإطلاق.",
+  "Industry": "القطاع",
+  "Where has AI been incorporated? Teams, workflows, decisions, or tools.": "أين تم إدماج الذكاء الاصطناعي؟ الفرق أو مسارات العمل أو القرارات أو الأدوات.",
+  "What has worked so far?": "ما الذي نجح حتى الآن؟",
+  "What has not worked, created friction, or exposed risk?": "ما الذي لم ينجح أو خلق احتكاكاً أو كشف مخاطر؟",
+  "What would you expect from a strategic pilot?": "ماذا تتوقع من تجربة استراتيجية؟",
+  "Current or future project this could support.": "مشروع حالي أو مستقبلي يمكن أن يدعمه ذلك."
+});
+
+Object.assign(I18N.zh, {
+  "This is not leadership development. It is not coaching. It is not an assessment. It is signal-grounded intervention.": "这不是领导力培训，不是教练服务，也不是评估工具。这是基于信号的干预。",
+  "Typical pilot scope:": "典型试点范围：",
+  "If you already see the gap, you are exactly who this was built for.": "如果你已经看见这个缺口，这正是为你而构建的。",
+  "1-50 employees": "1–50名员工",
+  "51-250 employees": "51–250名员工",
+  "251-1,000 employees": "251–1,000名员工",
+  "1,001-5,000 employees": "1,001–5,000名员工",
+  "5,001-20,000 employees": "5,001–20,000名员工",
+  "20,000+ employees": "20,000名以上员工",
+  "6-12 months": "6–12个月",
+  "1-2 years": "1–2年",
+  "Language selector": "语言选择",
+  "Menu": "菜单",
+  "Illustrative signal view": "示例信号视图",
+  "Privacy policy placeholder": "隐私政策占位链接",
+  "Ask Amber assistant": "Amber 问答助手",
+  "Close Ask Amber": "关闭 Amber"
+});
+
+Object.assign(I18N.ar, {
+  "This is not leadership development. It is not coaching. It is not an assessment. It is signal-grounded intervention.": "هذا ليس تطويراً قيادياً ولا تدريباً ولا تقييماً. إنه تدخل قائم على الإشارة.",
+  "Typical pilot scope:": "نطاق التجربة النموذجي:",
+  "If you already see the gap, you are exactly who this was built for.": "إذا كنت ترى هذه الفجوة بالفعل، فهذا صُمم لك تحديداً.",
+  "1-50 employees": "1–50 موظفاً",
+  "51-250 employees": "51–250 موظفاً",
+  "251-1,000 employees": "251–1,000 موظف",
+  "1,001-5,000 employees": "1,001–5,000 موظف",
+  "5,001-20,000 employees": "5,001–20,000 موظف",
+  "20,000+ employees": "أكثر من 20,000 موظف",
+  "6-12 months": "6–12 شهراً",
+  "1-2 years": "سنة إلى سنتين",
+  "Language selector": "اختيار اللغة",
+  "Menu": "القائمة",
+  "Illustrative signal view": "عرض إشارة توضيحي",
+  "Privacy policy placeholder": "رابط سياسة الخصوصية المؤقت",
+  "Ask Amber assistant": "مساعد Amber",
+  "Close Ask Amber": "إغلاق Amber"
+});
+
+const originalTextNodes = new WeakMap();
+const translatedAttributes = ["placeholder", "aria-label"];
+
+function translateValue(value, lang){
+  if (lang === "en") return value;
+  return (I18N[lang] && I18N[lang][value]) || value;
+}
+
+function translateNodeText(root, lang){
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode(node){
+      const parent = node.parentElement;
+      if (!parent || ["SCRIPT","STYLE"].includes(parent.tagName)) return NodeFilter.FILTER_REJECT;
+      if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach((node) => {
+    if (!originalTextNodes.has(node)) originalTextNodes.set(node, node.nodeValue);
+    const original = originalTextNodes.get(node);
+    const leading = original.match(/^\s*/)[0];
+    const trailing = original.match(/\s*$/)[0];
+    const core = original.trim();
+    node.nodeValue = leading + translateValue(core, lang) + trailing;
+  });
+}
+
+function translateAttributes(root, lang){
+  root.querySelectorAll("*").forEach((el) => {
+    translatedAttributes.forEach((attr) => {
+      if (!el.hasAttribute(attr)) return;
+      const store = `data-i18n-original-${attr.replace(/[^a-z0-9]/gi, "-").toLowerCase()}`;
+      if (!el.hasAttribute(store)) el.setAttribute(store, el.getAttribute(attr));
+      el.setAttribute(attr, translateValue(el.getAttribute(store), lang));
+    });
+  });
+}
+
+function applyLanguage(lang){
+  const meta = LANG_META[lang] || LANG_META.en;
+  document.documentElement.lang = lang;
+  document.documentElement.dir = meta.dir;
+  document.documentElement.dataset.lang = lang;
+  document.title = meta.title;
+  const desc = document.querySelector('meta[name="description"]');
+  if (desc) desc.setAttribute("content", meta.description);
+  translateNodeText(document.body, lang);
+  translateAttributes(document.body, lang);
+  document.querySelectorAll("[data-lang-select]").forEach((link) => {
+    link.classList.toggle("active", link.dataset.langSelect === lang);
+  });
+  document.querySelectorAll('[name="selected_language"]').forEach((field) => field.value = lang);
+  localStorage.setItem("cs_language", lang);
+  if (window.lucide) window.lucide.createIcons();
+}
+
+function languageFromPath(){
+  const parts = location.pathname.split("/").filter(Boolean);
+  return parts.find((part) => ["fr","es","zh","ar"].includes(part)) || "en";
+}
+
+function setLanguageRouteLinks(){
+  const url = new URL(location.href);
+  const path = url.pathname;
+  const routeMatch = path.match(/\/(fr|es|zh|ar)\/(?:index\.html)?$/);
+  const indexMatch = path.match(/\/index\.html$/);
+  const basePath = routeMatch ? path.slice(0, routeMatch.index) : indexMatch ? path.replace(/\/index\.html$/, "") : path.replace(/\/$/, "");
+  document.querySelectorAll("[data-lang-select]").forEach((link) => {
+    const lang = link.dataset.langSelect;
+    const targetPath = lang === "en" ? `${basePath}/index.html` : `${basePath}/${lang}/index.html`;
+    const targetUrl = new URL(location.href);
+    targetUrl.pathname = targetPath.replace(/\/+/g, "/");
+    targetUrl.search = "";
+    targetUrl.hash = "";
+    link.href = targetUrl.href;
+  });
+}
+
+setLanguageRouteLinks();
+applyLanguage(languageFromPath());
+window.addEventListener("DOMContentLoaded", () => {
+  if (window.lucide) window.lucide.createIcons();
+});
+
+// INSERT GTM ID HERE before launch, for example: const GTM_ID = "GTM-XXXXXXX";
+const GTM_ID = "";
+// Optional direct GA4 fallback if GTM is not used, for example: const GA4_MEASUREMENT_ID = "G-XXXXXXXXXX";
+const GA4_MEASUREMENT_ID = "";
+// INSERT WEBHOOK URL HERE before launch. Works with Zapier, Make, HubSpot, Airtable, or a custom CRM endpoint.
+const LEAD_ENDPOINT = "";
+// INSERT HUBSPOT FORM SETTINGS HERE to render the real HubSpot form instead of the local fallback.
+// HubSpot embed docs require region, portalId, and formId.
+const HUBSPOT_REGION = "na3";
+const HUBSPOT_PORTAL_ID = "343218698";
+// Current GitHub form ID 3a5690bc-b3dd-468b-962c-035b65b85363 renders a generic First/Last/Email form.
+// Replace this with the strategic-pilot HubSpot form ID once that form exists.
+const HUBSPOT_FORM_ID = "";
+// Optional: insert a private enrichment endpoint that accepts {domain, organization}
+// and returns public company context, for example {industry, company_size}.
+// Keep API keys server-side. Do not call enrichment vendors directly from this page.
+const COMPANY_ENRICHMENT_ENDPOINT = "";
+// INSERT Q&A BOT ENDPOINT HERE. This should be your server-side AI route.
+// The browser sends {question, page_context, attribution}; the server returns {answer}.
+// Do not put OpenAI, HubSpot, or enrichment API keys directly in this HTML file.
+const QA_ENDPOINT = "";
+const ATTRIBUTION_KEYS = ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","ref","gclid","gbraid","wbraid","fbclid","li_fat_id"];
+
+function safeJSON(value, fallback){
+  try { return JSON.parse(value) || fallback; } catch (_) { return fallback; }
+}
+
+function getAttribution(){
+  const params = new URLSearchParams(location.search);
+  const current = {};
+  ATTRIBUTION_KEYS.forEach((key) => {
+    const value = params.get(key);
+    if (value) current[key] = value;
+  });
+  const stored = safeJSON(localStorage.getItem("cs_attribution"), {});
+  const merged = {...stored, ...current};
+  if (Object.keys(merged).length) localStorage.setItem("cs_attribution", JSON.stringify(merged));
+  return merged;
+}
+
+const attribution = getAttribution();
+populateHiddenAttributionFields(attribution);
+
+function track(eventName, payload={}){
+  const selectedLanguage = document.documentElement.lang || languageFromPath();
+  const eventPayload = {
+    event: eventName,
+    language: selectedLanguage,
+    path: location.pathname,
+    page_title: document.title,
+    ...attribution,
+    ...payload
+  };
+  window.dataLayer.push(eventPayload);
+  if (typeof window.gtag === "function") window.gtag("event", eventName, eventPayload);
+}
+
+function loadTracking(){
+  if (GTM_ID) {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtm.js?id=${encodeURIComponent(GTM_ID)}`;
+    document.head.appendChild(script);
+  }
+  if (GA4_MEASUREMENT_ID) {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GA4_MEASUREMENT_ID)}`;
+    document.head.appendChild(script);
+    window.gtag = function(){ window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", GA4_MEASUREMENT_ID, {send_page_view: false});
+  }
+}
+
+loadTracking();
+track("page_view");
+
+function populateHiddenAttributionFields(values){
+  ATTRIBUTION_KEYS.forEach((key) => {
+    const field = document.querySelector(`[name="${key}"]`);
+    if (field) field.value = values[key] || "";
+  });
+}
+
+document.querySelectorAll("[data-track]").forEach((el) => {
+  el.addEventListener("click", () => track(el.dataset.track, {cta: el.dataset.cta || el.textContent.trim()}));
+});
+
+function toggleMenu(){document.getElementById("mobile").classList.toggle("open")}
+function closeMenu(){document.getElementById("mobile").classList.remove("open")}
+
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("in")}),{threshold:.07});
+document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
+
+let formStarted = false;
+let qualificationStarted = false;
+let latestLeadPayload = null;
+const leadForm = document.getElementById("leadForm");
+const hubspotFormWrap = document.getElementById("hubspotFormWrap");
+const qualification = document.getElementById("qualification");
+const qualificationForm = document.getElementById("qualificationForm");
+const qualificationDone = document.getElementById("qualificationDone");
+const qaToggle = document.getElementById("qaToggle");
+const qaPanel = document.getElementById("qaPanel");
+const qaClose = document.getElementById("qaClose");
+const qaForm = document.getElementById("qaForm");
+const qaInput = document.getElementById("qaInput");
+const qaLog = document.getElementById("qaLog");
+leadForm.addEventListener("input", () => {
+  if (!formStarted) {
+    formStarted = true;
+    track("form_start");
+  }
+});
+
+function isHubSpotConfigured(){
+  return Boolean(HUBSPOT_PORTAL_ID && HUBSPOT_FORM_ID);
+}
+
+function loadScript(src){
+  return new Promise((resolve, reject) => {
+    const existing = document.querySelector(`script[src="${src}"]`);
+    if (existing) {
+      existing.addEventListener("load", resolve, {once: true});
+      if (window.hbspt) resolve();
+      return;
+    }
+    const script = document.createElement("script");
+    script.charset = "utf-8";
+    script.type = "text/javascript";
+    script.src = src;
+    script.onload = resolve;
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+}
+
+function setHubSpotField($form, name, value){
+  if (!$form || !value) return;
+  const field = $form.find(`[name="${name}"]`);
+  if (field && field.length) field.val(value).change();
+}
+
+function hydrateHubSpotAttribution($form){
+  ATTRIBUTION_KEYS.forEach((key) => setHubSpotField($form, key, attribution[key] || ""));
+  setHubSpotField($form, "selected_language", document.documentElement.lang || languageFromPath());
+}
+
+function isExpectedHubSpotLeadForm($form){
+  if (!$form || !$form.find) return false;
+  const hasEmail = $form.find('[name="email"]').length > 0;
+  const hasOrg = $form.find('[name="organization"], [name="company"], [name="companyname"]').length > 0;
+  const hasRole = $form.find('[name="role"], [name="jobtitle"], [name="job_title"]').length > 0;
+  const hasUseCase = $form.find('textarea, [name="use_case"], [name="reason_for_applying"]').length > 0;
+  return hasEmail && hasOrg && hasRole && hasUseCase;
+}
+
+function hasGenericHubSpotForm(){
+  const text = hubspotFormWrap.textContent || "";
+  const hasGenericNames = text.includes("First Name") && text.includes("Last Name");
+  const hasExpectedContext = text.includes("Organization") || text.includes("Role") || text.includes("Use case");
+  return hasGenericNames && !hasExpectedContext;
+}
+
+function showLocalLeadForm(reason){
+  hubspotFormWrap.innerHTML = "";
+  leadForm.style.display = "";
+  track("hubspot_form_fallback", {reason});
+}
+
+async function loadHubSpotForm(){
+  if (!isHubSpotConfigured()) return;
+  hubspotFormWrap.innerHTML = "";
+  await loadScript("https://js.hsforms.net/forms/embed/v2.js");
+  if (!window.hbspt || !window.hbspt.forms) throw new Error("HubSpot form library unavailable");
+  let hubspotRendered = false;
+  const fallbackTimer = setTimeout(() => {
+    if (!hubspotRendered && !hubspotFormWrap.querySelector("form,input,iframe")) {
+      showLocalLeadForm("empty_render");
+    }
+  }, 3000);
+  let watchdogChecks = 0;
+  const renderWatchdog = setInterval(() => {
+    watchdogChecks += 1;
+    if (hasGenericHubSpotForm()) {
+      clearInterval(renderWatchdog);
+      showLocalLeadForm("generic_hubspot_form");
+    }
+    if (watchdogChecks >= 8) clearInterval(renderWatchdog);
+  }, 1000);
+  window.hbspt.forms.create({
+    region: HUBSPOT_REGION,
+    portalId: HUBSPOT_PORTAL_ID,
+    formId: HUBSPOT_FORM_ID,
+    target: "#hubspotFormWrap",
+    onFormReady: function($form){
+      hubspotRendered = true;
+      clearTimeout(fallbackTimer);
+      if (!isExpectedHubSpotLeadForm($form)) {
+        showLocalLeadForm("unexpected_form_fields");
+        return;
+      }
+      clearInterval(renderWatchdog);
+      leadForm.style.display = "none";
+      hydrateHubSpotAttribution($form);
+      track("hubspot_form_ready");
+    },
+    onFormSubmit: function($form){
+      hydrateHubSpotAttribution($form);
+      track("form_submit", {lead_status: "hubspot_submitted"});
+    },
+    onFormSubmitted: function(){
+      qualification.style.display = "block";
+      document.getElementById("ty").style.display = "block";
+    }
+  });
+}
+
+loadHubSpotForm().catch(() => {
+  leadForm.style.display = "";
+  track("hubspot_form_fallback");
+});
+
+document.querySelectorAll("form").forEach((form) => form.addEventListener("input", (event) => {
+  const field = event.target;
+  if (field.matches("input, textarea, select")) {
+    field.classList.remove("invalid");
+    field.setCustomValidity("");
+  }
+}));
+
+qualificationForm.addEventListener("input", () => {
+  if (!qualificationStarted) {
+    qualificationStarted = true;
+    track("qualification_start");
+  }
+});
+
+async function enrichCompanyContext(){
+  if (!COMPANY_ENRICHMENT_ENDPOINT) return;
+  const email = String(leadForm.elements.work_email.value || "").trim();
+  const organization = String(leadForm.elements.organization.value || "").trim();
+  const domain = email.includes("@") ? email.split("@").pop() : "";
+  if (!domain && !organization) return;
+  try {
+    const response = await fetch(COMPANY_ENRICHMENT_ENDPOINT, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({domain, organization}),
+      keepalive: true
+    });
+    if (!response.ok) return;
+    const company = await response.json();
+    if (company.industry && !qualificationForm.elements.industry.value) qualificationForm.elements.industry.value = company.industry;
+    if (company.company_size && !qualificationForm.elements.company_size.value) qualificationForm.elements.company_size.value = company.company_size;
+    track("company_enrichment_applied", {email_domain: domain});
+  } catch (_) {}
+}
+
+leadForm.elements.work_email.addEventListener("blur", enrichCompanyContext);
+leadForm.elements.organization.addEventListener("blur", enrichCompanyContext);
+
+function toggleQA(open){
+  qaPanel.classList.toggle("open", open);
+  qaToggle.setAttribute("aria-expanded", String(open));
+  if (open) {
+    track("qa_open");
+    setTimeout(() => qaInput.focus(), 0);
+  }
+}
+
+function appendQAMessage(text, type){
+  const message = document.createElement("div");
+  message.className = `qa-msg ${type}`;
+  message.textContent = text;
+  qaLog.appendChild(message);
+  qaLog.scrollTop = qaLog.scrollHeight;
+}
+
+function fallbackQAAnswer(question){
+  const q = question.toLowerCase();
+  if (q.includes("pilot") || q.includes("access") || q.includes("apply")) {
+    return "Strategic pilots are application-based and designed for organizations that need visibility into human performance under AI conditions. The best next step is to apply for early access and complete the Strategic Fit Brief.";
+  }
+  if (q.includes("hos") || q.includes("score")) {
+    return "The HOS Score is an illustrative signal view across cognition, regulation, and AI collaboration. It is not positioned as a personality test, wellness score, or HR assessment.";
+  }
+  if (q.includes("fatigue") || q.includes("load")) {
+    return "AI fatigue is treated here as a symptom, not the category. The deeper issue is visibility into how people function under AI load: cognitive overload, judgment under pressure, and collaboration drift.";
+  }
+  if (q.includes("governance") || q.includes("audit")) {
+    return "Cognitive Signature supports governance by making decision-behavior patterns more visible, especially where AI delegation, validation, and oversight matter.";
+  }
+  return "Cognitive Signature is a Human Signal Intelligence layer for understanding how leaders and teams think, decide, regulate, and govern AI under real operating conditions. For fit, apply for early access and share your context.";
+}
+
+async function askQA(question){
+  const payload = {
+    question,
+    page_context: {
+      product: "Cognitive Signature",
+      category: "Human Signal Intelligence",
+      positioning: "signal infrastructure for human performance under AI conditions",
+      avoid: ["wellness", "burnout prevention", "coaching", "HR training", "generic change management"],
+      current_path: location.pathname
+    },
+    attribution
+  };
+  if (!QA_ENDPOINT) return {answer: fallbackQAAnswer(question), mode: "local_fallback"};
+  const response = await fetch(QA_ENDPOINT, {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(payload)
+  });
+  if (!response.ok) throw new Error(`Q&A request failed: ${response.status}`);
+  return response.json();
+}
+
+qaToggle.addEventListener("click", () => toggleQA(!qaPanel.classList.contains("open")));
+qaClose.addEventListener("click", () => toggleQA(false));
+qaForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const question = qaInput.value.trim();
+  if (!question) return;
+  appendQAMessage(question, "user");
+  qaInput.value = "";
+  appendQAMessage("Reading the signal...", "bot");
+  const pending = qaLog.lastElementChild;
+  try {
+    const result = await askQA(question);
+    pending.textContent = result.answer || fallbackQAAnswer(question);
+    track("qa_question_submit", {qa_mode: result.mode || "endpoint"});
+  } catch (_) {
+    pending.textContent = fallbackQAAnswer(question);
+    track("qa_question_submit", {qa_mode: "error_fallback"});
+  }
+});
+
+function validateFields(form, fields){
+  const data = new FormData(form);
+  const website = String(data.get("website") || "").trim();
+  let firstInvalid = null;
+
+  form.querySelectorAll(".invalid").forEach((field) => field.classList.remove("invalid"));
+
+  fields.forEach(([name, message, validator]) => {
+    const field = form.elements[name];
+    const value = String(data.get(name) || "").trim();
+    if (!validator(value)) {
+      field.classList.add("invalid");
+      field.setCustomValidity(message);
+      if (!firstInvalid) firstInvalid = field;
+    } else {
+      field.setCustomValidity("");
+    }
+  });
+
+  if (form.elements.consent && data.get("consent") !== "on") {
+    const field = form.elements.consent;
+    field.classList.add("invalid");
+    field.setCustomValidity("Consent is required to submit the application.");
+    if (!firstInvalid) firstInvalid = field;
+  } else if (form.elements.consent) {
+    form.elements.consent.setCustomValidity("");
+  }
+
+  if (website) return {valid: false, blocked: true};
+  if (firstInvalid) {
+    firstInvalid.reportValidity();
+    firstInvalid.focus();
+    return {valid: false, blocked: false};
+  }
+  return {valid: true, blocked: false};
+}
+
+function validateLeadForm(form){
+  return validateFields(form, [
+    ["work_email", "Enter a valid work email address.", (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)],
+    ["organization", "Enter your organization.", (value) => value.length >= 2],
+    ["role", "Enter your role.", (value) => value.length >= 2],
+    ["use_case", "Briefly describe the use case or reason for applying.", (value) => value.length >= 8]
+  ]);
+}
+
+function validateQualificationForm(form){
+  return validateFields(form, [
+    ["company_size", "Select company size.", (value) => value.length > 0],
+    ["industry", "Enter the industry.", (value) => value.length >= 2],
+    ["ai_maturity", "Select AI maturity level.", (value) => value.length > 0],
+    ["ai_duration", "Select how long AI has been in use.", (value) => value.length > 0],
+    ["ai_areas", "Describe where AI has been incorporated.", (value) => value.length >= 8],
+    ["what_worked", "Describe what has worked.", (value) => value.length >= 4],
+    ["what_didnt", "Describe what has not worked.", (value) => value.length >= 4],
+    ["expectations", "Describe expectations for a pilot.", (value) => value.length >= 8],
+    ["current_future_project", "Describe a current or future project.", (value) => value.length >= 8]
+  ]);
+}
+
+function buildLeadPayload(form){
+  const data = new FormData(form);
+  const email = String(data.get("work_email") || "").trim();
+  const formAttribution = Object.fromEntries(
+    ATTRIBUTION_KEYS.map((key) => [key, String(data.get(key) || "").trim()]).filter(([, value]) => value)
+  );
+  return {
+    source: "cognitive_signature_executive_landing_page",
+    submitted_at: new Date().toISOString(),
+    page: {
+      url: location.href,
+      path: location.pathname,
+      title: document.title,
+      referrer: document.referrer || ""
+    },
+    attribution: formAttribution,
+    lead: {
+      work_email: email,
+      email_domain: email.includes("@") ? email.split("@").pop() : "",
+      organization: String(data.get("organization") || "").trim(),
+      role: String(data.get("role") || "").trim(),
+      use_case: String(data.get("use_case") || "").trim(),
+      consent: data.get("consent") === "on",
+      selected_language: String(data.get("selected_language") || document.documentElement.lang || "en").trim()
+    }
+  };
+}
+
+async function submitLead(payload){
+  if (!LEAD_ENDPOINT) {
+    const storageKey = payload.type === "strategic_fit_brief" ? "cs_pending_qualification" : "cs_pending_lead";
+    localStorage.setItem(storageKey, JSON.stringify(payload));
+    return {queued: true};
+  }
+  const response = await fetch(LEAD_ENDPOINT, {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(payload),
+    keepalive: true
+  });
+  if (!response.ok) throw new Error(`Lead capture failed: ${response.status}`);
+  return response.json().catch(() => ({ok: true}));
+}
+
+function buildQualificationPayload(form){
+  const data = new FormData(form);
+  return {
+    type: "strategic_fit_brief",
+    source: "cognitive_signature_executive_landing_page",
+    submitted_at: new Date().toISOString(),
+    page: {
+      url: location.href,
+      path: location.pathname,
+      title: document.title,
+      referrer: document.referrer || ""
+    },
+    attribution: latestLeadPayload ? latestLeadPayload.attribution : attribution,
+    lead: latestLeadPayload ? latestLeadPayload.lead : {},
+    selected_language: String(data.get("selected_language") || document.documentElement.lang || "en").trim(),
+    qualification: {
+      company_size: String(data.get("company_size") || "").trim(),
+      industry: String(data.get("industry") || "").trim(),
+      ai_maturity: String(data.get("ai_maturity") || "").trim(),
+      ai_duration: String(data.get("ai_duration") || "").trim(),
+      ai_areas: String(data.get("ai_areas") || "").trim(),
+      what_worked: String(data.get("what_worked") || "").trim(),
+      what_didnt: String(data.get("what_didnt") || "").trim(),
+      expectations: String(data.get("expectations") || "").trim(),
+      current_future_project: String(data.get("current_future_project") || "").trim()
+    }
+  };
+}
+
+async function handleAccess(e){
+  e.preventDefault();
+  const form = e.currentTarget;
+  const button = form.querySelector("button[type='submit']");
+  const ty = document.getElementById("ty");
+  const err = document.getElementById("err");
+  const validation = validateLeadForm(form);
+  if (!validation.valid) {
+    if (!validation.blocked) err.textContent = "Please complete the required fields before submitting.";
+    err.style.display = validation.blocked ? "none" : "block";
+    return;
+  }
+  const payload = buildLeadPayload(form);
+  latestLeadPayload = payload;
+  button.disabled = true;
+  button.textContent = "Sending...";
+  err.style.display = "none";
+
+  try {
+    const result = await submitLead(payload);
+    track("form_submit", {
+      email_domain: payload.lead.email_domain,
+      organization: payload.lead.organization,
+      lead_status: result.queued ? "queued_endpoint_required" : "submitted"
+    });
+    form.style.display = "none";
+    ty.style.display = "block";
+    qualification.style.display = "block";
+  } catch (_) {
+    track("form_submit", {
+      email_domain: payload.lead.email_domain,
+      organization: payload.lead.organization,
+      lead_status: "error"
+    });
+    err.style.display = "block";
+    button.disabled = false;
+    button.textContent = "Apply Now";
+  }
+}
+
+async function handleQualification(e){
+  e.preventDefault();
+  const form = e.currentTarget;
+  const button = form.querySelector("button[type='submit']");
+  const err = document.getElementById("err");
+  const validation = validateQualificationForm(form);
+  if (!validation.valid) {
+    err.textContent = "Please complete the Strategic Fit Brief before sending.";
+    err.style.display = validation.blocked ? "none" : "block";
+    return;
+  }
+  const payload = buildQualificationPayload(form);
+  button.disabled = true;
+  button.textContent = "Sending...";
+  err.style.display = "none";
+
+  try {
+    const result = await submitLead(payload);
+    track("qualification_submit", {
+      organization: payload.lead.organization || "",
+      ai_maturity: payload.qualification.ai_maturity,
+      lead_status: result.queued ? "queued_endpoint_required" : "submitted"
+    });
+    qualification.style.display = "none";
+    qualificationDone.style.display = "block";
+  } catch (_) {
+    track("qualification_submit", {
+      organization: payload.lead.organization || "",
+      ai_maturity: payload.qualification.ai_maturity,
+      lead_status: "error"
+    });
+    err.textContent = "The Strategic Fit Brief could not be sent. Please try again.";
+    err.style.display = "block";
+    button.disabled = false;
+    button.textContent = "Send Strategic Fit Brief";
+  }
+}
+</script>
+</body>
+</html>
